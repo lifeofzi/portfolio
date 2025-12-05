@@ -32,7 +32,7 @@ const skillIconMap: Record<string, IconType> = {
   'BigQuery': SimpleIcons.SiGooglebigquery,
   'SQLite': SimpleIcons.SiSqlite,
   'JIRA': SimpleIcons.SiJira,
-  'OpenAI': SimpleIcons.SiOpenai,
+  'OpenAI API': SimpleIcons.SiOpenai,
   // Fallback for technologies not in Simple Icons
   'Clerk': SimpleIcons.SiAuth0, // Using Auth0 as fallback
   'Neon': SimpleIcons.SiPostgresql, // Using PostgreSQL as fallback
@@ -65,7 +65,7 @@ const skillIconKeyMap: Record<string, string> = {
   'BigQuery': 'siGooglebigquery',
   'SQLite': 'siSqlite',
   'JIRA': 'siJira',
-  'OpenAI': 'siOpenai',
+  'OpenAI API': 'siOpenai',
   'Clerk': 'siAuth0',
   'Neon': 'siPostgresql',
 };
@@ -84,12 +84,13 @@ const getBrandColor = (skill: string): string => {
 };
 
 const skills = [
+  'OpenAI API',
   'Python', 'JavaScript', 'TypeScript', 'React', 'Next.js',
   'GCP', 'AWS', 'Kafka', 'PostgreSQL', 'MongoDB',
   'Docker', 'Redis', 'Git', 'GitLab',
   'Jenkins', 'Prometheus', 'Grafana', 'Django', 'Flask', 'FastAPI',
   'ClickHouse', 'BigQuery', 'SQLite', 'JIRA',
-  'OpenAI', 'Clerk', 'Neon'
+  'Clerk', 'Neon'
 ];
 
 /**
@@ -108,7 +109,7 @@ const SkillLogo = ({ skill, Icon }: { skill: string; Icon?: IconType }) => {
   const brandColor = getBrandColor(skill);
 
   return (
-    <div className="relative w-28 h-28 flex-shrink-0 flex items-center justify-center">
+    <div className="relative w-20 h-20 flex-shrink-0 flex items-center justify-center">
       <Icon 
         className="w-full h-full transition-all duration-300 group-hover:scale-110"
         style={{ color: brandColor }}
@@ -141,17 +142,17 @@ export const SkillsSection = () => {
         </div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 gap-4">
+        <div className="flex flex-wrap justify-center gap-3">
           {skills.map((skill, index) => {
             const Icon = skillIconMap[skill];
             
             return (
               <div
                 key={skill}
-                className={`group relative ${mounted ? 'animate-slide-up' : 'opacity-0'}`}
+                className={`group relative min-w-[120px] ${mounted ? 'animate-slide-up' : 'opacity-0'}`}
                 style={{ animationDelay: `${index * 0.03}s` }}
               >
-                <div className="relative h-full bg-white rounded-full p-2 border-2 border-gray-200 transition-all duration-500 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-100/50 hover:-translate-y-1 flex flex-col items-center justify-center text-center min-h-[120px] overflow-hidden">
+                <div className="relative h-full bg-white rounded-full p-1.5 border-2 border-gray-200 transition-all duration-500 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-100/50 hover:-translate-y-1 flex flex-col items-center justify-center text-center min-h-[112px] overflow-hidden">
                   {/* Hover gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 via-purple-50/0 to-pink-50/0 group-hover:from-blue-50/50 group-hover:via-purple-50/30 group-hover:to-pink-50/20 transition-all duration-500 rounded-full" />
                   
