@@ -76,7 +76,7 @@ export const Hero = () => {
               <span className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-xl" />
             </a>
             <a
-              href="/Zaman_Ishtiyaq_Resume_Sep_25.pdf"
+              href="/Zaman_Ishtiyaq_Resume.pdf"
               download="Zaman_Ishtiyaq_Resume.pdf"
               className="group relative px-8 py-4 bg-white text-gray-900 border-2 border-gray-300 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 hover:border-gray-900 hover:shadow-xl hover:shadow-gray-200"
             >
