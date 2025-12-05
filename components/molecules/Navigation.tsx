@@ -15,6 +15,7 @@ export const Navigation = () => {
 
   const navItems = [
     { href: '/', label: 'Home' },
+    { href: '/projects', label: 'Projects' },
   ];
 
   const socialLinks = [
@@ -60,7 +61,7 @@ export const Navigation = () => {
             {/* Navigation Links */}
             <div className="hidden sm:flex space-x-8 items-center">
               {navItems.map((item) => {
-                const isActive = pathname === item.href;
+                const isActive = pathname === item.href || (item.href === '/projects' && pathname.startsWith('/projects'));
                 return (
                   <CustomLink
                     key={item.href}
