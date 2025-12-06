@@ -25,7 +25,7 @@ export const projects: Project[] = [
     title: 'Offer X-Ray',
     description: 'Offer X-Ray is an AI-powered platform that transforms how job seekers evaluate offer letters. Upload your offer letter and receive instant, comprehensive analysis including risk assessment, compensation breakdown, negotiation guidance, and detailed insights—all in under 5 minutes. Built with privacy-first principles, your documents are processed securely and never stored permanently.',
     longDescription: 'Offer X-Ray is an AI-powered platform that transforms how job seekers evaluate offer letters. Upload your offer letter and receive instant, comprehensive analysis including risk assessment, compensation breakdown, negotiation guidance, and detailed insights—all in under 5 minutes. Built with privacy-first principles, your documents are processed securely and never stored permanently.',
-    url: 'https://offer-letter-analyzer.vercel.app/',
+    url: 'https://www.offerxray.com/',
     image: '/offer-xray.png',
     technologies: ['Next.js', 'TypeScript', 'OpenAI API', 'React', 'Tailwind CSS'],
     featured: true,
