@@ -25,8 +25,8 @@ export const ProjectsTimeline: React.FC = () => {
 
   return (
     <div className="w-full max-w-6xl mx-auto relative">
-      {/* Single Vertical Line - runs through everything */}
-      <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-green-400 via-green-300 to-transparent z-0" />
+      {/* Single Vertical Line - neo-brutalist */}
+      <div className="absolute left-5 sm:left-6 top-0 bottom-0 w-[3px] bg-black z-0" />
 
       <div className="space-y-0 relative">
         {sortedProjects.map((project, index) => {

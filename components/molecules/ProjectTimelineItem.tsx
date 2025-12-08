@@ -26,41 +26,40 @@ const GithubIcon = () => (
 
 /**
  * Molecule: ProjectTimelineItem Component
- * Timeline item for projects with expandable details
+ * Neo-brutalist project timeline card
  */
 export const ProjectTimelineItem: React.FC<ProjectTimelineItemProps> = ({ 
   project, 
   isLast
 }) => {
   return (
-    <div className="relative flex gap-8 pb-8">
-      {/* Dot on the single line */}
+    <div className="relative flex gap-6 pb-10">
+      {/* Node on the line */}
       <div className="relative z-10 flex-shrink-0">
-        <div className="w-5 h-5 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 border-4 border-white shadow-lg hover:scale-125 transition-transform duration-300" />
+        <div className="w-5 h-5 rounded-full bg-[#34d399] border-[3px] border-black shadow-[4px_4px_0_0_rgba(0,0,0,0.85)]" />
       </div>
 
       {/* Content Card */}
       <div className="flex-1 pt-0.5">
         <Link
           href={`/projects/${project.id}`}
-          className="block glass-effect rounded-3xl p-8 sm:p-10 transition-all duration-500 bg-gradient-to-br from-white to-gray-50/50 border-2 border-gray-200 shadow-xl shadow-green-100/30 hover:scale-[1.02] hover:shadow-2xl hover:shadow-green-200/20 hover:border-green-300 cursor-pointer"
+          className="block neo-card rounded-2xl p-6 sm:p-8 bg-white transition-transform duration-150 hover:-translate-y-1 cursor-pointer"
         >
-          {/* Header Section */}
           <div className="flex flex-col gap-6">
             {/* Top Row: Badge, Date, and Link */}
             <div className="flex items-center justify-between flex-wrap gap-4">
-              <span className="text-xs font-bold text-gray-500 uppercase tracking-widest px-3 py-1.5 bg-gray-100 rounded-full">
+              <span className="text-xs font-display font-bold uppercase tracking-widest px-3 py-1.5 neo-pill bg-white">
                 Project
               </span>
               <div className="flex items-center gap-3">
                 {project.duration && (
-                  <div className="px-4 py-1.5 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-full shadow-sm">
-                    <div className="text-sm font-bold text-gray-700 whitespace-nowrap">
+                  <div className="neo-pill bg-[#bbf7d0] text-black px-4 py-1.5">
+                    <div className="text-sm font-display font-bold whitespace-nowrap">
                       {project.duration}
                     </div>
                   </div>
                 )}
-                <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-gray-900 text-white rounded-full font-semibold text-sm">
+                <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#facc15] text-black neo-pill font-display font-semibold text-sm">
                   View Details
                   <ExternalLinkIcon />
                 </div>
@@ -70,7 +69,7 @@ export const ProjectTimelineItem: React.FC<ProjectTimelineItemProps> = ({
             {/* Project Logo and Title */}
             <div className="flex items-start gap-4">
               {project.image && (
-                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden shadow-lg border-2 border-gray-200 flex-shrink-0 bg-white p-2">
+                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden border-[3px] border-black shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] flex-shrink-0 bg-white p-2">
                   <Image
                     src={project.image}
                     alt={project.title}
@@ -81,21 +80,21 @@ export const ProjectTimelineItem: React.FC<ProjectTimelineItemProps> = ({
                 </div>
               )}
               <div className="flex-1 min-w-0">
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight mb-3">
+                <h3 className="text-2xl sm:text-3xl font-display font-extrabold text-black leading-tight mb-3">
                   {project.title}
                 </h3>
-                <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
+                <p className="text-base sm:text-lg text-black leading-relaxed font-display">
                   {project.description}
                 </p>
               </div>
             </div>
 
             {/* Technologies */}
-            <div className="flex flex-wrap gap-2 pt-2 border-t border-gray-200">
+            <div className="flex flex-wrap gap-2 pt-2 border-t-[3px] border-black/10">
               {project.technologies.map((tech) => (
                 <span
                   key={tech}
-                  className="px-3 py-1.5 bg-gray-100 text-gray-700 text-xs font-semibold rounded-full border border-gray-200"
+                  className="px-3 py-1.5 bg-white text-black text-xs font-display font-semibold neo-pill"
                 >
                   {tech}
                 </span>

@@ -109,7 +109,7 @@ const SkillLogo = ({ skill, Icon }: { skill: string; Icon?: IconType }) => {
   const brandColor = getBrandColor(skill);
 
   return (
-    <div className="relative w-20 h-20 flex-shrink-0 flex items-center justify-center">
+    <div className="relative w-16 h-16 flex-shrink-0 flex items-center justify-center">
       <Icon 
         className="w-full h-full transition-all duration-300 group-hover:scale-110"
         style={{ color: brandColor }}
@@ -120,7 +120,7 @@ const SkillLogo = ({ skill, Icon }: { skill: string; Icon?: IconType }) => {
 
 /**
  * Organism: SkillsSection Component
- * Modern, polished skills showcase with tech logos
+ * Neo-brutalist skills grid with bold borders and accent chips
  */
 export const SkillsSection = () => {
   const [mounted, setMounted] = useState(false);
@@ -130,64 +130,56 @@ export const SkillsSection = () => {
   }, []);
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-b from-white to-gray-50">
-      <div className="max-w-7xl mx-auto">
-        <div className={`text-center mb-20 ${mounted ? 'animate-slide-up' : 'opacity-0'}`}>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 text-gray-900">
-            <span className="gradient-text">Technologies</span> I Work With
+    <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-[#bfdbfe] border-t-[3px] border-b-[3px] border-black">
+      <div className="absolute inset-0 text-black opacity-30">
+        <div className="w-full h-full neo-dot-grid" />
+      </div>
+
+      <div className="max-w-7xl mx-auto relative">
+        <div className={`text-center mb-16 ${mounted ? 'animate-slide-up' : 'opacity-0'}`}>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold font-display mb-4 text-black">
+            Technologies I Work With
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            A curated stack of modern tools and frameworks powering my projects
+          <p className="text-lg sm:text-xl text-black/80 max-w-2xl mx-auto leading-relaxed font-display">
+            A curated stack of modern tools powering shipping speed and reliability
           </p>
         </div>
 
         {/* Skills Grid */}
-        <div className="flex flex-wrap justify-center gap-3">
+        <div className="flex flex-wrap justify-center gap-4">
           {skills.map((skill, index) => {
             const Icon = skillIconMap[skill];
             
             return (
               <div
                 key={skill}
-                className={`group relative min-w-[120px] ${mounted ? 'animate-slide-up' : 'opacity-0'}`}
-                style={{ animationDelay: `${index * 0.03}s` }}
+                className={`group relative min-w-[140px] ${mounted ? 'animate-slide-up' : 'opacity-0'}`}
+                style={{ animationDelay: `${index * 0.025}s` }}
               >
-                <div className="relative h-full bg-white rounded-full p-1.5 border-2 border-gray-200 transition-all duration-500 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-100/50 hover:-translate-y-1 flex flex-col items-center justify-center text-center min-h-[112px] overflow-hidden">
-                  {/* Hover gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 via-purple-50/0 to-pink-50/0 group-hover:from-blue-50/50 group-hover:via-purple-50/30 group-hover:to-pink-50/20 transition-all duration-500 rounded-full" />
-                  
-                  {/* Content */}
-                  <div className="relative z-10 w-full flex flex-col items-center justify-center">
+                <div className="neo-card rounded-2xl px-4 py-5 bg-white flex flex-col items-center justify-center text-center min-h-[140px] hover:-translate-y-1 transition-transform duration-150">
+                  <div className="relative z-10 w-full flex flex-col items-center justify-center gap-3">
                     {Icon ? (
                       <>
                         <SkillLogo skill={skill} Icon={Icon} />
-                        <div className="text-xs font-semibold text-gray-700 opacity-0 group-hover:opacity-100 transition-all duration-300 mt-2 transform translate-y-2 group-hover:translate-y-0">
+                        <div className="text-sm font-display font-semibold text-black">
                           {skill}
                         </div>
                       </>
                     ) : (
-                      <div className="text-sm font-bold text-gray-900 group-hover:gradient-text transition-all duration-300">
+                      <div className="text-sm font-bold text-black">
                         {skill}
                       </div>
                     )}
                   </div>
-                  
-                  {/* Shine effect on hover */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-                  </div>
+                  <div className="absolute -top-2 -left-2 w-4 h-4 bg-[#facc15] border-[3px] border-black shadow-[2px_2px_0_0_rgba(0,0,0,0.85)] rounded-sm" />
+                  <div className="absolute -bottom-2 -right-2 w-4 h-4 bg-[#f472b6] border-[3px] border-black shadow-[2px_2px_0_0_rgba(0,0,0,0.85)] rounded-sm" />
                 </div>
               </div>
             );
           })}
         </div>
-
-        {/* Subtle background elements */}
-        <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden -z-10">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-100/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-100/20 rounded-full blur-3xl" />
-        </div>
       </div>
     </section>
   );
 };
+

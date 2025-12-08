@@ -8,7 +8,7 @@ import { contactInfo } from '@/data/contact';
 
 /**
  * Molecule: Navigation Component
- * Modern glassmorphism navigation with social links
+ * Neo-brutalist navigation with chunky borders and bold colors
  */
 export const Navigation = () => {
   const pathname = usePathname();
@@ -49,46 +49,47 @@ export const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-gray-200">
+    <nav className="fixed top-0 left-0 right-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          <div className="text-xl font-bold text-gray-900">
-            {profileInfo.name.split(' ')[0]}
-            <span className="gradient-text ml-1">{profileInfo.name.split(' ')[1] || ''}</span>
+        <div className="mt-4 flex items-center justify-between neo-card rounded-2xl px-5 sm:px-7 py-3 bg-[#fde68a]">
+          <div className="text-xl sm:text-2xl font-bold font-display text-black flex items-center gap-2">
+            <span className="px-3 py-1 bg-white border-[3px] border-black shadow-[3px_3px_0_0_rgba(0,0,0,0.85)] rounded-xl">
+              {profileInfo.name.split(' ')[0]}
+            </span>
+            <span className="px-3 py-1 bg-black text-yellow-300 border-[3px] border-black shadow-[3px_3px_0_0_rgba(0,0,0,0.85)] rounded-xl">
+              {profileInfo.name.split(' ')[1] || ''}
+            </span>
           </div>
-          
-          <div className="flex items-center gap-6">
+
+          <div className="flex items-center gap-4 sm:gap-6">
             {/* Navigation Links */}
-            <div className="hidden sm:flex space-x-8 items-center">
+            <div className="hidden sm:flex items-center gap-3">
               {navItems.map((item) => {
                 const isActive = pathname === item.href || (item.href === '/projects' && pathname.startsWith('/projects'));
                 return (
                   <CustomLink
                     key={item.href}
                     href={item.href}
-                    className={`${
+                    className={`font-display text-sm sm:text-base px-3 py-2 border-[3px] rounded-xl transition-transform duration-200 ${
                       isActive
-                        ? 'text-gray-900 font-semibold'
-                        : 'text-gray-600 hover:text-gray-900'
-                    } no-underline transition-colors duration-200 relative group`}
+                        ? 'bg-white border-black text-black shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] -translate-y-0.5'
+                        : 'bg-[#bfdbfe] border-black text-black hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_rgba(0,0,0,0.85)]'
+                    }`}
                   >
                     {item.label}
-                    {isActive && (
-                      <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500" />
-                    )}
                   </CustomLink>
                 );
               })}
               <a
                 href={`mailto:${contactInfo.email}`}
-                className="text-gray-600 hover:text-gray-900 no-underline transition-colors duration-200"
+                className="font-display text-sm sm:text-base px-3 py-2 bg-[#fca5a5] border-[3px] border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] hover:-translate-y-0.5 transition-transform duration-200 no-underline text-black"
               >
                 Get in Touch
               </a>
             </div>
 
             {/* Social Links */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
               {socialLinks.map((social) => (
                 <SocialIcon
                   key={social.label}
