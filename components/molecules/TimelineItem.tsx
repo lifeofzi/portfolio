@@ -48,14 +48,49 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({ item, isExpanded = t
     }
   })();
 
+  // Soft card backgrounds per type (override neo-card white)
+  const typeCardBg = (() => {
+    switch (item.type) {
+      case 'education':
+        return '!bg-[#ffeef8]';
+      case 'project':
+        return '!bg-[#f0fff4]';
+      case 'work':
+      default:
+        return 'bg-white';
+    }
+  })();
+
+  // Get unique color for company headers
+  const getCompanyHeaderStyles = (companyName: string) => {
+    const colorMap: Record<string, { bubble: string; card: string }> = {
+      BrightEdge: {
+        bubble: 'bg-[#f97316]', // Orange
+        card: '!bg-[#fff4ec]',   // Light orange wash
+      },
+      'Goldman Sachs': {
+        bubble: 'bg-[#8b5cf6]', // Purple
+        card: '!bg-[#f3e8ff]',   // Light purple wash
+      },
+    };
+
+    return (
+      colorMap[companyName] || {
+        bubble: 'bg-[#ec4899]', // Pink bubble default
+        card: '!bg-[#ffe4ef]',   // Light pink wash
+      }
+    );
+  };
+
   // Company Header styling
   if (item.isCompanyHeader) {
+    const companyStyles = getCompanyHeaderStyles(item.title);
     return (
       <div className="relative flex gap-6 pb-10">
         {/* Node */}
         <div className="relative z-10 flex-shrink-0">
           <div
-            className="w-6 h-6 rounded-full bg-black border-[3px] border-black shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] cursor-pointer hover:-translate-y-0.5 transition-transform duration-150"
+            className={`w-6 h-6 rounded-full ${companyStyles.bubble} border-[3px] border-black shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] cursor-pointer hover:-translate-y-0.5 transition-transform duration-150`}
             onClick={onToggle}
           />
         </div>
@@ -63,7 +98,7 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({ item, isExpanded = t
         {/* Card */}
         <div className="flex-1 pt-0.5">
           <div
-            className="neo-card rounded-2xl p-6 sm:p-8 bg-white cursor-pointer transition-transform duration-150 hover:-translate-y-1"
+            className={`neo-card rounded-2xl p-6 sm:p-8 ${companyStyles.card} cursor-pointer transition-transform duration-150 hover:-translate-y-1`}
             onClick={onToggle}
           >
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -124,7 +159,7 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({ item, isExpanded = t
       {/* Card */}
       <div className="flex-1 pt-0.5">
         <div
-          className="neo-card rounded-2xl p-6 sm:p-8 bg-white cursor-pointer transition-transform duration-150 hover:-translate-y-1"
+          className={`neo-card rounded-2xl p-6 sm:p-8 ${typeCardBg} cursor-pointer transition-transform duration-150 hover:-translate-y-1`}
           onClick={onToggle}
         >
           {/* Header */}
