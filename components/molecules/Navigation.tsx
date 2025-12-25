@@ -16,6 +16,7 @@ export const Navigation = () => {
   const navItems = [
     { href: '/', label: 'Home' },
     { href: '/projects', label: 'Projects' },
+    { href: '/blog', label: 'Blog' },
   ];
 
   const socialLinks = [
@@ -65,15 +66,35 @@ export const Navigation = () => {
             {/* Navigation Links */}
             <div className="hidden sm:flex items-center gap-3">
               {navItems.map((item) => {
-                const isActive = pathname === item.href || (item.href === '/projects' && pathname.startsWith('/projects'));
+                const isActive = pathname === item.href || 
+                  (item.href === '/projects' && pathname.startsWith('/projects')) ||
+                  (item.href === '/blog' && pathname.startsWith('/blog'));
+                
+                // Special styling for Blog button
+                if (item.href === '/blog') {
+                  return (
+                    <CustomLink
+                      key={item.href}
+                      href={item.href}
+                      className={`font-display text-sm sm:text-base px-3 py-2 border-[3px] rounded-xl transition-transform duration-200 !text-black no-underline ${
+                        isActive
+                          ? 'bg-[#fce7f3] border-black shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] -translate-y-0.5'
+                          : 'bg-[#fce7f3] border-black hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_rgba(0,0,0,0.85)]'
+                      }`}
+                    >
+                      {item.label}
+                    </CustomLink>
+                  );
+                }
+                
                 return (
                   <CustomLink
                     key={item.href}
                     href={item.href}
-                    className={`font-display text-sm sm:text-base px-3 py-2 border-[3px] rounded-xl transition-transform duration-200 ${
+                    className={`font-display text-sm sm:text-base px-3 py-2 border-[3px] rounded-xl transition-transform duration-200 !text-black no-underline ${
                       isActive
-                        ? 'bg-white border-black text-black shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] -translate-y-0.5'
-                        : 'bg-[#bfdbfe] border-black text-black hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_rgba(0,0,0,0.85)]'
+                        ? 'bg-white border-black shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] -translate-y-0.5'
+                        : 'bg-[#bfdbfe] border-black hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_rgba(0,0,0,0.85)]'
                     }`}
                   >
                     {item.label}

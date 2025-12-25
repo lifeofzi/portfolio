@@ -7,6 +7,21 @@ export const formatDate = (dateString: string): string => {
     return 'Present';
   }
 
+  // Handle "YYYY-MM-DD" format (for blog posts)
+  const fullDateMatch = dateString.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (fullDateMatch) {
+    const [, year, month, day] = fullDateMatch;
+    const monthIndex = parseInt(month, 10) - 1;
+    const date = new Date(parseInt(year, 10), monthIndex, parseInt(day, 10));
+    
+    const monthNames = [
+      'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+      'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+    ];
+    
+    return `${monthNames[monthIndex]} ${day}, ${year}`;
+  }
+
   // Handle "YYYY-MM" format
   const dateMatch = dateString.match(/^(\d{4})-(\d{2})$/);
   if (dateMatch) {
