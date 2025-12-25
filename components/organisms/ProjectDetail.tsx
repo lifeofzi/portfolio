@@ -61,10 +61,22 @@ export const ProjectDetail = ({ project }: { project: Project }) => {
           <div className="w-full h-full neo-dot-grid" />
         </div>
         <div className="pointer-events-none absolute inset-0">
+          {project.id === 'offer-letter-analyzer' ? (
+            <>
           <div className="absolute left-10 top-16 w-28 h-20 bg-[#60a5fa] border-[3px] border-black shadow-[5px_5px_0_0_rgba(0,0,0,0.85)] rotate-1" />
           <div className="absolute right-12 top-24 w-16 h-24 bg-[#f472b6] border-[3px] border-black shadow-[5px_5px_0_0_rgba(0,0,0,0.85)] rotate-3" />
           <div className="absolute left-1/4 bottom-16 w-32 h-32 bg-[#34d399] border-[3px] border-black shadow-[5px_5px_0_0_rgba(0,0,0,0.85)] -rotate-6" />
           <div className="absolute right-1/4 bottom-10 w-40 h-20 bg-white border-[3px] border-black shadow-[5px_5px_0_0_rgba(0,0,0,0.85)] rotate-2" />
+            </>
+          ) : (
+            <>
+              <div className="absolute left-10 top-16 w-32 h-24 bg-[#3b82f6] border-[3px] border-black shadow-[5px_5px_0_0_rgba(0,0,0,0.85)] rotate-2" />
+              <div className="absolute right-12 top-24 w-20 h-28 bg-[#8b5cf6] border-[3px] border-black shadow-[5px_5px_0_0_rgba(0,0,0,0.85)] -rotate-3" />
+              <div className="absolute left-1/4 bottom-16 w-36 h-36 bg-[#06b6d4] border-[3px] border-black shadow-[5px_5px_0_0_rgba(0,0,0,0.85)] rotate-6" />
+              <div className="absolute right-1/4 bottom-10 w-44 h-24 bg-[#facc15] border-[3px] border-black shadow-[5px_5px_0_0_rgba(0,0,0,0.85)] -rotate-2" />
+              <div className="absolute left-1/2 top-1/3 w-24 h-24 bg-[#ec4899] border-[3px] border-black shadow-[5px_5px_0_0_rgba(0,0,0,0.85)] rotate-12" />
+            </>
+          )}
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -93,7 +105,9 @@ export const ProjectDetail = ({ project }: { project: Project }) => {
             )}
 
             <div className="space-y-4">
+              {project.id === 'offer-letter-analyzer' && (
               <p className="font-display text-lg text-black">AI-Powered</p>
+              )}
               <h1 className="font-display text-5xl sm:text-6xl md:text-7xl font-bold text-black leading-tight">
                 <span className="neo-underline inline-block">{project.title}</span>
               </h1>
@@ -107,7 +121,9 @@ export const ProjectDetail = ({ project }: { project: Project }) => {
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-display text-lg px-8 py-4 bg-[#facc15] border-[3px] border-black rounded-xl shadow-[6px_6px_0_0_rgba(0,0,0,0.85)] hover:-translate-y-1 transition-transform duration-150 text-black inline-flex items-center gap-2 justify-center"
+                className={`font-display text-lg px-8 py-4 border-[3px] border-black rounded-xl shadow-[6px_6px_0_0_rgba(0,0,0,0.85)] hover:-translate-y-1 transition-transform duration-150 text-black inline-flex items-center gap-2 justify-center ${
+                  project.id === 'architex' ? 'bg-[#3b82f6] text-white' : 'bg-[#facc15]'
+                }`}
               >
                 <ExternalLinkIcon />
                 Visit Live Project
@@ -126,6 +142,7 @@ export const ProjectDetail = ({ project }: { project: Project }) => {
             </div>
 
             {/* Quick stats */}
+            {project.id === 'offer-letter-analyzer' && (
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
               {[
                 { label: 'AI-Powered Analysis', value: '100%', color: '#60a5fa' },
@@ -143,11 +160,35 @@ export const ProjectDetail = ({ project }: { project: Project }) => {
                 </div>
               ))}
             </div>
+            )}
+            {project.id === 'architex' && project.workflowStages && (
+              <div className="max-w-2xl mx-auto">
+                <div className="flex flex-wrap justify-center items-center gap-3">
+                  {project.workflowStages.map((stage, idx) => (
+                    <>
+                      <div
+                        key={stage}
+                        className="neo-card rounded-xl px-6 py-3 bg-white text-center hover:-translate-y-1 transition-transform duration-150 border-[3px] border-black shadow-[4px_4px_0_0_rgba(0,0,0,0.85)]"
+                        style={{ 
+                          backgroundColor: idx === 0 ? '#dbeafe' : idx === 1 ? '#e0e7ff' : idx === 2 ? '#fce7f3' : '#dcfce7'
+                        }}
+                      >
+                        <div className="text-lg font-display font-bold text-black">{stage}</div>
+                      </div>
+                      {idx < project.workflowStages!.length - 1 && (
+                        <span className="text-2xl font-display font-bold text-black">→</span>
+                      )}
+                    </>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
 
-      {/* How it works */}
+      {/* How it works - for Offer X-Ray */}
+      {project.workflowSteps && project.workflowSteps.length > 0 && (
       <section className="py-20 lg:py-28 bg-white border-y-[3px] border-black">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
@@ -155,13 +196,7 @@ export const ProjectDetail = ({ project }: { project: Project }) => {
             <p className="text-lg sm:text-xl text-black/80 font-display">Get comprehensive insights in 5 steps</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {[
-              { title: 'Document Upload', desc: 'Upload PDF, DOC, DOCX securely', color: '#60a5fa', icon: '⬆' },
-              { title: 'AI Analysis', desc: 'Comp, benefits, legal terms', color: '#22c55e', icon: '⚡' },
-              { title: 'Risk Assessment', desc: 'Red / Amber / Green clarity', color: '#f59e0b', icon: '!' },
-              { title: 'Negotiation Guidance', desc: 'Strategies, templates, talking points', color: '#0ea5e9', icon: '💬' },
-              { title: 'Export Report', desc: 'Detailed PDF to share or keep', color: '#10b981', icon: '↘' },
-            ].map((step, idx) => (
+              {project.workflowSteps.map((step, idx) => (
               <div key={step.title} className="neo-card rounded-2xl p-6 bg-white relative hover:-translate-y-1 transition-transform duration-150">
                 <div
                   className="absolute -top-3 -right-3 w-10 h-10 rounded-full border-[3px] border-black shadow-[3px_3px_0_0_rgba(0,0,0,0.85)] flex items-center justify-center font-display font-bold text-black"
@@ -173,36 +208,221 @@ export const ProjectDetail = ({ project }: { project: Project }) => {
                   {step.icon}
                 </div>
                 <h3 className="text-xl font-display font-bold text-black mt-4 mb-2">{step.title}</h3>
-                <p className="text-black/80 font-display text-sm leading-relaxed">{step.desc}</p>
+                  <p className="text-black/80 font-display text-sm leading-relaxed">{step.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
+      )}
 
-      {/* Features */}
+      {/* Main Features - for Architex */}
+      {project.mainFeatures && project.mainFeatures.length > 0 && (
+        <section className="py-20 lg:py-28 bg-[#fef3c7] border-y-[3px] border-black relative">
+          <div className="absolute inset-0 text-black opacity-10">
+            <div className="w-full h-full neo-dot-grid" />
+          </div>
+          <div className="max-w-6xl mx-auto px-4 relative">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl sm:text-5xl font-display font-bold text-black mb-3">01 — Features</h2>
+              <p className="text-lg sm:text-xl text-black/80 font-display">Built by Architects, for Architects</p>
+            </div>
+            <div className="space-y-8">
+              {project.mainFeatures.map((feature, idx) => {
+                const colors = [
+                  { bg: '#dbeafe', border: '#3b82f6', number: '#60a5fa' },
+                  { bg: '#e0e7ff', border: '#6366f1', number: '#818cf8' },
+                  { bg: '#fce7f3', border: '#ec4899', number: '#f472b6' },
+                ];
+                const color = colors[idx] || colors[0];
+                return (
+                  <div 
+                    key={feature.number} 
+                    className="neo-card rounded-2xl p-8 border-[3px] border-black shadow-[6px_6px_0_0_rgba(0,0,0,0.85)] hover:-translate-y-1 transition-transform duration-150"
+                    style={{ backgroundColor: color.bg }}
+                  >
+                    <div className="flex flex-col md:flex-row gap-6">
+                      <div className="flex-shrink-0">
+                        <div 
+                          className="w-20 h-20 rounded-xl border-[3px] border-black flex items-center justify-center font-display font-bold text-2xl text-white shadow-[4px_4px_0_0_rgba(0,0,0,0.85)]"
+                          style={{ backgroundColor: color.number }}
+                        >
+                          {feature.number}
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-2xl sm:text-3xl font-display font-bold text-black mb-3">{feature.title}</h3>
+                        <p className="text-lg text-black/90 font-display mb-4">{feature.description}</p>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                          {feature.items.map((item, itemIdx) => (
+                            <div key={itemIdx} className="flex items-center gap-3">
+                              <div 
+                                className="w-3 h-3 rounded-full border-[2px] border-black flex-shrink-0"
+                                style={{ backgroundColor: color.number }}
+                              />
+                              <span className="text-black font-display font-medium">{item}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* AI Assistant Section - for Architex - MOVED ABOVE ABOUT */}
+      {project.id === 'architex' && (
+        <section className="py-20 lg:py-28 bg-white border-y-[3px] border-black">
+          <div className="max-w-5xl mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl sm:text-5xl font-display font-bold text-black mb-3">02 — AI Assistant</h2>
+              <p className="text-lg sm:text-xl text-black/80 font-display">Your Intelligent Project Partner</p>
+            </div>
+            <div className="grid items-start gap-16 md:grid-cols-2">
+              <div>
+                <p className="mb-8 text-base text-black/60 leading-relaxed font-display">
+                  Ask questions about your projects, get instant summaries, and let AI help you stay on top of deadlines and deliverables. Fully integrated with your project data.
+                </p>
+                <div className="space-y-5">
+                  {[
+                    { title: 'Project Summaries', desc: 'Get instant overviews of any project status' },
+                    { title: 'Document Search', desc: 'Find files and information across all projects' },
+                    { title: 'Deadline Alerts', desc: 'AI monitors and reminds you of upcoming deadlines' },
+                    { title: 'Smart Suggestions', desc: 'Recommendations based on your workflow patterns' },
+                  ].map((item) => (
+                    <div key={item.title} className="flex items-start gap-4">
+                      <div className="w-1.5 h-1.5 bg-[#3b82f6] mt-2 rounded-full flex-shrink-0"></div>
+                      <div>
+                        <span className="font-display font-bold text-black">{item.title}</span>
+                        <span className="text-black/50 font-display"> — {item.desc}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="relative">
+                <div className="border-[3px] border-black bg-[#fef3c7] shadow-[6px_6px_0_0_rgba(0,0,0,0.85)] rounded-xl overflow-hidden">
+                  {/* Chat Header */}
+                  <div className="border-b-[3px] border-black px-4 py-3 flex items-center gap-3 bg-white">
+                    <div className="w-8 h-8 rounded-full bg-[#3b82f6]/20 flex items-center justify-center border-[2px] border-black">
+                      <span className="text-[#3b82f6] text-xs font-display font-bold">AI</span>
+                    </div>
+                    <div>
+                      <div className="text-xs font-display font-bold uppercase tracking-wider text-black">Architex Assistant</div>
+                      <div className="text-[10px] text-black/40 font-display">Always available</div>
+                    </div>
+                  </div>
+                  
+                  {/* Chat Messages */}
+                  <div className="p-4 space-y-4 min-h-[300px] bg-[#fef3c7]">
+                    {/* User Message 1 */}
+                    <div className="flex justify-end">
+                      <div className="bg-[#3b82f6] text-white px-4 py-2 text-xs max-w-[80%] rounded-lg border-[2px] border-black font-display shadow-[3px_3px_0_0_rgba(0,0,0,0.85)]">
+                        What&apos;s the status of the Morrison Residence?
+                      </div>
+                    </div>
+                    
+                    {/* AI Response 1 */}
+                    <div className="flex justify-start">
+                      <div className="border-[2px] border-black bg-white px-4 py-3 text-xs max-w-[85%] rounded-lg space-y-2 font-display shadow-[3px_3px_0_0_rgba(0,0,0,0.85)]">
+                        <p className="text-black/80">
+                          <span className="font-bold text-black">Morrison Residence</span> is currently in the{' '}
+                          <span className="text-[#3b82f6] font-bold">Design Development</span> stage.
+                        </p>
+                        <div className="border-t border-black/10 pt-2 mt-2 space-y-1 text-black/60">
+                          <div className="flex justify-between">
+                            <span>Progress</span>
+                            <span className="text-[#3b82f6] font-bold">68%</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span>Next deadline</span>
+                            <span>Dec 15 — CD Set</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span>Open items</span>
+                            <span>3 checklist items</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* User Message 2 */}
+                    <div className="flex justify-end">
+                      <div className="bg-[#3b82f6] text-white px-4 py-2 text-xs max-w-[80%] rounded-lg border-[2px] border-black font-display shadow-[3px_3px_0_0_rgba(0,0,0,0.85)]">
+                        Show me pending payments
+                      </div>
+                    </div>
+                    
+                    {/* AI Response 2 */}
+                    <div className="flex justify-start">
+                      <div className="border-[2px] border-black bg-white px-4 py-3 text-xs max-w-[85%] rounded-lg font-display shadow-[3px_3px_0_0_rgba(0,0,0,0.85)]">
+                        <p className="text-black/80 mb-2">
+                          You have <span className="font-bold text-[#3b82f6]">2 pending payments</span>:
+                        </p>
+                        <div className="space-y-1 text-black/60">
+                          <div>• Morrison — $12,500 (DD milestone)</div>
+                          <div>• Chen Office — $8,200 (SD milestone)</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Chat Input */}
+                  <div className="border-t-[3px] border-black px-4 py-3 bg-white">
+                    <div className="flex items-center gap-3">
+                      <div className="flex-1 border-[2px] border-black/20 px-3 py-2 text-xs text-black/40 rounded-lg font-display bg-[#fef3c7]">
+                        Ask about your projects...
+                      </div>
+                      <div className="w-8 h-8 bg-[#3b82f6] flex items-center justify-center text-white text-xs rounded-lg border-[2px] border-black font-display shadow-[3px_3px_0_0_rgba(0,0,0,0.85)] cursor-pointer hover:-translate-y-0.5 transition-transform">
+                        →
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Features - 02 — About for Architex */}
       {project.features && project.features.length > 0 && (
-        <section className="py-20 lg:py-28 bg-[#bfdbfe] border-y-[3px] border-black relative">
+        <section className={`py-20 lg:py-28 border-y-[3px] border-black relative ${project.id === 'architex' ? 'bg-[#e0e7ff]' : 'bg-[#bfdbfe]'}`}>
           <div className="absolute inset-0 text-black opacity-25">
             <div className="w-full h-full neo-dot-grid" />
           </div>
           <div className="max-w-6xl mx-auto px-4 relative">
             <div className="text-center mb-12">
-              <h2 className="text-4xl sm:text-5xl font-display font-bold text-black mb-3">Everything You Need</h2>
-              <p className="text-lg sm:text-xl text-black/80 font-display">Comprehensive tools to make confident decisions</p>
+              <h2 className="text-4xl sm:text-5xl font-display font-bold text-black mb-3">
+                {project.id === 'architex' ? '03 — About' : 'Everything You Need'}
+              </h2>
+              <p className="text-lg sm:text-xl text-black/80 font-display">
+                {project.id === 'architex' 
+                  ? 'We understand your workflow because we\'ve lived it. Architex is designed around how architecture practices actually operate.'
+                  : 'Comprehensive tools to make confident decisions'}
+              </p>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {project.features.map((feature, idx) => (
+              {(project.id === 'architex' ? project.features.slice(0, 6) : project.features).map((feature, idx) => {
+                const colors = ['#dbeafe', '#e0e7ff', '#fce7f3', '#dcfce7', '#fef3c7', '#fde68a'];
+                const bgColor = project.id === 'architex' ? colors[idx % colors.length] : 'white';
+                return (
                 <div
                   key={idx}
-                  className="neo-card rounded-2xl p-6 bg-white hover:-translate-y-1 transition-transform duration-150"
+                    className="neo-card rounded-2xl p-6 border-[3px] border-black hover:-translate-y-1 transition-transform duration-150 shadow-[4px_4px_0_0_rgba(0,0,0,0.85)]"
+                    style={{ backgroundColor: bgColor }}
                 >
                   <div className="flex items-start gap-3">
                     <CheckIcon />
-                    <p className="text-black font-display leading-relaxed">{feature}</p>
+                      <p className="text-black font-display leading-relaxed font-medium">{feature}</p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
@@ -225,7 +445,8 @@ export const ProjectDetail = ({ project }: { project: Project }) => {
         </div>
       </section>
 
-      {/* Why choose */}
+      {/* Why choose - for Offer X-Ray */}
+      {project.id === 'offer-letter-analyzer' && (
       <section className="py-20 lg:py-28 bg-[#fef08a] border-b-[3px] border-black relative">
         <div className="absolute inset-0 text-black opacity-20">
           <div className="w-full h-full neo-dot-grid" />
@@ -261,6 +482,7 @@ export const ProjectDetail = ({ project }: { project: Project }) => {
           </div>
         </div>
       </section>
+      )}
 
       {/* CTA */}
       <section className="py-18 lg:py-24 bg-white">
