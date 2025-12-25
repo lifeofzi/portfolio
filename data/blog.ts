@@ -14,6 +14,7 @@ export interface BlogPost {
   tags: string[];
   featured?: boolean;
   image?: string;
+  projectId?: string; // Link to project detail page
 }
 
 export const blogPosts: BlogPost[] = [
@@ -95,6 +96,7 @@ The platform is currently in active development and testing. With Tauseef's ongo
     category: 'Development',
     tags: ['Next.js', 'TypeScript', 'AI', 'Architecture', 'Project Management'],
     featured: true,
+    projectId: 'architex',
   },
   {
     slug: 'ai-powered-offer-letter-analysis',
@@ -149,6 +151,7 @@ The platform helps job seekers make informed decisions in under 5 minutes, somet
     category: 'AI',
     tags: ['AI', 'OpenAI', 'Next.js', 'Privacy', 'Career'],
     featured: true,
+    projectId: 'offer-letter-analyzer',
   },
   {
     slug: 'neo-brutalist-design-principles',
@@ -211,6 +214,169 @@ It's not for everyone, but for a developer portfolio, it perfectly captures pers
     category: 'Design',
     tags: ['Design', 'UI/UX', 'Tailwind CSS', 'Portfolio'],
     featured: false,
+  },
+  {
+    slug: 'ugc-content-creation-platform-tiktok-automation',
+    title: 'Building a UGC Content Creation Platform: Rethinking TikTok Automation',
+    excerpt: 'Exploring the future of user-generated content creation with AI-powered video automation, TikTok workflows, and intelligent content generation.',
+    content: `# Building a UGC Content Creation Platform: Rethinking TikTok Automation
+
+I'm currently working on a UGC (User Generated Content) content creation platform that aims to revolutionize how creators and brands produce TikTok videos. The idea stems from observing the massive time investment required to create engaging content consistently.
+
+## The Problem with Current Content Creation
+
+Creating viral TikTok content is incredibly time-consuming:
+- Finding the right hook that captures attention
+- Sourcing or creating demo videos
+- Writing compelling captions
+- Editing and combining multiple elements
+- Maintaining consistency across multiple videos
+- Managing multiple social accounts
+
+Most creators spend hours on a single video, and brands struggle to scale their content production without hiring large teams.
+
+![UGC Platform Interface](/ugc/ugc.png)
+
+## What I'm Building
+
+The platform I'm developing focuses on **intelligent video automation** rather than just basic scheduling. Here's what I'm building:
+
+### Core Features
+
+**Home Section:**
+- **Library**: Centralized storage for all your content assets
+- **Schedule**: Plan and schedule your TikTok posts
+- **Analytics**: Track performance and engagement metrics
+- **Autopilot**: Automated content creation and posting workflows
+
+**Playground - Content Creation Tools:**
+- **Slideshows**: Create engaging slideshow content
+- **AI Avatars**: Generate and customize AI-powered avatars for videos
+- **Hook + Demo**: Combine attention-grabbing hooks with demo videos (currently the main focus)
+- **Product Review**: Template-based product review creation
+- **Trending Video Mixer**: Blend your content with trending formats
+- **Swap**: Face and element swapping capabilities
+- **TikTok Research**: Research trending content and formats
+
+**Social Accounts:**
+- Direct TikTok integration for seamless posting
+
+**Settings & Management:**
+- **Usage**: Track platform usage and limits
+- **My Products**: Manage product catalogs for reviews
+- **My Demos**: Organize your demo video library
+- **Connect Social Accounts**: Link multiple social platforms
+
+### 1. Hook Generation & Selection
+
+The platform uses AI to generate and suggest hooks based on:
+- Trending topics in your niche
+- Performance data from your previous videos
+- Industry-specific patterns
+- A/B testing different hook styles
+
+Users can select from AI-generated hooks (templates), create their own (user created), or use the "Create New" feature. The system learns from what works and suggests hook lines with a dropdown of AI-generated suggestions.
+
+### 2. Demo Video Library & AI Avatars
+
+Instead of creators having to film every demo themselves, the platform provides:
+- A library of pre-made demo videos (Available Demos section)
+- AI-generated avatars that can be customized
+- The ability to swap faces, backgrounds, and elements
+- Product review templates that can be quickly customized
+- Easy demo video management with add/remove functionality
+
+This dramatically reduces the time from idea to published video.
+
+### 3. TikTok Automation Workflow
+
+The automation isn't just about posting—it's about the entire workflow:
+- **Hook + Demo Mixing**: Automatically combine hooks with relevant demo videos
+- **Trending Video Mixer**: Blend your content with trending formats
+- **Smart Scheduling**: Post at optimal times based on your audience data
+- **Multi-Account Management**: Manage multiple TikTok accounts from one dashboard
+- **Video History**: Search and manage previously created videos by title, description, or prompt
+
+### 4. Video Automation Intelligence
+
+The platform learns and adapts:
+- Tracks which hooks perform best for your audience
+- Suggests demo videos based on successful combinations
+- Automatically adjusts posting times based on engagement
+- Provides analytics on what's working and what's not
+- Real-time video preview with full editing capabilities
+
+## My Thinking on TikTok Automation
+
+TikTok automation shouldn't be about spamming content—it should be about **intelligent content creation and distribution**. Here's my philosophy:
+
+### Quality Over Quantity
+Automation should help creators produce better content faster, not just more content. The AI should understand context, trends, and audience preferences.
+
+### Creator-Centric Design
+The platform should feel like a creative tool, not a robot. Creators maintain full control while automation handles the repetitive, time-consuming tasks.
+
+### Data-Driven Decisions
+Every automation decision should be backed by data:
+- Which hooks convert best?
+- What demo videos resonate with your audience?
+- When do your followers engage most?
+- What content formats drive the most views?
+
+### Ethical Automation
+I'm thinking carefully about:
+- Maintaining authenticity in automated content
+- Ensuring creators still have creative input
+- Following TikTok's guidelines and best practices
+- Building tools that enhance creativity, not replace it
+
+## Technical Challenges
+
+Building this platform presents interesting challenges:
+
+### Video Processing at Scale
+- Real-time video editing and composition
+- Face swapping and AI avatar integration
+- Efficient video rendering and optimization
+- Storage and delivery of video assets
+
+### AI Integration
+- Natural language processing for hook generation
+- Computer vision for video analysis
+- Recommendation systems for content suggestions
+- Trend detection and analysis
+
+### TikTok API Limitations
+- Working within TikTok's API constraints
+- Handling rate limits and authentication
+- Ensuring compliance with platform policies
+- Building reliable automation that doesn't get flagged
+
+## Current Status
+
+The platform is in active development. I'm focusing on:
+- Building the core video composition engine
+- Integrating AI for hook generation
+- Creating a seamless user experience
+- Testing with real creators to gather feedback
+
+## Vision
+
+My vision is to create a platform where:
+- A creator can go from idea to published TikTok video in minutes, not hours
+- Brands can scale their content production without massive teams
+- Automation enhances creativity rather than replacing it
+- Data drives every decision, making content creation more strategic
+
+The future of content creation isn't about replacing creators—it's about empowering them with intelligent tools that handle the grunt work so they can focus on what matters: creativity and connection with their audience.
+
+This is still early days, but I'm excited about the potential to transform how UGC content is created and distributed.`,
+    author: 'Zaman Ishtiyaq',
+    publishedAt: '2025-01-20',
+    readTime: 8,
+    category: 'Development',
+    tags: ['UGC', 'TikTok', 'Automation', 'AI', 'Video', 'Content Creation'],
+    featured: true,
   },
 ];
 

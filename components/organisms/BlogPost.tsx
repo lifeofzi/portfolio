@@ -137,13 +137,27 @@ export const BlogPostDetail = ({ post }: { post: BlogPost }) => {
 
       {/* Footer */}
       <footer className="mt-12 pt-8 border-t-[3px] border-black">
-        <Link
-          href="/blog"
-          className="inline-flex items-center gap-2 font-display text-lg px-6 py-3 bg-[#facc15] border-[3px] border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] hover:-translate-y-1 transition-transform duration-150 text-black"
-        >
-          <ArrowLeftIcon />
-          Back to Blog
-        </Link>
+        <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
+          <Link
+            href="/blog"
+            className="inline-flex items-center gap-2 font-display text-lg px-6 py-3 bg-[#facc15] border-[3px] border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] hover:-translate-y-1 transition-transform duration-150 text-black"
+          >
+            <ArrowLeftIcon />
+            Back to Blog
+          </Link>
+          
+          {post.projectId && (
+            <Link
+              href={`/projects/${post.projectId}`}
+              className="inline-flex items-center gap-2 font-display text-lg px-6 py-3 bg-[#3b82f6] border-[3px] border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] hover:-translate-y-1 transition-transform duration-150 text-white"
+            >
+              View Project Details
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </Link>
+          )}
+        </div>
       </footer>
     </article>
   );

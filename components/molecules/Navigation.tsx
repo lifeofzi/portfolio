@@ -87,6 +87,23 @@ export const Navigation = () => {
                   );
                 }
                 
+                // Special styling for Home button
+                if (item.href === '/') {
+                  return (
+                    <CustomLink
+                      key={item.href}
+                      href={item.href}
+                      className={`font-display text-sm sm:text-base px-3 py-2 border-[3px] rounded-xl transition-transform duration-200 !text-black no-underline ${
+                        isActive
+                          ? 'bg-white border-black shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] -translate-y-0.5'
+                          : 'bg-[#fef08a] border-black hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_rgba(0,0,0,0.85)]'
+                      }`}
+                    >
+                      {item.label}
+                    </CustomLink>
+                  );
+                }
+                
                 return (
                   <CustomLink
                     key={item.href}
