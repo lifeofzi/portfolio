@@ -378,6 +378,262 @@ This is still early days, but I'm excited about the potential to transform how U
     tags: ['UGC', 'TikTok', 'Automation', 'AI', 'Video', 'Content Creation'],
     featured: true,
   },
+  {
+    slug: 'building-ai-agent-system-restaurant-owners-pet-pooja-integration',
+    title: 'Building an AI Agent System for Restaurant Owners: Why I Chose an Agentic Framework Over Traditional Solutions',
+    excerpt: 'How I built a conversational AI system for restaurant owners using an agentic framework, with deep integration into Pet Pooja—one of India\'s most popular restaurant management platforms.',
+    content: `# Building an AI Agent System for Restaurant Owners: Why I Chose an Agentic Framework Over Traditional Solutions
+
+## The Problem: A Café Owner's Frustration
+
+A friend introduced me to a café owner who was dealing with a common issue: getting insights from their business data took too long. His managers would pull reports, analyze them, and present them—a process that drained time and slowed decisions.
+
+The conversation made the problem clear: business owners need instant, conversational access to their data, not reports that arrive hours or days later.
+
+The owner wanted to ask questions like:
+- "Show me how coffee sales changed after we raised prices"
+- "What are our top-selling items this month?"
+- "How's our inventory looking for the most popular menu items?"
+
+Each query required manual work: query the database, analyze results, format a response, and create visualizations. This wasn't scalable.
+
+![First Conversation with Café Owner](/easy-day/first-conversaton.jpeg)
+
+## The Real Value: It's All About the Data
+
+The framework is only as good as the data it connects to. The value comes from integrating with real operational systems that restaurants already use.
+
+### Why Pet Pooja?
+
+Pet Pooja is one of the most popular restaurant management platforms in India, handling:
+- Point-of-Sale (POS) transactions
+- Inventory management
+- Customer relationship management (CRM)
+- Staff scheduling
+- Menu management
+- Real-time reporting and analytics
+
+By building over Pet Pooja, we can leverage:
+- Years of historical transaction data
+- Real-time inventory levels
+- Customer ordering patterns
+- Menu performance metrics
+- Staff productivity data
+- Financial data
+
+The agentic framework becomes powerful when it can access this operational data in real time.
+
+![Base System Architecture](/easy-day/base.png)
+
+## The Solution: An Agentic AI System Connected to Real Data
+
+I decided to build a system where specialized AI agents collaborate to answer business questions in real time, using natural language, connected directly to the restaurant's operational data.
+
+### Why Agentic Architecture?
+
+After exploring options, I chose OpenAI's Agents SDK with an agentic framework for these reasons:
+
+**Specialized Agents for Different Tasks:** Instead of one general model, I created specialized agents:
+- **Sales Agent**: Answers sales questions, queries the database, and provides insights
+- **Inventory Agent**: Handles inventory questions and stock analysis
+- **Plotter Agent**: Creates visualizations when users ask to "see" data
+- **Response Agent**: Formats final outputs for consistency
+
+**Agent Collaboration (Handoffs):** Agents hand off work when needed. When the Sales Agent detects a visualization request, it provides analysis first, then hands off to the Plotter Agent with the data. This mirrors how teams collaborate.
+
+**Data Grounding:** Each agent is constrained to use actual database results—no hallucinations. The Sales Agent must query before answering and uses exact numbers from query results.
+
+**Temperature Control:** Critical agents use low temperature (0.1) for deterministic, data-grounded responses while maintaining natural conversation.
+
+## The Architecture
+
+The system uses:
+- **Backend**: FastAPI with OpenAI Agents SDK
+- **Database**: Neon (PostgreSQL) with schema introspection
+- **Frontend**: React + TypeScript with streaming responses
+- **Agent Orchestrator**: Routes messages and manages agent collaboration
+
+Key features:
+- Streaming responses for real-time feedback
+- Automatic visualizations when users say "show me"
+- Database schema introspection so agents understand the data structure
+- Session management to maintain conversation context
+- Multi-agent handoffs for complex workflows
+
+## Integrating with Pet Pooja: The Data Pipeline
+
+Pet Pooja's API capabilities enable seamless integration. Here's how the data flow works:
+
+### 1. Data Export and Import
+
+Pet Pooja allows exporting data in various formats. The system includes a CSV import utility that:
+- Automatically infers database schema from exported data
+- Handles batch imports for large datasets
+- Sanitizes column names for database compatibility
+- Supports incremental updates (append mode) for daily syncs
+
+For example, a restaurant can export:
+- Daily sales transactions
+- Inventory movements
+- Menu item performance
+- Customer order history
+
+This data gets imported into our PostgreSQL database where agents can query it.
+
+### 2. Real-Time API Integration (Future)
+
+Pet Pooja's API enables:
+- Real-time transaction data sync
+- Live inventory level monitoring
+- Customer data access
+- Order status updates
+
+This means agents can answer questions with up-to-the-minute data, not yesterday's export.
+
+### 3. Schema-Aware Querying
+
+The system's schema introspection allows agents to:
+- Understand table structures automatically
+- Discover available data columns
+- Write accurate SQL queries
+- Handle schema changes gracefully
+
+When a Pet Pooja export structure changes, agents adapt without code changes.
+
+## What Makes This Framework "Worth the Juice"
+
+The real value comes from connecting the agentic framework to comprehensive operational data:
+
+### 1. Real-Time Insights from Operational Data
+
+Instead of analyzing stale exports, agents can access:
+- **Live sales data**: "What did we sell in the last hour?"
+- **Current inventory**: "Do we have enough flour for tomorrow's orders?"
+- **Customer patterns**: "Which customers order the most during lunch hours?"
+
+### 2. Cross-Domain Analysis
+
+Pet Pooja's integrated data allows agents to answer complex questions:
+- "How does inventory turnover correlate with sales peaks?"
+- "Which menu items have the best profit margins considering ingredient costs?"
+- "What's the relationship between staff scheduling and customer wait times?"
+
+### 3. Historical Context
+
+Years of Pet Pooja data enable:
+- **Trend analysis**: "How have coffee sales changed seasonally over 3 years?"
+- **Pattern recognition**: "What menu items typically sell better on weekends?"
+- **Predictive insights**: "Based on last year's data, how much inventory should we order for Diwali?"
+
+### 4. Business-Specific Intelligence
+
+Pet Pooja's data includes restaurant-specific context:
+- Menu structure and categories
+- Pricing history and changes
+- Promotional campaign impacts
+- Multi-location performance comparisons
+
+Agents understand this context and provide relevant insights.
+
+## The Integration Strategy
+
+### Phase 1: CSV Export/Import (Current)
+
+Restaurants can:
+- Export data from Pet Pooja (daily/weekly)
+- Import CSV files using the provided utility
+- Ask questions about their data immediately
+
+This works for:
+- Historical analysis
+- Periodic reporting
+- Data exploration
+
+### Phase 2: API Integration (Next)
+
+Building direct API integration for:
+- Real-time data sync
+- Live querying without exports
+- Automatic updates
+- Webhook-based triggers
+
+### Phase 3: Native Integration (Future)
+
+Working with Pet Pooja for:
+- OAuth-based authentication
+- Official API partnerships
+- Seamless data flow
+- Plugin/extension capabilities
+
+## The User Experience with Real Data
+
+The café owner can now:
+- Connect their Pet Pooja data (via export or API)
+- Ask questions: "Show me coffee sales trends after our price increase"
+- Get immediate analysis with exact numbers from their transactions
+- See visualizations automatically generated
+- Ask follow-ups that build on the conversation
+
+All powered by their actual operational data.
+
+## Why This Matters
+
+The agentic framework is powerful, but its real value comes from:
+- Access to comprehensive operational data
+- Integration with tools restaurants already use
+- Real-time insights from live data
+- Historical context for trend analysis
+- Business-specific intelligence
+
+By building over Pet Pooja, we're not creating another siloed system—we're adding an intelligent layer on top of existing infrastructure. Restaurant owners get:
+- Zero learning curve (they already use Pet Pooja)
+- No data migration needed
+- Instant access to their business intelligence
+- Natural language interface to their data
+
+## What I've Built So Far
+
+The current system includes:
+- Multi-agent orchestration with automatic routing
+- Database query tools with schema awareness
+- Automatic chart generation from natural language requests
+- Streaming responses for real-time interaction
+- Specialized agents for sales and inventory
+- A clean React interface for conversations
+- CSV import utilities for Pet Pooja data
+
+## The Future
+
+This is just the beginning. The agentic framework makes it straightforward to add agents for:
+- Financial analysis
+- Menu optimization recommendations
+- Staff scheduling insights
+- Customer behavior analysis
+
+Each new capability becomes a new specialized agent that collaborates with existing ones.
+
+As we integrate deeper with Pet Pooja:
+- Agents will understand restaurant operations better
+- Real-time insights will become the norm
+- Predictive analytics will guide decisions
+- Multi-location analysis will scale easily
+
+The agentic framework makes this possible, but the data makes it valuable.
+
+## Key Takeaway
+
+Agentic architecture isn't just a technical choice—it's a way to model how humans work. By creating specialized agents that collaborate, we can build systems that feel natural, are reliable, and scale as business needs grow.
+
+But the framework alone isn't enough. The real value comes from connecting it to comprehensive, real-world data. By integrating with Pet Pooja—a platform that restaurants already trust and use daily—we're not asking them to change their workflow. We're enhancing it.
+
+For restaurant owners overwhelmed by data requests, this approach transforms hours of manual work into seconds of conversation, powered by the data they're already generating in their day-to-day operations.`,
+    author: 'Zaman Ishtiyaq',
+    publishedAt: '2025-01-25',
+    readTime: 12,
+    category: 'AI',
+    tags: ['AI', 'OpenAI', 'Agents', 'Pet Pooja', 'Restaurant Tech', 'Data Integration', 'FastAPI'],
+    featured: true,
+  },
 ];
 
 /**
