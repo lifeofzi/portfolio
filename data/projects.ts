@@ -16,6 +16,7 @@ export interface Project {
   url: string;
   githubUrl?: string;
   image?: string;
+  screenshots?: string[];
   technologies: string[];
   featured?: boolean;
   features?: string[];
@@ -183,6 +184,135 @@ export const projects: Project[] = [
       }
     ],
     workflowStages: ['Intro', 'Analysis', 'Design', 'Complete'],
+  },
+  {
+    id: 'ugc-ai-platform',
+    title: 'ReelRocket',
+    description: 'An AI-powered UGC content creation platform that helps creators and brands generate hook scripts, demo videos, product reviews, and TikTok content strategies — all in one place.',
+    longDescription: 'ReelRocket is an AI-powered UGC content creation platform designed to streamline how creators and brands produce short-form video content. The platform combines AI-generated hook scripts, avatar-based demo video creation, TikTok content research, and a product review generator into a single workflow — drastically reducing the time from idea to published content.',
+    url: 'https://ugccreatorsfrontend.vercel.app/',
+    image: '/ugc/ugc.png',
+    screenshots: [
+      '/ugc/ugc-ai-content-studio.png',
+      '/ugc/ugc-hook-demo.png',
+      '/ugc/ugc-library.png',
+    ],
+    technologies: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS', 'AI/LLM Integration', 'TikTok API'],
+    featured: false,
+    overview: 'ReelRocket gives creators a full content studio powered by AI. From generating compelling hook scripts and demo video overlays to researching trending TikTok content and analyzing existing videos, the platform covers every stage of UGC production. A credit-based system tracks usage, while a built-in library organizes uploaded products and demo assets for reuse across campaigns.',
+    role: 'Full-Stack Developer & Product Designer',
+    duration: '2025-Present (In Progress)',
+    features: [
+      'AI Content Studio with tabs for Hooks & Demo, Product Review, TikTok Research, and Video Analyzer',
+      'Hook + Demo video generation with selectable AI avatars and hook templates',
+      'Real-time preview of generated video overlays before exporting',
+      'TikTok content research to identify trending hooks and formats',
+      'Video Analyzer for auditing existing UGC content performance',
+      'Product Review generator tailored to highlight key benefits',
+      'Content Library organized by Products and Demo Videos',
+      'Credit-based usage system with transaction history',
+      'Schedule management for planned content drops',
+      'Analytics dashboard for tracking content performance',
+      'Autopilot mode for automated content generation pipelines',
+      'Social account integration for TikTok and Instagram',
+      'AI Avatars for faceless UGC video creation',
+      'Slideshow generator for image-based content'
+    ],
+    mainFeatures: [
+      {
+        number: '01',
+        title: 'AI Content Studio',
+        description: 'A unified workspace for generating all types of UGC content — hooks, demos, product reviews, and TikTok research — powered by AI.',
+        items: [
+          'Hook & Demo script generation',
+          'Product Review writer',
+          'TikTok Content Research',
+          'Video Analyzer'
+        ]
+      },
+      {
+        number: '02',
+        title: 'Hook + Demo Creator',
+        description: 'Select a hook template, attach demo videos, choose an AI avatar, and generate a ready-to-post video overlay with a single click.',
+        items: [
+          'Avatar-based video generation',
+          'Customizable hook templates',
+          'Real-time preview',
+          'Credit-based generation'
+        ]
+      },
+      {
+        number: '03',
+        title: 'Content Library & Automation',
+        description: 'Manage all uploaded assets in one place and automate your content pipeline with scheduling and autopilot features.',
+        items: [
+          'Product & demo asset library',
+          'Upload tracking by category',
+          'Content scheduling',
+          'Autopilot automation'
+        ]
+      }
+    ],
+  },
+  {
+    id: 'muhasaba',
+    title: 'Muhasaba',
+    description: 'A quiet iOS companion for the daily Islamic practice of muhasaba — written or spoken reflection, with gentle guidance rooted in the Quran and Sunnah. Coming soon to the App Store.',
+    longDescription: 'Muhasaba is an iOS app built around the Islamic tradition of self-accounting — a daily practice of honest reflection encouraged by scholars for centuries. The app offers a private space to write or speak each day, then receive guidance drawn from the Quran and Sunnah tailored to what you actually said. Voice entries are transcribed by Whisper. Insights track virtue patterns like sabr, shukr, and tawbah over time. Everything stays in an encrypted vault you control — reflections never train an AI and can be fully exported or deleted in one tap.',
+    url: 'https://muhasaba.me/',
+    image: '/muhasaba.png',
+    technologies: ['Swift', 'SwiftUI', 'iOS', 'Whisper', 'AI/LLM Integration', 'Next.js'],
+    featured: false,
+    overview: 'Muhasaba brings the centuries-old Islamic practice of self-accounting into a focused daily ritual. Five minutes after Isha, a prompt arrives. You write a sentence or speak for a minute. The app responds with a relevant ayah or hadith, a small actionable insight, and a dhikr for the night. Over time, virtue patterns like sabr, shukr, and tawbah surface — a private mirror of the soul, not a social feed. Privacy is foundational: entries live in an encrypted vault you control, never used to train any model.',
+    role: 'Founder & Full-Stack Developer',
+    duration: '2025-Present (In Progress)',
+    features: [
+      'Daily reflection prompts delivered after Isha prayer',
+      'Write or speak — voice journaling with Whisper transcription',
+      'AI guidance grounded in Quran and Sunnah, shaped to what you said',
+      'Insights tracking virtue patterns: sabr, shukr, tawbah over time',
+      'Unlimited reflections with no monthly caps',
+      'Privacy-first: entries stored in an encrypted vault you control',
+      'Reflections never used to train any AI model',
+      'One-tap full account deletion and data export',
+      'No newsletter, no marketing — single launch notification only',
+      'iPhone-first, coming to the App Store'
+    ],
+    mainFeatures: [
+      {
+        number: '01',
+        title: 'Daily Reflection',
+        description: 'A quiet prompt arrives after Isha. Write a sentence or speak for a minute — your private thread for the soul.',
+        items: [
+          'Daily after-Isha prompts',
+          'Write or voice entry',
+          'Whisper transcription',
+          'Unlimited entries'
+        ]
+      },
+      {
+        number: '02',
+        title: 'Guided Response',
+        description: 'Receive a short ayah or hadith, an insight shaped to what you wrote, one small action for tomorrow, and a dhikr for tonight.',
+        items: [
+          'Quran & Sunnah guidance',
+          'Personalized insight',
+          'Actionable next step',
+          'Evening dhikr'
+        ]
+      },
+      {
+        number: '03',
+        title: 'Privacy & Ownership',
+        description: 'Your reflections live in an encrypted vault you control. Export, delete, and erase your account in one tap — no forms, no waiting.',
+        items: [
+          'Encrypted local vault',
+          'No AI training on your data',
+          'One-tap account deletion',
+          'Full data export'
+        ]
+      }
+    ],
   },
 ];
 

@@ -122,7 +122,7 @@ export const ProjectDetail = ({ project }: { project: Project }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`font-display text-lg px-8 py-4 border-[3px] border-black rounded-xl shadow-[6px_6px_0_0_rgba(0,0,0,0.85)] hover:-translate-y-1 transition-transform duration-150 text-black inline-flex items-center gap-2 justify-center ${
-                  project.id === 'architex' ? 'bg-[#3b82f6] text-white' : 'bg-[#facc15]'
+                  project.id === 'architex' ? 'bg-[#3b82f6] text-white' : project.id === 'ugc-ai-platform' ? 'bg-[#f97316] text-white' : project.id === 'muhasaba' ? 'bg-[#d97706] text-white' : 'bg-[#facc15]'
                 }`}
               >
                 <ExternalLinkIcon />
@@ -186,6 +186,41 @@ export const ProjectDetail = ({ project }: { project: Project }) => {
           </div>
         </div>
       </section>
+
+      {/* Screenshots Gallery */}
+      {project.screenshots && project.screenshots.length > 0 && (
+        <section className="py-20 lg:py-28 bg-white border-y-[3px] border-black">
+          <div className="max-w-6xl mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl sm:text-5xl font-display font-bold text-black mb-3">Screenshots</h2>
+              <p className="text-lg sm:text-xl text-black/80 font-display">A look inside the platform</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {project.screenshots.map((src, idx) => (
+                <button
+                  key={idx}
+                  className="group relative overflow-hidden rounded-2xl border-[3px] border-black shadow-[6px_6px_0_0_rgba(0,0,0,0.85)] hover:-translate-y-1 transition-transform duration-150 bg-white focus:outline-none"
+                  onClick={() => setSelectedImage(src)}
+                  aria-label={`View screenshot ${idx + 1}`}
+                >
+                  <Image
+                    src={src}
+                    alt={`${project.title} screenshot ${idx + 1}`}
+                    width={600}
+                    height={400}
+                    className="w-full h-auto object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-150 flex items-center justify-center">
+                    <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-150 bg-white border-[2px] border-black rounded-lg px-3 py-1 text-xs font-display font-bold shadow-[3px_3px_0_0_rgba(0,0,0,0.85)]">
+                      Click to expand
+                    </span>
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* How it works - for Offer X-Ray */}
       {project.workflowSteps && project.workflowSteps.length > 0 && (
