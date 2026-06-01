@@ -6,6 +6,24 @@ import { type TimelineItemData } from '@/components/molecules/TimelineItem';
  * Solo projects (without organization) are handled separately
  */
 export const timelineData: TimelineItemData[] = [
+  // Atlan
+  {
+    id: '0',
+    title: 'Automation Engine & Temporal Migration',
+    projectName: 'Atlan Connector Automation',
+    organization: 'Atlan',
+    logo: '/atlan.png',
+    location: 'Remote',
+    startDate: '2026-03',
+    endDate: 'Present',
+    type: 'work',
+    role: 'Senior Software Engineer • AI Native Engineer',
+    description: [
+      'AI Native Engineer — building and shipping with AI as a core part of the engineering workflow, not a side tool',
+      'Migrated Redshift and Fivetran connectors from Argo to Automation Engine and Temporal, improving performance, reliability, and cost efficiency',
+      'Drove architectural improvements that reduced operational overhead and increased pipeline observability across both connectors',
+    ],
+  },
   // BrightEdge Projects
   {
     id: '1',
@@ -17,7 +35,7 @@ export const timelineData: TimelineItemData[] = [
     images: ['/ai_catalyst_1.png', '/ai_catalyst_2.png'],
     location: 'Remote',
     startDate: '2025-05',
-    endDate: 'Present',
+    endDate: '2026-02',
     type: 'work',
     role: 'Senior Software Engineer • Lead Backend Engineer',
     projectUrl: 'https://www.brightedge.com/ai-catalyst',
