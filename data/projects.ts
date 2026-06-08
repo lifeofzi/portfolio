@@ -322,8 +322,10 @@ export const projects: Project[] = [
     url: 'https://alisaffudin.com/',
     image: '/alisaffudin/cover.jpg',
     screenshots: [
-      '/alisaffudin/screenshot-desktop.png',
-      '/alisaffudin/screenshot-mobile.png',
+      '/alisaffudin/screenshot-1.png',
+      '/alisaffudin/screenshot-2.png',
+      '/alisaffudin/screenshot-3.png',
+      '/alisaffudin/screenshot-4.png',
     ],
     technologies: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS'],
     featured: false,
