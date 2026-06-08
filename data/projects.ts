@@ -314,6 +314,55 @@ export const projects: Project[] = [
       }
     ],
   },
+  {
+    id: 'ali-saffudin',
+    title: 'Ali Saffudin',
+    description: 'A cinematic artist website for musician Ali Saffudin, built around his debut EP "Irtiqa" (ارتقا) — featuring an immersive dark aesthetic, interactive tracklist with a cassette player, and bilingual Arabic/English design.',
+    longDescription: 'A bespoke artist website built for musician Ali Saffudin to launch his debut EP "Irtiqa" (ارتقا — meaning "ascent"). The site leads with full-bleed album art and a bold typographic hero, then flows into an interactive cassette-tape player for the four-track EP. The dark red-and-black visual language matches the raw, intimate tone of the music. Built entirely as a personal project for a friend.',
+    url: 'https://alisaffudin.com/',
+    image: '/alisaffudin/cover.jpg',
+    screenshots: [
+      '/alisaffudin/screenshot-desktop.png',
+      '/alisaffudin/screenshot-mobile.png',
+    ],
+    technologies: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS'],
+    featured: false,
+    overview: 'Ali Saffudin needed a home for his debut EP — not a template, but something that felt like the music. The site opens with the album cover full-bleed, the title in both Latin and Arabic script, and an animated scrolling marquee. Below, a cassette-tape interface lets visitors browse and select from the four tracks. The whole thing is built on Next.js and ships as a fast static site.',
+    role: 'Designer & Developer',
+    duration: '2026',
+    features: [
+      'Full-bleed hero with album art and bilingual Arabic/English typography',
+      'Animated scrolling marquee with EP title and artist name',
+      'Interactive cassette tape player with four-track tracklist',
+      'Dark cinematic aesthetic in red and black matching the EP mood',
+      'Responsive design across mobile, tablet, and desktop',
+      'Fast static site with Next.js',
+    ],
+    mainFeatures: [
+      {
+        number: '01',
+        title: 'Immersive Hero',
+        description: 'Album cover fills the screen. The EP title appears in both Latin script and Arabic (ارتقا), with the artist name beneath.',
+        items: [
+          'Full-bleed album art',
+          'Bilingual typography',
+          'Animated marquee',
+          'Dark cinematic palette'
+        ]
+      },
+      {
+        number: '02',
+        title: 'Cassette Player',
+        description: 'A vintage cassette tape graphic anchors the music section. Visitors select any of the four tracks from the tracklist panel alongside it.',
+        items: [
+          'Interactive track selection',
+          '4-track EP: Irtiqa 2026',
+          'Cassette tape visual',
+          'Minimal, focused UI'
+        ]
+      },
+    ],
+  },
 ];
 
 /**
