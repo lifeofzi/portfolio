@@ -257,7 +257,7 @@ export const projects: Project[] = [
   {
     id: 'muhasaba',
     title: 'Muhasaba',
-    description: 'A quiet iOS companion for the daily Islamic practice of muhasaba — written or spoken reflection, with gentle guidance rooted in the Quran and Sunnah. Coming soon to the App Store.',
+    description: 'A quiet iOS companion for the daily Islamic practice of muhasaba — written or spoken reflection, with gentle guidance rooted in the Quran and Sunnah. Now live on the App Store.',
     longDescription: 'Muhasaba is an iOS app built around the Islamic tradition of self-accounting — a daily practice of honest reflection encouraged by scholars for centuries. The app offers a private space to write or speak each day, then receive guidance drawn from the Quran and Sunnah tailored to what you actually said. Voice entries are transcribed by Whisper. Insights track virtue patterns like sabr, shukr, and tawbah over time. Everything stays in an encrypted vault you control — reflections never train an AI and can be fully exported or deleted in one tap.',
     url: 'https://muhasaba.me/',
     image: '/muhasaba.png',
@@ -265,7 +265,7 @@ export const projects: Project[] = [
     featured: false,
     overview: 'Muhasaba brings the centuries-old Islamic practice of self-accounting into a focused daily ritual. Five minutes after Isha, a prompt arrives. You write a sentence or speak for a minute. The app responds with a relevant ayah or hadith, a small actionable insight, and a dhikr for the night. Over time, virtue patterns like sabr, shukr, and tawbah surface — a private mirror of the soul, not a social feed. Privacy is foundational: entries live in an encrypted vault you control, never used to train any model.',
     role: 'Founder & Full-Stack Developer',
-    duration: '2025-Present (In Progress)',
+    duration: '2025-Present',
     features: [
       'Daily reflection prompts delivered after Isha prayer',
       'Write or speak — voice journaling with Whisper transcription',
@@ -275,8 +275,8 @@ export const projects: Project[] = [
       'Privacy-first: entries stored in an encrypted vault you control',
       'Reflections never used to train any AI model',
       'One-tap full account deletion and data export',
-      'No newsletter, no marketing — single launch notification only',
-      'iPhone-first, coming to the App Store'
+      'No newsletter, no marketing — privacy by default',
+      'Live on the App Store for iPhone'
     ],
     mainFeatures: [
       {
