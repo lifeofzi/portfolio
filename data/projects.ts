@@ -265,7 +265,7 @@ export const projects: Project[] = [
     featured: false,
     overview: 'Muhasaba brings the centuries-old Islamic practice of self-accounting into a focused daily ritual. Five minutes after Isha, a prompt arrives. You write a sentence or speak for a minute. The app responds with a relevant ayah or hadith, a small actionable insight, and a dhikr for the night. Over time, virtue patterns like sabr, shukr, and tawbah surface — a private mirror of the soul, not a social feed. Privacy is foundational: entries live in an encrypted vault you control, never used to train any model.',
     role: 'Founder & Full-Stack Developer',
-    duration: '2025-Present',
+    duration: '2026-Present',
     features: [
       'Daily reflection prompts delivered after Isha prayer',
       'Write or speak — voice journaling with Whisper transcription',
