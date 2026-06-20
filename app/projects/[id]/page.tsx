@@ -1,10 +1,46 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Navigation } from '@/components/molecules/Navigation';
 import { ProjectDetail } from '@/components/organisms/ProjectDetail';
-import { getProjectById } from '@/data/projects';
+import { getProjectById, projects } from '@/data/projects';
+
+const BASE = 'https://zamanishtiyaq.work';
 
 interface ProjectPageProps {
   params: Promise<{ id: string }>;
+}
+
+export async function generateStaticParams() {
+  return projects.map((project) => ({ id: project.id }));
+}
+
+export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
+  const { id } = await params;
+  const project = getProjectById(id);
+  if (!project) return {};
+
+  const url = `${BASE}/projects/${project.id}`;
+  const description = project.description.slice(0, 160);
+  const image = project.image ? `${BASE}${project.image}` : `${BASE}/me.png`;
+
+  return {
+    title: project.title,
+    description,
+    openGraph: {
+      title: `${project.title} | Zaman Ishtiyaq`,
+      description,
+      url,
+      type: 'website',
+      images: [{ url: image, alt: project.title }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${project.title} | Zaman Ishtiyaq`,
+      description,
+      images: [image],
+    },
+    alternates: { canonical: url },
+  };
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
@@ -15,11 +51,38 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     notFound();
   }
 
+  const isMuhasaba = project.id === 'muhasaba';
+
+  const softwareSchema = isMuhasaba
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'MobileApplication',
+        name: project.title,
+        description: project.description,
+        url: project.url,
+        applicationCategory: 'LifestyleApplication',
+        operatingSystem: 'iOS',
+        offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+        author: { '@type': 'Person', '@id': `${BASE}/#person`, name: 'Zaman Ishtiyaq' },
+      }
+    : {
+        '@context': 'https://schema.org',
+        '@type': 'SoftwareApplication',
+        name: project.title,
+        description: project.description,
+        url: project.url,
+        applicationCategory: 'WebApplication',
+        author: { '@type': 'Person', '@id': `${BASE}/#person`, name: 'Zaman Ishtiyaq' },
+      };
+
   return (
     <main className="min-h-screen bg-white text-gray-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
+      />
       <Navigation />
       <ProjectDetail project={project} />
     </main>
   );
 }
-

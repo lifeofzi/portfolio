@@ -1,5 +1,18 @@
+import type { Metadata } from 'next';
 import { Navigation } from '@/components/molecules/Navigation';
 import { ProjectsTimeline } from '@/components/organisms/ProjectsTimeline';
+
+export const metadata: Metadata = {
+  title: 'Projects — Web & AI Applications',
+  description: 'AI-powered products, SaaS platforms, and web applications built by Zaman Ishtiyaq — including Offer X-Ray, Architex, ReelRocket, Muhasaba, and more.',
+  openGraph: {
+    title: 'Projects — Web & AI Applications | Zaman Ishtiyaq',
+    description: 'AI-powered products, SaaS platforms, and web applications by Zaman Ishtiyaq.',
+    url: 'https://zamanishtiyaq.work/projects',
+    type: 'website',
+  },
+  alternates: { canonical: 'https://zamanishtiyaq.work/projects' },
+};
 
 export default function ProjectsPage() {
   return (

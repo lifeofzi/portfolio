@@ -53,9 +53,9 @@ export const Hero = () => {
 
             <div className="space-y-4 text-center lg:text-left">
               <p className="font-display text-lg text-black">Hello, I&apos;m</p>
-              <h1 className="font-display text-5xl sm:text-6xl md:text-7xl font-bold leading-tight text-black">
-                <span className="block neo-underline inline-block">{profileInfo.name.split(' ')[0]}</span>{' '}
-                <span className="block sm:inline-block px-3 py-1 bg-[#bfdbfe] border-[3px] border-black shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] rounded-xl mt-2 sm:mt-0">
+              <h1 className="font-display text-5xl sm:text-6xl md:text-7xl font-bold leading-tight text-black" aria-label={profileInfo.name}>
+                <span className="block neo-underline inline-block" aria-hidden="true">{profileInfo.name.split(' ')[0]}</span>{' '}
+                <span className="block sm:inline-block px-3 py-1 bg-[#bfdbfe] border-[3px] border-black shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] rounded-xl mt-2 sm:mt-0" aria-hidden="true">
                   {profileInfo.name.split(' ')[1] || ''}
                 </span>
               </h1>

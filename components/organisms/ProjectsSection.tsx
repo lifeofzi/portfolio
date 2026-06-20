@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { projects, type Project } from '@/data/projects';
 // SVG Icons
@@ -44,9 +45,11 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
               {project.image ? (
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-24 h-24 flex-shrink-0 rounded-xl overflow-hidden bg-white p-2 border-2 border-gray-200">
-                    <img 
-                      src={project.image} 
+                    <Image
+                      src={project.image}
                       alt={project.title}
+                      width={96}
+                      height={96}
                       className="w-full h-full object-contain"
                     />
                   </div>
