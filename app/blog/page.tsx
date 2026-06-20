@@ -1,6 +1,19 @@
+import type { Metadata } from 'next';
 import { Navigation } from '@/components/molecules/Navigation';
 import { BlogList } from '@/components/organisms/BlogList';
 import { blogPosts } from '@/data/blog';
+
+export const metadata: Metadata = {
+  title: 'Blog — AI, Development & Product Design',
+  description: 'Articles on building AI products, scalable backend systems, and product design by Zaman Ishtiyaq — Senior Software Engineer and AI Native Engineer at Atlan.',
+  openGraph: {
+    title: 'Blog — AI, Development & Product Design | Zaman Ishtiyaq',
+    description: 'Articles on building AI products, scalable backend systems, and product design by Zaman Ishtiyaq.',
+    url: 'https://zamanishtiyaq.work/blog',
+    type: 'website',
+  },
+  alternates: { canonical: 'https://zamanishtiyaq.work/blog' },
+};
 
 export default function BlogPage() {
   // Sort posts by published date (newest first)

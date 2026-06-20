@@ -1,0 +1,37 @@
+# Zaman Ishtiyaq — Senior Software Engineer & AI Native Engineer
+
+> Portfolio of Zaman Ishtiyaq, a software engineer building AI-native products and scalable data systems. Based in Srinagar, India. Remote friendly.
+
+## About
+
+Zaman Ishtiyaq is a Senior Software Engineer currently working as an AI Native Engineer at Atlan (Mar 2026–Present), previously at BrightEdge (Nov 2023–Feb 2026) and Goldman Sachs (2018–2023). He graduated from IIT Bhubaneswar with a B.Tech in Computer Science (CGPA 8.97, top 0.05% JEE 2015).
+
+He builds AI-powered products, scalable backend systems, and data pipelines. He ships side projects independently including iOS apps and web platforms.
+
+## Current Role
+
+At Atlan, Zaman works as an AI Native Engineer — migrating Redshift and Fivetran connectors from Argo to Automation Engine and Temporal, improving pipeline performance, reliability, and cost efficiency.
+
+## Projects
+
+- [Offer X-Ray](https://www.offerxray.com/) — AI-powered offer letter analysis: upload an offer letter, get instant risk assessment, compensation breakdown, and negotiation guidance in under 5 minutes
+- [Architex](https://architex-two.vercel.app/) — Architecture practice management platform with stage-based workflows, document version control, site visit tracking, and AI assistant
+- [ReelRocket](https://ugccreatorsfrontend.vercel.app/) — AI UGC content creation platform for hook scripts, demo videos, TikTok research, and product reviews (in progress)
+- [Muhasaba](https://muhasaba.me/) — iOS app for the Islamic daily practice of muhasaba: written or spoken reflection with guidance from Quran and Sunnah. Live on the App Store.
+- [Ali Saffudin](https://alisaffudin.com/) — Bespoke artist website for musician Ali Saffudin, showcasing the Irtiqa EP with a cassette player and bilingual Arabic/English design
+
+## Skills
+
+Next.js, TypeScript, React, Python, Swift, SwiftUI, Java, Kafka, Temporal, Argo, GCP, Docker, PostgreSQL, AI/LLM Integration, Whisper, OpenAI API, Tailwind CSS
+
+## Writing
+
+Technical articles on AI development, product design, and building scalable systems at https://zamanishtiyaq.work/blog
+
+## Contact
+
+- Website: https://zamanishtiyaq.work
+- Email: zaman.ishtiyaq@gmail.com
+- LinkedIn: https://www.linkedin.com/in/zaman-ishtiyaq
+- GitHub: https://github.com/lifeofzi
+- Twitter/X: https://x.com/i_am_za_man
