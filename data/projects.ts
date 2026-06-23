@@ -255,6 +255,72 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: 'spree',
+    title: 'Spree',
+    description: 'A smart iOS wishlist app that lets you paste links from any store, swipe to rank what you love, and try on outfits with AI — before you spend a cent. Live on the App Store.',
+    longDescription: 'Spree is a shopping wishlist app built for iOS that solves the age-old problem of indecision. Paste any product link from any store and Spree automatically pulls in the title, price, and photos. Swipe through your wishlist Tinder-style to surface what you actually want. An AI virtual try-on feature lets you see clothes on yourself before buying. A clean subscription model (free tier + Pro at $7.99/month or $49.99/year) keeps the app ad-free forever.',
+    url: 'https://www.tryspree.app/',
+    image: '/spree.png',
+    screenshots: [
+      '/spree/ss-import.webp',
+      '/spree/ss-swipe.webp',
+      '/spree/ss-tryiton.webp',
+    ],
+    technologies: ['Swift', 'SwiftUI', 'iOS', 'AI/LLM Integration', 'Next.js'],
+    featured: false,
+    overview: 'Spree makes wishlist management effortless. Paste a product URL from any store — Amazon, ASOS, Zara, anywhere — and the app instantly saves the title, price, and photos. A swipe-based ranking UI (swipe right to keep, left to pass) helps cut through wishlist bloat. The standout feature is AI virtual try-on: tap any clothing item and see it on you before you buy. Collections keep lists organized by context (work, weekends, gifts). A freemium model with a clean Pro tier funds development without ads or data selling.',
+    role: 'Founder & Full-Stack Developer',
+    duration: '2026',
+    features: [
+      'Paste any product URL from any store — title, price, and photos pulled automatically',
+      'Share directly to Spree from any browser or app via iOS share extension',
+      'Swipe-to-rank interface: like or pass on every wishlist item',
+      'AI virtual try-on — see yourself in any outfit before buying',
+      'Collections to organize wishlists by category (work, weekends, gifts)',
+      'In-app product browser from top stores — no ads, no distractions',
+      'Spree Pro: unlimited products, unlimited collections, extra AI try-on credits',
+      'Apple Sign-In — no passwords stored',
+      'Full account and data deletion in one tap',
+      'No ads, no data selling — ever',
+      'Live on the App Store',
+    ],
+    mainFeatures: [
+      {
+        number: '01',
+        title: 'Paste & Save',
+        description: 'Copy any product URL from any store and Spree instantly saves the title, price, and photos. No screenshots, no camera roll clutter.',
+        items: [
+          'Any store, any URL',
+          'Auto-fetch title & price',
+          'iOS share extension',
+          'Photos saved automatically',
+        ]
+      },
+      {
+        number: '02',
+        title: 'Swipe to Rank',
+        description: 'Stop overthinking. Swipe through your wishlist — or a single collection — to surface what you actually want and clear the clutter.',
+        items: [
+          'Like or pass on each item',
+          'Swipe whole wishlist or one collection',
+          'Clear indecision fast',
+          'Collections by context',
+        ]
+      },
+      {
+        number: '03',
+        title: 'AI Virtual Try-On',
+        description: 'Tap any clothing item and see yourself in it before you buy. No changing rooms, no buyer\'s remorse.',
+        items: [
+          'AI try-on for any outfit',
+          'See it on you instantly',
+          'Included in Pro plan',
+          'No changing rooms needed',
+        ]
+      }
+    ],
+  },
+  {
     id: 'muhasaba',
     title: 'Muhasaba',
     description: 'A quiet iOS companion for the daily Islamic practice of muhasaba — written or spoken reflection, with gentle guidance rooted in the Quran and Sunnah. Now live on the App Store.',
