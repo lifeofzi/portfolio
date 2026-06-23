@@ -147,34 +147,40 @@ export const SkillsSection = () => {
           </p>
         </div>
 
-        {/* Skills Grid */}
-        <div className="flex flex-wrap justify-center gap-4">
+        {/* Skills Grid — 4 cols on mobile, wrap on desktop */}
+        <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 gap-2 sm:gap-4">
           {skills.map((skill, index) => {
             const Icon = skillIconMap[skill];
-            
+
             return (
               <div
                 key={skill}
-                className={`group relative min-w-[140px] ${mounted ? 'animate-slide-up' : 'opacity-0'}`}
+                className={`group relative ${mounted ? 'animate-slide-up' : 'opacity-0'}`}
                 style={{ animationDelay: `${index * 0.025}s` }}
               >
-                <div className="neo-card rounded-2xl px-4 py-5 bg-white flex flex-col items-center justify-center text-center min-h-[140px] hover:-translate-y-1 transition-transform duration-150">
-                  <div className="relative z-10 w-full flex flex-col items-center justify-center gap-3">
+                <div className="neo-card rounded-xl sm:rounded-2xl p-2 sm:px-4 sm:py-5 bg-white flex flex-col items-center justify-center text-center min-h-[72px] sm:min-h-[140px] hover:-translate-y-1 transition-transform duration-150">
+                  <div className="relative z-10 w-full flex flex-col items-center justify-center gap-1 sm:gap-3">
                     {Icon ? (
                       <>
-                        <SkillLogo skill={skill} Icon={Icon} />
-                        <div className="text-sm font-display font-semibold text-black">
+                        {/* Smaller icon on mobile */}
+                        <div className="w-8 h-8 sm:hidden flex items-center justify-center">
+                          <Icon style={{ color: getBrandColor(skill), width: '100%', height: '100%' }} />
+                        </div>
+                        <div className="hidden sm:block">
+                          <SkillLogo skill={skill} Icon={Icon} />
+                        </div>
+                        <div className="text-[10px] sm:text-sm font-display font-semibold text-black leading-tight text-center">
                           {skill}
                         </div>
                       </>
                     ) : (
-                      <div className="text-sm font-bold text-black">
+                      <div className="text-[10px] sm:text-sm font-bold text-black leading-tight text-center">
                         {skill}
                       </div>
                     )}
                   </div>
-                  <div className="absolute -top-2 -left-2 w-4 h-4 bg-[#facc15] border-[3px] border-black shadow-[2px_2px_0_0_rgba(0,0,0,0.85)] rounded-sm" />
-                  <div className="absolute -bottom-2 -right-2 w-4 h-4 bg-[#f472b6] border-[3px] border-black shadow-[2px_2px_0_0_rgba(0,0,0,0.85)] rounded-sm" />
+                  <div className="absolute -top-1.5 -left-1.5 sm:-top-2 sm:-left-2 w-3 h-3 sm:w-4 sm:h-4 bg-[#facc15] border-[2px] sm:border-[3px] border-black shadow-[2px_2px_0_0_rgba(0,0,0,0.85)] rounded-sm" />
+                  <div className="absolute -bottom-1.5 -right-1.5 sm:-bottom-2 sm:-right-2 w-3 h-3 sm:w-4 sm:h-4 bg-[#f472b6] border-[2px] sm:border-[3px] border-black shadow-[2px_2px_0_0_rgba(0,0,0,0.85)] rounded-sm" />
                 </div>
               </div>
             );

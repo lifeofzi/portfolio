@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { projects, type Project } from '@/data/projects';
-// SVG Icons
+
 const ExternalLinkIcon = () => (
   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -17,135 +17,119 @@ const GithubIcon = () => (
   </svg>
 );
 
-/**
- * Molecule: ProjectCard Component
- * Individual project card display
- */
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
   const [mounted, setMounted] = useState(false);
+  const [expanded, setExpanded] = useState(false);
+  const isInProgress = project.duration?.includes('In Progress') || project.duration?.includes('Present');
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  useEffect(() => { setMounted(true); }, []);
 
   return (
     <div
-      className={`group relative ${mounted ? 'animate-slide-up' : 'opacity-0'}`}
-      style={{ animationDelay: `${index * 0.1}s` }}
+      className={`${mounted ? 'animate-slide-up' : 'opacity-0'}`}
+      style={{ animationDelay: `${index * 0.08}s` }}
     >
-      <div className="relative h-full bg-white rounded-3xl p-8 border-2 border-gray-200 transition-all duration-500 hover:border-blue-300 hover:shadow-2xl hover:shadow-blue-100/50 hover:-translate-y-2 overflow-hidden">
-        {/* Hover gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 via-purple-50/0 to-pink-50/0 group-hover:from-blue-50/30 group-hover:via-purple-50/20 group-hover:to-pink-50/10 transition-all duration-500 rounded-3xl" />
-        
-        {/* Content */}
-        <div className="relative z-10">
-          {/* Header */}
-          <div className="flex items-start justify-between mb-6">
-            <div className="flex-1">
-              {project.image ? (
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-24 h-24 flex-shrink-0 rounded-xl overflow-hidden bg-white p-2 border-2 border-gray-200">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      width={96}
-                      height={96}
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-2 group-hover:gradient-text transition-all duration-300">
-                      {project.title}
-                    </h3>
-                  </div>
-                </div>
-              ) : (
-                <>
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-2 group-hover:gradient-text transition-all duration-300">
-                    {project.title}
-                  </h3>
-                </>
+      <div className="bg-white rounded-2xl border-[3px] border-black shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] overflow-hidden">
+        {/* Header row — always visible */}
+        <button
+          className="w-full flex items-center gap-4 p-4 sm:p-5 text-left hover:bg-amber-50/50 transition-colors duration-150"
+          onClick={() => setExpanded((v) => !v)}
+          aria-expanded={expanded}
+        >
+          {project.image && (
+            <div className="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 rounded-xl overflow-hidden border-[2px] border-black bg-white p-1">
+              <Image
+                src={project.image}
+                alt={project.title}
+                width={56}
+                height={56}
+                className="w-full h-full object-contain"
+              />
+            </div>
+          )}
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="font-display font-extrabold text-lg sm:text-xl text-black leading-tight">
+                {project.title}
+              </span>
+              {isInProgress && (
+                <span className="text-xs font-display font-bold px-2 py-0.5 bg-[#bbf7d0] border border-black rounded-full whitespace-nowrap">
+                  In Progress
+                </span>
+              )}
+            </div>
+            <p className="text-sm text-black/50 font-display mt-0.5 truncate">
+              {project.technologies.slice(0, 4).join(' · ')}
+            </p>
+          </div>
+          <div
+            className={`flex-shrink-0 w-9 h-9 rounded-full border-[2px] border-black flex items-center justify-center text-sm transition-transform duration-200 bg-white ${expanded ? 'rotate-180' : ''}`}
+          >
+            ▼
+          </div>
+        </button>
+
+        {/* Expandable body */}
+        <div className={`overflow-hidden transition-all duration-300 ease-in-out ${expanded ? 'max-h-[500px]' : 'max-h-0'}`}>
+          <div className="px-4 sm:px-5 pb-5 space-y-4 border-t-[2px] border-black/10">
+            <p className="text-sm sm:text-base text-black/70 leading-relaxed font-display pt-4">
+              {project.description}
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {project.technologies.map((tech) => (
+                <span
+                  key={tech}
+                  className="px-3 py-1 bg-[#fef3c7] border border-black text-xs sm:text-sm font-display font-semibold rounded-full"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+            <div className="flex items-center gap-3 pt-1">
+              <Link
+                href={`/projects/${project.id}`}
+                className="flex items-center gap-2 px-5 py-2 bg-black text-white rounded-full font-display font-bold text-sm hover:-translate-y-0.5 transition-transform duration-150"
+              >
+                View Details <ExternalLinkIcon />
+              </Link>
+              {project.githubUrl && (
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-5 py-2 bg-white border-[2px] border-black rounded-full font-display font-bold text-sm hover:-translate-y-0.5 transition-transform duration-150"
+                >
+                  <GithubIcon /> Code
+                </a>
               )}
             </div>
           </div>
-
-          {/* Description */}
-          <p className="text-gray-700 leading-relaxed mb-6 text-base sm:text-lg">
-            {project.description}
-          </p>
-
-          {/* Technologies */}
-          <div className="flex flex-wrap gap-2 mb-6">
-            {project.technologies.map((tech) => (
-              <span
-                key={tech}
-                className="px-3 py-1.5 bg-gray-100 text-gray-700 text-sm font-semibold rounded-full border border-gray-200"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-
-          {/* Links */}
-          <div className="flex items-center gap-4 pt-4 border-t border-gray-200">
-            <Link
-              href={`/projects/${project.id}`}
-              className="flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-full font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/30 group/link"
-            >
-              View Details
-              <ExternalLinkIcon />
-              <span className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300 -z-10 blur-xl" />
-            </Link>
-            {project.githubUrl && (
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 bg-white text-gray-900 border-2 border-gray-300 rounded-full font-semibold text-sm transition-all duration-300 hover:scale-105 hover:border-gray-900 hover:shadow-lg"
-              >
-                <GithubIcon />
-                Code
-              </a>
-            )}
-          </div>
-        </div>
-
-        {/* Shine effect on hover */}
-        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
         </div>
       </div>
     </div>
   );
 };
 
-/**
- * Organism: ProjectsSection Component
- * Showcase of featured projects
- */
 export const ProjectsSection = () => {
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  useEffect(() => { setMounted(true); }, []);
 
   if (projects.length === 0) return null;
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-white">
-      <div className="max-w-7xl mx-auto">
-        <div className={`text-center mb-20 ${mounted ? 'animate-slide-up' : 'opacity-0'}`}>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 text-gray-900">
+    <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white">
+      <div className="max-w-3xl mx-auto">
+        <div className={`text-center mb-8 sm:mb-12 ${mounted ? 'animate-slide-up' : 'opacity-0'}`}>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-3 text-gray-900">
             Featured <span className="gradient-text">Projects</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-gray-500 max-w-xl mx-auto">
             A collection of projects I&apos;ve built and deployed
           </p>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="space-y-3">
           {projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
@@ -154,4 +138,3 @@ export const ProjectsSection = () => {
     </section>
   );
 };
-

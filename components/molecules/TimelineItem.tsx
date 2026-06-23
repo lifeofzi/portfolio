@@ -86,7 +86,7 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({ item, isExpanded = t
   if (item.isCompanyHeader) {
     const companyStyles = getCompanyHeaderStyles(item.title);
     return (
-      <div className="relative flex gap-6 pb-10">
+      <div className="relative flex gap-6 pb-10 w-full">
         {/* Node */}
         <div className="relative z-10 flex-shrink-0">
           <div
@@ -124,7 +124,7 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({ item, isExpanded = t
                 {isExpanded && (
                   <div className="space-y-3 pt-1">
                     {item.location && (
-                      <p className="text-lg font-display text-black/80">{item.location}</p>
+                      <p className="hidden sm:block text-lg font-display text-black/80">{item.location}</p>
                     )}
                     <div className="flex items-center gap-3 flex-wrap">
                       <div className="neo-pill bg-[#bfdbfe] text-black px-4 py-2">
@@ -150,20 +150,20 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({ item, isExpanded = t
 
   // Regular items
   return (
-    <div className="relative flex gap-6 pb-10">
+    <div className="relative flex gap-4 sm:gap-6 pb-10 w-full">
       {/* Node */}
       <div className="relative z-10 flex-shrink-0">
         <div className={`w-5 h-5 rounded-full ${typeColor} border-[3px] border-black shadow-[4px_4px_0_0_rgba(0,0,0,0.85)]`} />
       </div>
 
       {/* Card */}
-      <div className="flex-1 pt-0.5">
+      <div className="flex-1 min-w-0 pt-0.5">
         <div
-          className={`neo-card rounded-2xl p-6 sm:p-8 ${typeCardBg} cursor-pointer transition-transform duration-150 hover:-translate-y-1`}
+          className={`neo-card rounded-2xl p-4 sm:p-8 ${typeCardBg} cursor-pointer transition-transform duration-150 hover:-translate-y-1`}
           onClick={onToggle}
         >
           {/* Header */}
-          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-5 mb-5">
+          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-5 mb-3 sm:mb-5">
             <div className="flex-1 space-y-3">
               {/* Type Badge */}
               <div className="flex items-center gap-3">
@@ -204,29 +204,26 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({ item, isExpanded = t
                   </div>
                 </div>
               ) : (
-                <h3 className="text-3xl sm:text-4xl font-display font-extrabold text-black leading-tight break-words overflow-wrap-anywhere">
+                <h3 className="text-xl sm:text-3xl font-display font-extrabold text-black leading-tight break-words overflow-wrap-anywhere">
                   {item.title}
                 </h3>
               )}
 
               {/* Role */}
               {item.role && (
-                <p className="text-lg sm:text-xl text-black font-display leading-relaxed">
+                <p className="text-sm sm:text-lg text-black font-display leading-relaxed">
                   {item.role}
                 </p>
               )}
 
               {/* Organization & Location */}
               {item.organization && (
-                <div className="flex items-center gap-2 pt-1">
-                  <span className="text-xl sm:text-2xl font-display font-bold text-black">
+                <div className="pt-1">
+                  <span className="text-base sm:text-xl font-display font-bold text-black">
                     {item.organization}
                   </span>
                   {item.location && (
-                    <>
-                      <span className="text-black/50 text-xl">•</span>
-                      <span className="text-lg text-black/70 font-display">{item.location}</span>
-                    </>
+                    <span className="hidden sm:inline text-black/50 text-base"> • <span className="text-black/70">{item.location}</span></span>
                   )}
                 </div>
               )}
@@ -234,8 +231,8 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({ item, isExpanded = t
 
             {/* Date & toggle */}
             <div className="flex flex-col items-end gap-3 sm:items-start sm:flex-row sm:gap-4">
-              <div className="neo-pill bg-white text-black px-5 py-2.5">
-                <div className="text-sm font-display font-bold whitespace-nowrap">
+              <div className="neo-pill bg-white text-black px-3 sm:px-5 py-1.5 sm:py-2.5">
+                <div className="text-xs sm:text-sm font-display font-bold">
                   {formatDateRange(item.startDate, item.endDate)}
                 </div>
               </div>

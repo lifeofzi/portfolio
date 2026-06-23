@@ -6,6 +6,7 @@ interface LinkProps {
   children: React.ReactNode;
   className?: string;
   external?: boolean;
+  onClick?: () => void;
 }
 
 /**
@@ -17,6 +18,7 @@ export const CustomLink: React.FC<LinkProps> = ({
   children,
   className = '',
   external = false,
+  onClick,
 }) => {
   const baseStyles = 'text-blue-600 hover:text-blue-700 underline-offset-4 hover:underline transition-colors';
   
@@ -27,6 +29,7 @@ export const CustomLink: React.FC<LinkProps> = ({
         target="_blank"
         rel="noopener noreferrer"
         className={`${baseStyles} ${className}`}
+        onClick={onClick}
       >
         {children}
       </a>
@@ -34,7 +37,7 @@ export const CustomLink: React.FC<LinkProps> = ({
   }
 
   return (
-    <Link href={href} className={`${baseStyles} ${className}`}>
+    <Link href={href} className={`${baseStyles} ${className}`} onClick={onClick}>
       {children}
     </Link>
   );

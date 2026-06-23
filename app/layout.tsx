@@ -121,7 +121,38 @@ const personSchema = {
             text: 'Zaman Ishtiyaq specializes in AI/LLM integration, distributed data pipelines (Kafka, Temporal, GCP), full-stack web development (Next.js, TypeScript, React), and iOS app development (Swift, SwiftUI). He focuses on building production-grade AI-native products that solve real-world problems.',
           },
         },
+        {
+          '@type': 'Question',
+          name: 'Is Zaman Ishtiyaq available for freelance web development projects?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. Zaman Ishtiyaq is available for freelance web development, full-stack application development, and AI integration projects. He works with startups and businesses worldwide on a remote basis. He has shipped production projects including Offer X-Ray, Spree, Muhasaba, Architex, ReelRocket, and Ali Saffudin. Contact: zaman.ishtiyaq@gmail.com or visit https://zamanishtiyaq.work/hire',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'What kind of websites and apps can Zaman Ishtiyaq build?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Zaman Ishtiyaq builds custom websites, SaaS web applications, AI-powered tools, and iOS apps. His stack is Next.js, TypeScript, React, Python, and Swift. He handles the full build: design, frontend, backend, database, deployment, and AI feature integration. Past work includes an architecture practice management platform (Architex), an AI offer-letter analyzer (Offer X-Ray), and a bespoke artist website (Ali Saffudin).',
+          },
+        },
       ],
+    },
+    {
+      '@type': 'Service',
+      '@id': `${BASE}/#service`,
+      name: 'Freelance Web & AI Development',
+      provider: { '@id': `${BASE}/#person` },
+      serviceType: ['Web Development', 'Full-Stack Development', 'AI Integration', 'iOS App Development'],
+      description: 'Custom website and web application development for startups and businesses. Services include full-stack web apps (Next.js, React, TypeScript), AI/LLM feature integration, iOS apps (Swift/SwiftUI), and API development. Remote-friendly, fixed-price or hourly.',
+      areaServed: 'Worldwide',
+      url: `${BASE}/hire`,
+      availableChannel: {
+        '@type': 'ServiceChannel',
+        serviceUrl: `${BASE}/hire`,
+        availableLanguage: 'English',
+      },
     },
   ],
 };
