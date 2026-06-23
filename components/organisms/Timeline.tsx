@@ -29,8 +29,24 @@ interface TimelineItemWithMetadata extends TimelineItemData {
  */
 export const Timeline: React.FC<TimelineProps> = ({ items }) => {
   const [mounted, setMounted] = useState(false);
-  const [collapsedCompanies, setCollapsedCompanies] = useState<Set<string>>(new Set());
-  const [collapsedProjects, setCollapsedProjects] = useState<Set<string>>(new Set());
+
+  // Compute all company and project IDs upfront for default-collapsed state
+  const [collapsedCompanies, setCollapsedCompanies] = useState<Set<string>>(() => {
+    const ids = new Set<string>();
+    items.forEach((item) => {
+      if (item.type !== 'education' && item.organization) {
+        ids.add(`company-${item.organization}`);
+      }
+    });
+    return ids;
+  });
+  const [collapsedProjects, setCollapsedProjects] = useState<Set<string>>(() => {
+    const ids = new Set<string>();
+    items.forEach((item) => {
+      ids.add(item.id);
+    });
+    return ids;
+  });
 
   useEffect(() => {
     setMounted(true);
