@@ -1,23 +1,33 @@
-# Zaman Ishtiyaq — Senior Software Engineer & AI Native Engineer
+# Zaman Ishtiyaq — Full-Stack & AI Engineer
 
-> Portfolio of Zaman Ishtiyaq, a software engineer building AI-native products and scalable data systems. Based in Srinagar, India. Remote friendly.
+> Zaman Ishtiyaq is a Full-Stack and AI Engineer with 7+ years of professional software engineering experience, currently working as an AI Native Engineer at Atlan. He builds AI-native products, scalable data pipelines, and iOS apps. Based in Srinagar, India. Remote friendly.
 
 ## About
 
-Zaman Ishtiyaq is a Senior Software Engineer currently working as an AI Native Engineer at Atlan (Mar 2026–Present), previously at BrightEdge (Nov 2023–Feb 2026) and Goldman Sachs (2018–2023). He graduated from IIT Bhubaneswar with a B.Tech in Computer Science (CGPA 8.97, top 0.05% JEE 2015).
+Zaman Ishtiyaq is a Senior Software Engineer and AI Native Engineer currently at Atlan (Mar 2026–Present), previously at BrightEdge (Nov 2023–Feb 2026) and Goldman Sachs (Jul 2018–Sep 2023). He graduated from the Indian Institute of Technology (IIT) Bhubaneswar with a B.Tech in Computer Science, CGPA 8.97, ranking in the top 0.05% of JEE 2015.
 
-He builds AI-powered products, scalable backend systems, and data pipelines. He ships side projects independently including iOS apps and web platforms.
+He specializes in AI/LLM integration, distributed data pipelines, and full-stack web and iOS development. As an independent developer, he has shipped multiple products live on the App Store and the web.
 
 ## Current Role
 
-At Atlan, Zaman works as an AI Native Engineer — migrating Redshift and Fivetran connectors from Argo to Automation Engine and Temporal, improving pipeline performance, reliability, and cost efficiency.
+At Atlan, Zaman works as an AI Native Engineer — migrating Redshift and Fivetran connectors from Argo to Automation Engine and Temporal, improving pipeline performance, reliability, and cost efficiency across enterprise data platforms.
+
+## Key Facts
+
+- 7+ years of professional software engineering experience
+- IIT Bhubaneswar Computer Science graduate, top 0.05% JEE 2015 (CGPA 8.97)
+- Worked at Goldman Sachs (5 years), BrightEdge (2+ years), Atlan (current)
+- Two iOS apps live on the App Store: Muhasaba and Spree
+- Specializes in AI/LLM integration, Temporal workflows, Kafka, and GCP
+- Builds full-stack products independently from idea to production
 
 ## Projects
 
 - [Offer X-Ray](https://www.offerxray.com/) — AI-powered offer letter analysis: upload an offer letter, get instant risk assessment, compensation breakdown, and negotiation guidance in under 5 minutes
-- [Architex](https://architex-two.vercel.app/) — Architecture practice management platform with stage-based workflows, document version control, site visit tracking, and AI assistant
-- [ReelRocket](https://ugccreatorsfrontend.vercel.app/) — AI UGC content creation platform for hook scripts, demo videos, TikTok research, and product reviews (in progress)
+- [Spree](https://www.tryspree.app/) — iOS wishlist app with AI virtual try-on: paste links from any store, swipe to rank, and try on outfits with AI before buying. Live on the App Store.
 - [Muhasaba](https://muhasaba.me/) — iOS app for the Islamic daily practice of muhasaba: written or spoken reflection with guidance from Quran and Sunnah. Live on the App Store.
+- [Architex](https://architex-two.vercel.app/) — Architecture practice management platform with stage-based workflows, document version control, site visit tracking, and AI assistant
+- [ReelRocket](https://ugccreatorsfrontend.vercel.app/) — AI UGC content creation platform for hook scripts, demo videos, TikTok research, and product reviews
 - [Ali Saffudin](https://alisaffudin.com/) — Bespoke artist website for musician Ali Saffudin, showcasing the Irtiqa EP with a cassette player and bilingual Arabic/English design
 
 ## Skills

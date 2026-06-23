@@ -24,6 +24,8 @@ export const blogPosts: BlogPost[] = [
     excerpt: 'How I built a comprehensive project management platform specifically designed for architecture practices, with stage-based workflows, document control, and AI assistance.',
     content: `# Building Architex: A Project Management Platform for Architects
 
+**Quick answer:** Architex is a Next.js project management platform built specifically for architecture practices. It solves the version-control and workflow problem architects face daily — stage-based project tracking, automatic document revision numbering, site visit documentation, and an AI assistant that understands architectural terminology. Built with Next.js, TypeScript, and OpenAI. Currently in active testing with a real architecture practice.
+
 Architex is a project management platform I built specifically for architecture practices. The idea came from a real-world problem I witnessed firsthand.
 
 I was working with my long-time friend Tauseef, who is an architect, and I saw how he was struggling to find the latest file for a client. He had multiple versions of drawings, specifications, and documents scattered across different folders, and it was taking him way too long to locate the most recent version. That's when we sat down together and designed the workflow that would become Architex.
@@ -92,6 +94,7 @@ Building Architex taught me the importance of:
 The platform is currently in active development and testing. With Tauseef's ongoing feedback, we're building something that will genuinely help architects manage their practices more efficiently.`,
     author: 'Zaman Ishtiyaq',
     publishedAt: '2025-01-15',
+    updatedAt: '2026-06-23',
     readTime: 10,
     category: 'Development',
     tags: ['Next.js', 'TypeScript', 'AI', 'Architecture', 'Project Management'],
@@ -103,6 +106,8 @@ The platform is currently in active development and testing. With Tauseef's ongo
     title: 'AI-Powered Offer Letter Analysis: Building Offer X-Ray',
     excerpt: 'Creating an AI platform that helps job seekers evaluate offer letters in minutes, with comprehensive analysis of compensation, benefits, and contract terms.',
     content: `# AI-Powered Offer Letter Analysis: Building Offer X-Ray
+
+**Quick answer:** Offer X-Ray is an AI tool that analyzes job offer letters in under 5 minutes. Upload a PDF, and it extracts compensation components, identifies risk factors (like unusually long notice periods or missing leave policies), and generates negotiation talking points. Built with Next.js and GPT-4. All documents are processed securely and never stored permanently.
 
 Offer X-Ray is an AI-powered platform that transforms how job seekers evaluate offer letters. The idea came from a personal mistake I made that I never want anyone else to repeat.
 
@@ -147,6 +152,7 @@ All document processing happens securely, and documents are never stored permane
 The platform helps job seekers make informed decisions in under 5 minutes, something that would typically take hours of research and analysis.`,
     author: 'Zaman Ishtiyaq',
     publishedAt: '2025-01-10',
+    updatedAt: '2026-06-23',
     readTime: 6,
     category: 'AI',
     tags: ['AI', 'OpenAI', 'Next.js', 'Privacy', 'Career'],
@@ -158,6 +164,8 @@ The platform helps job seekers make informed decisions in under 5 minutes, somet
     title: 'Neo-Brutalist Design: Bold, Bold, Bold',
     excerpt: 'Exploring neo-brutalist design principles and how I applied them to create a distinctive portfolio that stands out from the crowd.',
     content: `# Neo-Brutalist Design: Bold, Bold, Bold
+
+**Quick answer:** Neo-brutalism is a web design movement defined by thick black borders, bold offset box-shadows, high-contrast colors (typically black, white, and vivid accent colors), and chunky typography. Unlike minimalism, it embraces rawness and personality. In web development, it is implemented using utility-first CSS (Tailwind CSS) with consistent border widths (3px+), shadow utilities, and a restrained but punchy color palette. It is increasingly popular for developer portfolios and startup landing pages.
 
 Neo-brutalism is a design movement that embraces raw, bold aesthetics. It's characterized by:
 - Thick borders and shadows
@@ -210,6 +218,7 @@ The neo-brutalist design has made my portfolio:
 It's not for everyone, but for a developer portfolio, it perfectly captures personality and technical skill.`,
     author: 'Zaman Ishtiyaq',
     publishedAt: '2025-01-05',
+    updatedAt: '2026-06-23',
     readTime: 5,
     category: 'Design',
     tags: ['Design', 'UI/UX', 'Tailwind CSS', 'Portfolio'],
@@ -220,6 +229,8 @@ It's not for everyone, but for a developer portfolio, it perfectly captures pers
     title: 'Building a UGC Content Creation Platform: Rethinking TikTok Automation',
     excerpt: 'Exploring the future of user-generated content creation with AI-powered video automation, TikTok workflows, and intelligent content generation.',
     content: `# Building a UGC Content Creation Platform: Rethinking TikTok Automation
+
+**Quick answer:** ReelRocket is an AI-powered UGC (user-generated content) platform for TikTok creators and brands. It generates hook scripts from trends, combines them with demo videos via an AI mixing engine, supports AI avatars and face-swapping, and automates posting across multiple TikTok accounts. The goal is to reduce video creation time from hours to minutes without sacrificing quality or authenticity. Built with Next.js, Python (FastAPI), and AI video-processing APIs.
 
 I'm currently working on a UGC (User Generated Content) content creation platform that aims to revolutionize how creators and brands produce TikTok videos. The idea stems from observing the massive time investment required to create engaging content consistently.
 
@@ -373,6 +384,7 @@ The future of content creation isn't about replacing creators—it's about empow
 This is still early days, but I'm excited about the potential to transform how UGC content is created and distributed.`,
     author: 'Zaman Ishtiyaq',
     publishedAt: '2025-01-20',
+    updatedAt: '2026-06-23',
     readTime: 8,
     category: 'Development',
     tags: ['UGC', 'TikTok', 'Automation', 'AI', 'Video', 'Content Creation'],
@@ -383,6 +395,8 @@ This is still early days, but I'm excited about the potential to transform how U
     title: 'Building an AI Agent System for Restaurant Owners: Why I Chose an Agentic Framework Over Traditional Solutions',
     excerpt: 'How I built a conversational AI system for restaurant owners using an agentic framework, with deep integration into Pet Pooja—one of India\'s most popular restaurant management platforms.',
     content: `# Building an AI Agent System for Restaurant Owners: Why I Chose an Agentic Framework Over Traditional Solutions
+
+**Quick answer:** This project is a multi-agent AI system that gives restaurant owners conversational access to their operational data. Instead of waiting for managers to pull reports, a café owner can ask: "How did coffee sales change after the price increase?" and get an instant answer with a chart — in seconds. Built with FastAPI, OpenAI Agents SDK, React, and Neon (PostgreSQL). Agents specialize by domain (sales, inventory, visualization) and hand off work to each other, mimicking how a real analytics team collaborates. Integrated with Pet Pooja, one of India's most popular restaurant POS platforms.
 
 ## The Problem: A Café Owner's Frustration
 
@@ -629,6 +643,7 @@ But the framework alone isn't enough. The real value comes from connecting it to
 For restaurant owners overwhelmed by data requests, this approach transforms hours of manual work into seconds of conversation, powered by the data they're already generating in their day-to-day operations.`,
     author: 'Zaman Ishtiyaq',
     publishedAt: '2025-01-25',
+    updatedAt: '2026-06-23',
     readTime: 12,
     category: 'AI',
     tags: ['AI', 'OpenAI', 'Agents', 'Pet Pooja', 'Restaurant Tech', 'Data Integration', 'FastAPI'],
