@@ -86,7 +86,7 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({ item, isExpanded = t
   if (item.isCompanyHeader) {
     const companyStyles = getCompanyHeaderStyles(item.title);
     return (
-      <div className="relative flex gap-6 pb-10">
+      <div className="relative flex gap-6 pb-10 w-full">
         {/* Node */}
         <div className="relative z-10 flex-shrink-0">
           <div

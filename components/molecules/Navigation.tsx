@@ -1,22 +1,20 @@
 'use client';
 
+import { useState } from 'react';
 import { CustomLink } from '@/components/atoms/Link';
 import { SocialIcon } from '@/components/atoms/SocialIcon';
 import { usePathname } from 'next/navigation';
 import { profileInfo } from '@/data/profile';
 import { contactInfo } from '@/data/contact';
 
-/**
- * Molecule: Navigation Component
- * Neo-brutalist navigation with chunky borders and bold colors
- */
 export const Navigation = () => {
   const pathname = usePathname();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const navItems = [
-    { href: '/', label: 'Home' },
-    { href: '/projects', label: 'Projects' },
-    { href: '/blog', label: 'Blog' },
+    { href: '/', label: 'Home', bg: 'bg-[#fef08a]' },
+    { href: '/projects', label: 'Projects', bg: 'bg-[#bfdbfe]' },
+    { href: '/blog', label: 'Blog', bg: 'bg-[#fce7f3]' },
   ];
 
   const socialLinks = [
@@ -52,7 +50,9 @@ export const Navigation = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mt-4 flex items-center justify-between neo-card rounded-2xl px-5 sm:px-7 py-3 bg-[#fde68a]">
+        {/* Main bar */}
+        <div className="mt-4 flex items-center justify-between neo-card rounded-2xl px-4 sm:px-7 py-3 bg-[#fde68a]">
+          {/* Logo */}
           <div className="text-xl sm:text-2xl font-bold font-display text-black flex items-center gap-2">
             <span className="px-3 py-1 bg-white border-[3px] border-black shadow-[3px_3px_0_0_rgba(0,0,0,0.85)] rounded-xl">
               {profileInfo.name.split(' ')[0]}
@@ -62,57 +62,18 @@ export const Navigation = () => {
             </span>
           </div>
 
-          <div className="flex items-center gap-4 sm:gap-6">
-            {/* Navigation Links */}
+          <div className="flex items-center gap-2 sm:gap-4">
+            {/* Desktop nav links */}
             <div className="hidden sm:flex items-center gap-3">
               {navItems.map((item) => {
-                const isActive = pathname === item.href || 
+                const isActive = pathname === item.href ||
                   (item.href === '/projects' && pathname.startsWith('/projects')) ||
                   (item.href === '/blog' && pathname.startsWith('/blog'));
-                
-                // Special styling for Blog button
-                if (item.href === '/blog') {
-                  return (
-                    <CustomLink
-                      key={item.href}
-                      href={item.href}
-                      className={`font-display text-sm sm:text-base px-3 py-2 border-[3px] rounded-xl transition-transform duration-200 !text-black no-underline ${
-                        isActive
-                          ? 'bg-[#fce7f3] border-black shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] -translate-y-0.5'
-                          : 'bg-[#fce7f3] border-black hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_rgba(0,0,0,0.85)]'
-                      }`}
-                    >
-                      {item.label}
-                    </CustomLink>
-                  );
-                }
-                
-                // Special styling for Home button
-                if (item.href === '/') {
-                  return (
-                    <CustomLink
-                      key={item.href}
-                      href={item.href}
-                      className={`font-display text-sm sm:text-base px-3 py-2 border-[3px] rounded-xl transition-transform duration-200 !text-black no-underline ${
-                        isActive
-                          ? 'bg-white border-black shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] -translate-y-0.5'
-                          : 'bg-[#fef08a] border-black hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_rgba(0,0,0,0.85)]'
-                      }`}
-                    >
-                      {item.label}
-                    </CustomLink>
-                  );
-                }
-                
                 return (
                   <CustomLink
                     key={item.href}
                     href={item.href}
-                    className={`font-display text-sm sm:text-base px-3 py-2 border-[3px] rounded-xl transition-transform duration-200 !text-black no-underline ${
-                      isActive
-                        ? 'bg-white border-black shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] -translate-y-0.5'
-                        : 'bg-[#bfdbfe] border-black hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_rgba(0,0,0,0.85)]'
-                    }`}
+                    className={`font-display text-sm px-3 py-2 border-[3px] rounded-xl transition-transform duration-200 !text-black no-underline ${item.bg} border-black ${isActive ? 'shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] -translate-y-0.5' : 'hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_rgba(0,0,0,0.85)]'}`}
                   >
                     {item.label}
                   </CustomLink>
@@ -120,21 +81,60 @@ export const Navigation = () => {
               })}
               <a
                 href={`mailto:${contactInfo.email}`}
-                className="font-display text-sm sm:text-base px-3 py-2 bg-[#fca5a5] border-[3px] border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] hover:-translate-y-0.5 transition-transform duration-200 no-underline text-black"
+                className="font-display text-sm px-3 py-2 bg-[#fca5a5] border-[3px] border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] hover:-translate-y-0.5 transition-transform duration-200 no-underline text-black"
               >
                 Get in Touch
               </a>
             </div>
 
-            {/* Social Links */}
-            <div className="flex items-center gap-2">
+            {/* Social icons — desktop only */}
+            <div className="hidden sm:flex items-center gap-2">
               {socialLinks.map((social) => (
-                <SocialIcon
-                  key={social.label}
-                  href={social.href}
-                  icon={social.icon}
-                  label={social.label}
-                />
+                <SocialIcon key={social.label} href={social.href} icon={social.icon} label={social.label} />
+              ))}
+            </div>
+
+            {/* Hamburger — mobile only */}
+            <button
+              className="sm:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 bg-white border-[3px] border-black rounded-xl shadow-[3px_3px_0_0_rgba(0,0,0,0.85)] hover:-translate-y-0.5 transition-transform duration-150"
+              onClick={() => setMenuOpen((v) => !v)}
+              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            >
+              <span className={`block w-5 h-0.5 bg-black transition-all duration-200 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+              <span className={`block w-5 h-0.5 bg-black transition-all duration-200 ${menuOpen ? 'opacity-0' : ''}`} />
+              <span className={`block w-5 h-0.5 bg-black transition-all duration-200 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile dropdown menu */}
+        <div className={`sm:hidden overflow-hidden transition-all duration-300 ease-in-out ${menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+          <div className="mt-2 neo-card rounded-2xl bg-[#fde68a] px-4 py-4 space-y-2">
+            {navItems.map((item) => {
+              const isActive = pathname === item.href ||
+                (item.href === '/projects' && pathname.startsWith('/projects')) ||
+                (item.href === '/blog' && pathname.startsWith('/blog'));
+              return (
+                <CustomLink
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMenuOpen(false)}
+                  className={`block font-display font-bold text-base px-4 py-3 border-[3px] rounded-xl !text-black no-underline ${item.bg} border-black ${isActive ? 'shadow-[4px_4px_0_0_rgba(0,0,0,0.85)]' : ''}`}
+                >
+                  {item.label}
+                </CustomLink>
+              );
+            })}
+            <a
+              href={`mailto:${contactInfo.email}`}
+              onClick={() => setMenuOpen(false)}
+              className="block font-display font-bold text-base px-4 py-3 bg-[#fca5a5] border-[3px] border-black rounded-xl no-underline text-black"
+            >
+              Get in Touch
+            </a>
+            <div className="flex items-center gap-3 pt-2">
+              {socialLinks.map((social) => (
+                <SocialIcon key={social.label} href={social.href} icon={social.icon} label={social.label} />
               ))}
             </div>
           </div>
@@ -143,4 +143,3 @@ export const Navigation = () => {
     </nav>
   );
 };
-
