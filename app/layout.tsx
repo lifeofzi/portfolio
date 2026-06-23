@@ -66,9 +66,10 @@ const personSchema = {
       '@type': 'Person',
       '@id': `${BASE}/#person`,
       name: 'Zaman Ishtiyaq',
+      description: 'Full-Stack and AI Engineer with 7+ years of experience building AI-native products, data pipelines, and iOS apps. Currently AI Native Engineer at Atlan. IIT Bhubaneswar Computer Science graduate.',
       url: BASE,
       image: `${BASE}/me.png`,
-      jobTitle: 'Senior Software Engineer',
+      jobTitle: 'AI Native Engineer',
       worksFor: { '@type': 'Organization', name: 'Atlan' },
       alumniOf: [
         { '@type': 'Organization', name: 'BrightEdge' },
@@ -90,8 +91,37 @@ const personSchema = {
       '@id': `${BASE}/#website`,
       url: BASE,
       name: 'Zaman Ishtiyaq',
-      description: 'Portfolio of Zaman Ishtiyaq, Senior Software Engineer and AI Native Engineer.',
+      description: 'Portfolio of Zaman Ishtiyaq, Full-Stack and AI Engineer. Building AI-native products, data systems, and iOS apps. Currently at Atlan.',
       publisher: { '@id': `${BASE}/#person` },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Who is Zaman Ishtiyaq?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Zaman Ishtiyaq is a Full-Stack and AI Engineer with 7+ years of experience, currently working as an AI Native Engineer at Atlan. He previously worked at Goldman Sachs (5 years) and BrightEdge (2+ years). He is an IIT Bhubaneswar Computer Science graduate and an independent app developer with two iOS apps live on the App Store: Muhasaba and Spree.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'What has Zaman Ishtiyaq built?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Zaman Ishtiyaq has built Offer X-Ray (AI offer letter analysis tool), Spree (iOS wishlist app with AI virtual try-on, live on App Store), Muhasaba (iOS Islamic reflection app, live on App Store), Architex (architecture practice management platform), and ReelRocket (AI UGC content creation platform for TikTok automation).',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'What does Zaman Ishtiyaq specialize in?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Zaman Ishtiyaq specializes in AI/LLM integration, distributed data pipelines (Kafka, Temporal, GCP), full-stack web development (Next.js, TypeScript, React), and iOS app development (Swift, SwiftUI). He focuses on building production-grade AI-native products that solve real-world problems.',
+          },
+        },
+      ],
     },
   ],
 };
