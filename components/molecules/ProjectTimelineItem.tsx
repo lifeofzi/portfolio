@@ -29,7 +29,7 @@ export const ProjectTimelineItem: React.FC<ProjectTimelineItemProps> = ({ projec
       </div>
 
       {/* Card */}
-      <div className="flex-1 pt-0.5">
+      <div className="flex-1 min-w-0 pt-0.5">
         <div className="neo-card rounded-2xl bg-white overflow-hidden">
           {/* Collapsed header — always visible */}
           <button
@@ -54,8 +54,8 @@ export const ProjectTimelineItem: React.FC<ProjectTimelineItemProps> = ({ projec
                   {project.title}
                 </span>
                 {project.duration && (
-                  <span className={`text-xs font-display font-bold px-2 py-0.5 border border-black rounded-full whitespace-nowrap ${isInProgress ? 'bg-[#bbf7d0]' : 'bg-white'}`}>
-                    {project.duration}
+                  <span className={`text-xs font-display font-bold px-2 py-0.5 border border-black rounded-full ${isInProgress ? 'bg-[#bbf7d0]' : 'bg-white'}`}>
+                    {project.duration.replace(' (In Progress)', '')}
                   </span>
                 )}
               </div>
