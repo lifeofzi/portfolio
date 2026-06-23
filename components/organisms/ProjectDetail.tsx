@@ -122,7 +122,7 @@ export const ProjectDetail = ({ project }: { project: Project }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`font-display text-lg px-8 py-4 border-[3px] border-black rounded-xl shadow-[6px_6px_0_0_rgba(0,0,0,0.85)] hover:-translate-y-1 transition-transform duration-150 text-black inline-flex items-center gap-2 justify-center ${
-                  project.id === 'architex' ? 'bg-[#3b82f6] text-white' : project.id === 'ugc-ai-platform' ? 'bg-[#f97316] text-white' : project.id === 'muhasaba' ? 'bg-[#d97706] text-white' : project.id === 'ali-saffudin' ? 'bg-[#dc2626] text-white' : 'bg-[#facc15]'
+                  project.id === 'architex' ? 'bg-[#3b82f6] text-white' : project.id === 'ugc-ai-platform' ? 'bg-[#f97316] text-white' : project.id === 'muhasaba' ? 'bg-[#d97706] text-white' : project.id === 'ali-saffudin' ? 'bg-[#dc2626] text-white' : project.id === 'spree' ? 'bg-[#f43f5e] text-white' : 'bg-[#facc15]'
                 }`}
               >
                 <ExternalLinkIcon />
