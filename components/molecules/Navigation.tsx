@@ -15,6 +15,7 @@ export const Navigation = () => {
     { href: '/', label: 'Home', bg: 'bg-[#fef08a]' },
     { href: '/projects', label: 'Projects', bg: 'bg-[#bfdbfe]' },
     { href: '/blog', label: 'Blog', bg: 'bg-[#fce7f3]' },
+    { href: '/hire', label: 'Hire Me', bg: 'bg-[#bbf7d0]' },
   ];
 
   const socialLinks = [

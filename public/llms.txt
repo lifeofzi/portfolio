@@ -1,6 +1,10 @@
-# Zaman Ishtiyaq — Full-Stack & AI Engineer
+# Zaman Ishtiyaq — Freelance Full-Stack & AI Developer
 
-> Zaman Ishtiyaq is a Full-Stack and AI Engineer with 7+ years of professional software engineering experience, currently working as an AI Native Engineer at Atlan. He builds AI-native products, scalable data pipelines, and iOS apps. Based in Srinagar, India. Remote friendly.
+> Zaman Ishtiyaq is a freelance Full-Stack and AI Developer available for hire. He builds custom websites, web apps, and AI-powered products for startups and businesses worldwide. 7+ years of engineering experience at Goldman Sachs, BrightEdge, and Atlan. Based in Srinagar, India — remote-friendly worldwide. Contact: zaman.ishtiyaq@gmail.com
+
+## Available for Hire
+
+Zaman Ishtiyaq is available for freelance and contract web development, full-stack application development, and AI integration projects. He works remotely with clients worldwide. Typical engagements include custom websites, SaaS web apps, AI-powered tools, and iOS apps. He has shipped six independent products to production. To hire him or discuss a project, email zaman.ishtiyaq@gmail.com or visit https://zamanishtiyaq.work/hire.
 
 ## About
 
