@@ -26,61 +26,60 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
 
   return (
     <div
-      className={`group relative ${mounted ? 'animate-slide-up' : 'opacity-0'}`}
-      style={{ animationDelay: `${index * 0.1}s` }}
+      className={`${mounted ? 'animate-slide-up' : 'opacity-0'}`}
+      style={{ animationDelay: `${index * 0.08}s` }}
     >
-      {/* ── Mobile card (collapsible) ── */}
-      <div className="md:hidden bg-white rounded-2xl border-[3px] border-black shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] overflow-hidden">
-        {/* Collapsed header — always visible */}
+      <div className="bg-white rounded-2xl border-[3px] border-black shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] overflow-hidden">
+        {/* Header row — always visible */}
         <button
-          className="w-full flex items-center gap-3 p-4 text-left"
+          className="w-full flex items-center gap-4 p-4 sm:p-5 text-left hover:bg-amber-50/50 transition-colors duration-150"
           onClick={() => setExpanded((v) => !v)}
           aria-expanded={expanded}
         >
           {project.image && (
-            <div className="w-12 h-12 flex-shrink-0 rounded-lg overflow-hidden border-[2px] border-black bg-white p-1">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 rounded-xl overflow-hidden border-[2px] border-black bg-white p-1">
               <Image
                 src={project.image}
                 alt={project.title}
-                width={48}
-                height={48}
+                width={56}
+                height={56}
                 className="w-full h-full object-contain"
               />
             </div>
           )}
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="font-display font-extrabold text-lg text-black leading-tight">
+              <span className="font-display font-extrabold text-lg sm:text-xl text-black leading-tight">
                 {project.title}
               </span>
               {isInProgress && (
-                <span className="text-xs font-display font-bold px-2 py-0.5 bg-[#bbf7d0] border border-black rounded-full">
+                <span className="text-xs font-display font-bold px-2 py-0.5 bg-[#bbf7d0] border border-black rounded-full whitespace-nowrap">
                   In Progress
                 </span>
               )}
             </div>
-            <p className="text-sm text-black/60 font-display line-clamp-1 mt-0.5">
-              {project.technologies.slice(0, 3).join(' · ')}
+            <p className="text-sm text-black/50 font-display mt-0.5 truncate">
+              {project.technologies.slice(0, 4).join(' · ')}
             </p>
           </div>
-          <span
-            className={`flex-shrink-0 w-8 h-8 rounded-full border-[2px] border-black flex items-center justify-center transition-transform duration-200 ${expanded ? 'rotate-180' : ''}`}
+          <div
+            className={`flex-shrink-0 w-9 h-9 rounded-full border-[2px] border-black flex items-center justify-center text-sm transition-transform duration-200 bg-white ${expanded ? 'rotate-180' : ''}`}
           >
             ▼
-          </span>
+          </div>
         </button>
 
-        {/* Expandable content */}
-        <div className={`overflow-hidden transition-all duration-300 ease-in-out ${expanded ? 'max-h-[600px]' : 'max-h-0'}`}>
-          <div className="px-4 pb-4 space-y-3 border-t-[2px] border-black/10">
-            <p className="text-sm text-black/70 leading-relaxed font-display pt-3">
+        {/* Expandable body */}
+        <div className={`overflow-hidden transition-all duration-300 ease-in-out ${expanded ? 'max-h-[500px]' : 'max-h-0'}`}>
+          <div className="px-4 sm:px-5 pb-5 space-y-4 border-t-[2px] border-black/10">
+            <p className="text-sm sm:text-base text-black/70 leading-relaxed font-display pt-4">
               {project.description}
             </p>
-            <div className="flex flex-wrap gap-1.5">
+            <div className="flex flex-wrap gap-2">
               {project.technologies.map((tech) => (
                 <span
                   key={tech}
-                  className="px-2 py-1 bg-[#fef3c7] border border-black text-xs font-display font-semibold rounded-full"
+                  className="px-3 py-1 bg-[#fef3c7] border border-black text-xs sm:text-sm font-display font-semibold rounded-full"
                 >
                   {tech}
                 </span>
@@ -89,7 +88,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
             <div className="flex items-center gap-3 pt-1">
               <Link
                 href={`/projects/${project.id}`}
-                className="flex items-center gap-1.5 px-4 py-2 bg-black text-white rounded-full font-display font-bold text-sm hover:-translate-y-0.5 transition-transform duration-150"
+                className="flex items-center gap-2 px-5 py-2 bg-black text-white rounded-full font-display font-bold text-sm hover:-translate-y-0.5 transition-transform duration-150"
               >
                 View Details <ExternalLinkIcon />
               </Link>
@@ -98,85 +97,13 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 px-4 py-2 bg-white border-[2px] border-black rounded-full font-display font-bold text-sm hover:-translate-y-0.5 transition-transform duration-150"
+                  className="flex items-center gap-2 px-5 py-2 bg-white border-[2px] border-black rounded-full font-display font-bold text-sm hover:-translate-y-0.5 transition-transform duration-150"
                 >
                   <GithubIcon /> Code
                 </a>
               )}
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* ── Desktop card (unchanged full card) ── */}
-      <div className="hidden md:block relative h-full bg-white rounded-3xl p-8 border-2 border-gray-200 transition-all duration-500 hover:border-blue-300 hover:shadow-2xl hover:shadow-blue-100/50 hover:-translate-y-2 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 via-purple-50/0 to-pink-50/0 group-hover:from-blue-50/30 group-hover:via-purple-50/20 group-hover:to-pink-50/10 transition-all duration-500 rounded-3xl" />
-        <div className="relative z-10">
-          <div className="flex items-start justify-between mb-6">
-            <div className="flex-1">
-              {project.image ? (
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-24 h-24 flex-shrink-0 rounded-xl overflow-hidden bg-white p-2 border-2 border-gray-200">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      width={96}
-                      height={96}
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-2 group-hover:gradient-text transition-all duration-300">
-                      {project.title}
-                    </h3>
-                    {isInProgress && (
-                      <span className="text-xs font-semibold px-2 py-1 bg-green-100 border border-green-300 text-green-700 rounded-full">
-                        In Progress
-                      </span>
-                    )}
-                  </div>
-                </div>
-              ) : (
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-2 group-hover:gradient-text transition-all duration-300">
-                  {project.title}
-                </h3>
-              )}
-            </div>
-          </div>
-          <p className="text-gray-700 leading-relaxed mb-6 text-base sm:text-lg">
-            {project.description}
-          </p>
-          <div className="flex flex-wrap gap-2 mb-6">
-            {project.technologies.map((tech) => (
-              <span
-                key={tech}
-                className="px-3 py-1.5 bg-gray-100 text-gray-700 text-sm font-semibold rounded-full border border-gray-200"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-          <div className="flex items-center gap-4 pt-4 border-t border-gray-200">
-            <Link
-              href={`/projects/${project.id}`}
-              className="flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-full font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/30"
-            >
-              View Details <ExternalLinkIcon />
-            </Link>
-            {project.githubUrl && (
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 bg-white text-gray-900 border-2 border-gray-300 rounded-full font-semibold text-sm transition-all duration-300 hover:scale-105 hover:border-gray-900"
-              >
-                <GithubIcon /> Code
-              </a>
-            )}
-          </div>
-        </div>
-        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
         </div>
       </div>
     </div>
@@ -191,26 +118,18 @@ export const ProjectsSection = () => {
   if (projects.length === 0) return null;
 
   return (
-    <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-white">
-      <div className="max-w-7xl mx-auto">
-        <div className={`text-center mb-10 sm:mb-20 ${mounted ? 'animate-slide-up' : 'opacity-0'}`}>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-3 sm:mb-6 text-gray-900">
+    <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white">
+      <div className="max-w-3xl mx-auto">
+        <div className={`text-center mb-8 sm:mb-12 ${mounted ? 'animate-slide-up' : 'opacity-0'}`}>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-3 text-gray-900">
             Featured <span className="gradient-text">Projects</span>
           </h2>
-          <p className="text-base sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-gray-500 max-w-xl mx-auto">
             A collection of projects I&apos;ve built and deployed
           </p>
         </div>
 
-        {/* Mobile: stacked list */}
-        <div className="md:hidden space-y-3">
-          {projects.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
-          ))}
-        </div>
-
-        {/* Desktop: grid */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="space-y-3">
           {projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}

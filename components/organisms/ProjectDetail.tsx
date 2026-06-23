@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { type Project } from '@/data/projects';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -165,11 +165,10 @@ export const ProjectDetail = ({ project }: { project: Project }) => {
               <div className="max-w-2xl mx-auto">
                 <div className="flex flex-wrap justify-center items-center gap-3">
                   {project.workflowStages.map((stage, idx) => (
-                    <>
+                    <React.Fragment key={stage}>
                       <div
-                        key={stage}
                         className="neo-card rounded-xl px-6 py-3 bg-white text-center hover:-translate-y-1 transition-transform duration-150 border-[3px] border-black shadow-[4px_4px_0_0_rgba(0,0,0,0.85)]"
-                        style={{ 
+                        style={{
                           backgroundColor: idx === 0 ? '#dbeafe' : idx === 1 ? '#e0e7ff' : idx === 2 ? '#fce7f3' : '#dcfce7'
                         }}
                       >
@@ -178,7 +177,7 @@ export const ProjectDetail = ({ project }: { project: Project }) => {
                       {idx < project.workflowStages!.length - 1 && (
                         <span className="text-2xl font-display font-bold text-black">→</span>
                       )}
-                    </>
+                    </React.Fragment>
                   ))}
                 </div>
               </div>
