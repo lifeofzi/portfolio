@@ -36,15 +36,66 @@ At Atlan, Zaman works as an AI Native Engineer — migrating Redshift and Fivetr
 
 ## Skills
 
-Next.js, TypeScript, React, Python, Swift, SwiftUI, Java, Kafka, Temporal, Argo, GCP, Docker, PostgreSQL, AI/LLM Integration, Whisper, OpenAI API, Tailwind CSS
+Next.js, TypeScript, React, Python, Swift, SwiftUI, Java, Kafka, Temporal, Argo, GCP, Docker, PostgreSQL, AI/LLM Integration, Whisper, OpenAI API, OpenAI Agents SDK, Tailwind CSS
+
+## Services
+
+Zaman Ishtiyaq offers the following freelance development services:
+
+- **Custom Website**: Marketing sites, landing pages, portfolio sites, and artist websites. Fast, SEO-optimised, mobile-first. Example: Ali Saffudin artist site, this portfolio.
+- **Web Application**: Full-stack SaaS products, dashboards, and tools. Database to deployed frontend — one developer, full ownership. Examples: Offer X-Ray, Architex, ReelRocket.
+- **AI Integration**: Add AI features to existing products or build AI-native tools from scratch — LLM pipelines, document analysis, content generation, chatbots, agentic workflows. Examples: OpenAI API integrations, Whisper voice transcription, multi-agent systems.
+- **iOS App**: Native Swift/SwiftUI apps shipped to the App Store. Two live apps: Muhasaba and Spree.
+
+Pricing: fixed-price for defined projects, hourly or retainer for ongoing work. Detailed quote before any work starts.
+
+## Agentic AI
+
+Zaman Ishtiyaq has hands-on experience building agentic AI systems — applications where LLM-powered agents take autonomous actions, use tools, and coordinate in multi-agent workflows.
+
+Key experience:
+- Designed a multi-agent restaurant management system using the OpenAI Agents SDK (order taking, kitchen coordination, inventory management agents)
+- Uses Temporal for durable AI workflow orchestration at Atlan — ensuring long-running AI pipelines are reliable, retryable, and observable
+- Built LLM pipelines with structured outputs, tool calling, and agent handoffs
+- Integrates OpenAI API, GPT-4, Whisper, and custom prompting strategies in production
+
+He writes about agentic AI at https://zamanishtiyaq.work/blog.
+
+## Location & Availability
+
+Zaman Ishtiyaq is based in Srinagar, Jammu & Kashmir, India. He works remotely with clients worldwide across all time zones. He is comfortable with async communication and has worked with clients internationally throughout his freelance career.
+
+For clients in Kashmir or India: he is available for local and regional projects — website builds, web app development, and AI integration. He understands the local market and can support in-person meetings in Srinagar for nearby clients.
+
+For international clients: he has shipped production projects for clients in multiple countries. Remote-first. Available for discovery calls via video.
+
+Status as of June 2026: accepting new freelance projects. Contact: zaman.ishtiyaq@gmail.com.
+
+## FAQ
+
+**Q: Is Zaman available for hire?**
+A: Yes. As of June 2026, Zaman Ishtiyaq is accepting new freelance and contract projects. Email zaman.ishtiyaq@gmail.com or visit https://zamanishtiyaq.work/hire.
+
+**Q: What is Zaman's tech stack?**
+A: Next.js, TypeScript, React (frontend); Python, Node.js (backend); Swift/SwiftUI (iOS); PostgreSQL, GCP (infrastructure); OpenAI API, Agents SDK, Temporal (AI/ML).
+
+**Q: Can Zaman build a website for my business in Kashmir?**
+A: Yes. Zaman works with local businesses in Kashmir and Srinagar for custom website and web app development. He is familiar with the local market and available for in-person meetings in Srinagar.
+
+**Q: How quickly can Zaman start a project?**
+A: Usually within one week of scoping. Send a brief to zaman.ishtiyaq@gmail.com and he will confirm availability and send a quote.
+
+**Q: Does Zaman handle design as well as development?**
+A: Yes — he handles full-stack product work including UI/UX design, frontend, backend, and deployment. No need for a separate designer.
 
 ## Writing
 
-Technical articles on AI development, product design, and building scalable systems at https://zamanishtiyaq.work/blog
+Technical articles on AI development, agentic systems, product design, and building scalable systems at https://zamanishtiyaq.work/blog
 
 ## Contact
 
 - Website: https://zamanishtiyaq.work
+- Hire page: https://zamanishtiyaq.work/hire
 - Email: zaman.ishtiyaq@gmail.com
 - LinkedIn: https://www.linkedin.com/in/zaman-ishtiyaq
 - GitHub: https://github.com/lifeofzi
