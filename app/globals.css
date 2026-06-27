@@ -34,7 +34,7 @@ html {
 }
 
 /* Hide any decorative cursor-like elements that might be floating */
-[class*="cursor"]:not([class*="cursor-pointer"]):not([class*="cursor-default"]),
+[class*="cursor"]:not([class*="cursor-pointer"]):not([class*="cursor-default"]):not([class*="cursor-not"]):not(button):not(a):not([role="button"]),
 [id*="cursor"]:not([id*="cursor-pointer"]),
 [class*="mouse"]:not([class*="cursor"]),
 [id*="mouse"]:not([id*="cursor"]) {
