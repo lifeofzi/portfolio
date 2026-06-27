@@ -15,6 +15,7 @@ export const Navigation = () => {
     { href: '/', label: 'Home', bg: 'bg-[#fef08a]' },
     { href: '/projects', label: 'Projects', bg: 'bg-[#bfdbfe]' },
     { href: '/blog', label: 'Blog', bg: 'bg-[#fce7f3]' },
+    { href: '/products', label: 'Products', bg: 'bg-[#e9d5ff]' },
     { href: '/hire', label: 'Hire Me', bg: 'bg-[#bbf7d0]' },
   ];
 
@@ -69,7 +70,8 @@ export const Navigation = () => {
               {navItems.map((item) => {
                 const isActive = pathname === item.href ||
                   (item.href === '/projects' && pathname.startsWith('/projects')) ||
-                  (item.href === '/blog' && pathname.startsWith('/blog'));
+                  (item.href === '/blog' && pathname.startsWith('/blog')) ||
+                  (item.href === '/products' && pathname.startsWith('/products'));
                 return (
                   <CustomLink
                     key={item.href}
