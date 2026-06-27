@@ -4,6 +4,7 @@ import { Hero } from '@/components/molecules/Hero';
 import { Timeline } from '@/components/organisms/Timeline';
 import { SkillsSection } from '@/components/organisms/SkillsSection';
 import { ProjectsTimeline } from '@/components/organisms/ProjectsTimeline';
+import { CallbackModal } from '@/components/molecules/CallbackModal';
 import { timelineData } from '@/data/timeline';
 
 export default function Home() {
@@ -70,12 +71,12 @@ export default function Home() {
                 <span className="px-2 py-1 bg-[#facc15] border-[3px] border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,0.85)]">Sell</span>
               </h2>
             </div>
-            <Link
-              href="/products"
-              className="btn-neo bg-black text-white self-start sm:self-auto"
-            >
-              View all products →
-            </Link>
+            <div className="flex items-center gap-3 self-start sm:self-auto">
+              <CallbackModal source="homepage" buttonLabel="Get a Callback" buttonClassName="btn-neo bg-white text-black" />
+              <Link href="/products" className="btn-neo bg-black text-white">
+                View all →
+              </Link>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Navigation } from '@/components/molecules/Navigation';
 import { CheckoutSection } from './CheckoutSection';
+import { CallbackModal } from '@/components/molecules/CallbackModal';
 
 export const metadata: Metadata = {
   title: 'Supercharge — 814 Claude Code Skills for $1',
@@ -89,9 +90,14 @@ export default function SuperchargePage() {
             One slash command. Claude asks what you want. Claude does the install. You get back to building.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 items-start">
+          <div className="flex flex-col sm:flex-row gap-3 items-start flex-wrap">
             <CheckoutSection />
-            <div className="flex items-center gap-2 px-4 py-4 font-display text-sm text-black/60">
+            <CallbackModal
+              source="supercharge"
+              buttonLabel="Get a Callback"
+              buttonClassName="btn-neo bg-white text-black text-lg px-8 py-4"
+            />
+            <div className="flex items-center gap-2 px-4 py-4 font-display text-sm text-black/60 w-full sm:w-auto">
               One-time purchase · Instant download · Works with Claude Code
             </div>
           </div>
@@ -234,7 +240,14 @@ export default function SuperchargePage() {
           <p className="text-white/60 font-display text-lg mb-10 max-w-md mx-auto">
             Instant download. No subscription. Works with Claude Code on any OS.
           </p>
-          <CheckoutSection />
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <CheckoutSection />
+            <CallbackModal
+              source="supercharge-bottom"
+              buttonLabel="Get a Callback"
+              buttonClassName="btn-neo bg-white text-black text-lg px-8 py-4"
+            />
+          </div>
           <p className="mt-6 text-white/30 font-display text-sm">
             Built by{' '}
             <Link href="/" className="underline hover:text-white/60 transition-colors">
