@@ -86,7 +86,7 @@ export default function Home() {
                 <span className="px-3 py-1 bg-[#bbf7d0] border-[2px] border-black rounded-full text-xs font-display font-bold">
                   Available now
                 </span>
-                <span className="text-xl font-display font-extrabold text-black">$1</span>
+                <span className="text-xl font-display font-extrabold text-black">₹99</span>
               </div>
               <div>
                 <h3 className="text-2xl font-display font-extrabold text-black mb-1">Supercharge</h3>

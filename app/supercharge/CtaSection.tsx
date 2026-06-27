@@ -9,7 +9,7 @@ export function CtaSection() {
           814 skills.
           <br />
           <span className="px-2 py-1 bg-[#facc15] text-black border-[3px] border-white rounded-xl shadow-[4px_4px_0_0_rgba(255,255,255,0.3)] inline-block mt-2">
-            One dollar.
+            ₹99.
           </span>
         </h2>
         <p className="text-white/60 font-display text-lg mb-10 max-w-md mx-auto">

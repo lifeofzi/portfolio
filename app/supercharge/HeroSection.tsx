@@ -6,7 +6,7 @@ export function HeroSection() {
       <div className="max-w-4xl mx-auto">
         <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#bbf7d0] border-[3px] border-black rounded-full shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] mb-6 font-display text-sm font-bold">
           <span className="w-2 h-2 rounded-full bg-green-500" />
-          814 skills · One command · $1
+          814 skills · One command · ₹99
         </div>
 
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-extrabold text-black leading-tight mb-6">

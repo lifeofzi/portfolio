@@ -8,11 +8,11 @@ import { FaqSection } from './FaqSection';
 import { CtaSection } from './CtaSection';
 
 export const metadata: Metadata = {
-  title: 'Supercharge — 814 Claude Code Skills for $1',
+  title: 'Supercharge — 814 Claude Code Skills for ₹99',
   description: 'Install 814 Claude Code skills in 60 seconds. One slash command. Claude handles the rest. Engineering, design, iOS, SEO, marketing, video and more.',
   alternates: { canonical: 'https://zamanishtiyaq.work/supercharge' },
   openGraph: {
-    title: 'Supercharge — 814 Claude Code Skills for $1',
+    title: 'Supercharge — 814 Claude Code Skills for ₹99',
     description: 'Install 814 Claude Code skills in 60 seconds. One slash command. Claude handles the rest.',
     url: 'https://zamanishtiyaq.work/supercharge',
   },

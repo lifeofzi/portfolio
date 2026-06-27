@@ -51,7 +51,7 @@ export function CheckoutSection() {
         onClick={() => setExpanded(true)}
         className="btn-neo bg-black text-white text-lg px-8 py-4"
       >
-        Get Supercharge — $1
+        Get Supercharge — ₹99
       </button>
     );
   }
@@ -81,7 +81,7 @@ export function CheckoutSection() {
         disabled={loading || !email || !phone}
         className="w-full btn-neo bg-black text-white disabled:opacity-40 disabled:cursor-not-allowed disabled:shadow-none disabled:translate-y-0"
       >
-        {loading ? 'Starting checkout…' : 'Pay $1 and Download'}
+        {loading ? 'Starting checkout…' : 'Pay ₹99 and Download'}
       </button>
       <p className="text-xs text-black/40 font-display text-center">
         Secured by Cashfree · One-time · Instant download

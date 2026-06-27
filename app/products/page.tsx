@@ -18,7 +18,7 @@ const products = [
     name: 'Supercharge',
     tagline: '814 Claude Code skills. One command.',
     description: 'Install 814 community-curated Claude Code skills across engineering, design, iOS, SEO, marketing, video, and more — in 60 seconds. Claude handles the entire setup.',
-    price: '$1',
+    price: '₹99',
     href: '/supercharge',
     color: '#facc15',
     badge: 'Available now',
