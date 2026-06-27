@@ -71,12 +71,9 @@ export default function Home() {
                 <span className="px-2 py-1 bg-[#facc15] border-[3px] border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,0.85)]">Sell</span>
               </h2>
             </div>
-            <div className="flex items-center gap-3 self-start sm:self-auto">
-              <CallbackModal source="homepage" buttonLabel="Get a Callback" buttonClassName="btn-neo bg-white text-black" />
-              <Link href="/products" className="btn-neo bg-black text-white">
-                View all →
-              </Link>
-            </div>
+            <Link href="/products" className="btn-neo bg-black text-white self-start sm:self-auto">
+              View all →
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -109,6 +106,20 @@ export default function Home() {
               <p className="font-display font-bold text-black/50 text-sm">More coming soon</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Callback Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 border-b-[3px] border-black bg-[#fef3c7]">
+        <div className="max-w-xl mx-auto text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold font-display text-black mb-3">
+            Want a{' '}
+            <span className="px-2 py-1 bg-[#fca5a5] border-[3px] border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,0.85)]">Callback?</span>
+          </h2>
+          <p className="text-black/60 font-display mb-8">
+            Leave your number and I&apos;ll reach out within 24 hours.
+          </p>
+          <CallbackModal source="homepage" />
         </div>
       </section>
 
