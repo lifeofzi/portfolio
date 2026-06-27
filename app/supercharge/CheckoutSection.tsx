@@ -8,6 +8,7 @@ type LoadFn = (opts: { mode: string }) => Promise<CashfreeInstance>;
 const { load } = require('@cashfreepayments/cashfree-js') as { load: LoadFn };
 
 export function CheckoutSection() {
+  const [expanded, setExpanded] = useState(false);
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [loading, setLoading] = useState(false);
@@ -44,37 +45,47 @@ export function CheckoutSection() {
     }
   }
 
+  if (!expanded) {
+    return (
+      <button
+        onClick={() => setExpanded(true)}
+        className="btn-neo bg-black text-white text-lg px-8 py-4"
+      >
+        Get Supercharge — $1
+      </button>
+    );
+  }
+
   return (
-    <div className="w-full max-w-md">
-      <div className="flex flex-col gap-3">
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Email address"
-          className="w-full px-4 py-3 border-[3px] border-black rounded-xl bg-white font-display text-sm focus:outline-none focus:ring-2 focus:ring-black shadow-[3px_3px_0_0_rgba(0,0,0,0.85)]"
-        />
-        <input
-          type="tel"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-          placeholder="Phone number (required by payment processor)"
-          className="w-full px-4 py-3 border-[3px] border-black rounded-xl bg-white font-display text-sm focus:outline-none focus:ring-2 focus:ring-black shadow-[3px_3px_0_0_rgba(0,0,0,0.85)]"
-        />
-        {error && (
-          <p className="text-red-600 text-sm font-display font-semibold">{error}</p>
-        )}
-        <button
-          onClick={handlePay}
-          disabled={loading}
-          className="btn-neo bg-black text-white text-base py-4 disabled:opacity-60 disabled:cursor-not-allowed"
-        >
-          {loading ? 'Starting checkout…' : 'Pay $1 and Download'}
-        </button>
-        <p className="text-xs text-black/40 font-display text-center">
-          Secured by Cashfree · One-time · Instant download
-        </p>
-      </div>
+    <div className="flex flex-col gap-3 w-full max-w-md">
+      <input
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Email address"
+        autoFocus
+        className="w-full px-4 py-3 border-[3px] border-black rounded-xl bg-white font-display text-sm focus:outline-none focus:ring-2 focus:ring-black shadow-[3px_3px_0_0_rgba(0,0,0,0.85)]"
+      />
+      <input
+        type="tel"
+        value={phone}
+        onChange={(e) => setPhone(e.target.value)}
+        placeholder="Phone number (required by payment processor)"
+        className="w-full px-4 py-3 border-[3px] border-black rounded-xl bg-white font-display text-sm focus:outline-none focus:ring-2 focus:ring-black shadow-[3px_3px_0_0_rgba(0,0,0,0.85)]"
+      />
+      {error && (
+        <p className="text-red-600 text-sm font-display font-semibold">{error}</p>
+      )}
+      <button
+        onClick={handlePay}
+        disabled={loading}
+        className="btn-neo bg-black text-white text-base py-4 disabled:opacity-60 disabled:cursor-not-allowed"
+      >
+        {loading ? 'Starting checkout…' : 'Pay $1 and Download'}
+      </button>
+      <p className="text-xs text-black/40 font-display text-center">
+        Secured by Cashfree · One-time · Instant download
+      </p>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {
-  const { phone, whatsapp, source } = await req.json();
+  const { phone, whatsapp, email, source } = await req.json();
 
   if (!phone) {
     return NextResponse.json({ error: 'Phone number is required.' }, { status: 400 });
@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
   const res = await fetch(webhookUrl, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ phone, whatsapp: whatsapp || '', source: source || 'unknown' }),
+    body: JSON.stringify({ phone, whatsapp: whatsapp || '', email: email || '', source: source || 'unknown' }),
     redirect: 'follow',
   });
 

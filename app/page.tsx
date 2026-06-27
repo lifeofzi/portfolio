@@ -117,7 +117,7 @@ export default function Home() {
             <span className="px-2 py-1 bg-[#fca5a5] border-[3px] border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,0.85)]">Callback?</span>
           </h2>
           <p className="text-black/60 font-display mb-8">
-            Leave your number and I&apos;ll reach out within 24 hours.
+            Leave your WhatsApp and I&apos;ll be in touch.
           </p>
           <CallbackModal source="homepage" />
         </div>
