@@ -3,22 +3,22 @@ import { Navigation } from '@/components/molecules/Navigation';
 import { contactInfo } from '@/data/contact';
 
 export const metadata: Metadata = {
-  title: 'Hire Zaman Ishtiyaq — Freelance Web & AI Developer',
-  description: 'Hire Zaman Ishtiyaq to build your website, web app, or AI-powered product. Full-stack developer with 7+ years of experience. Remote-friendly worldwide. Fast turnaround. Get in touch today.',
+  title: 'Hire Zaman Ishtiyaq — AI Automations, Agentic Systems & Full-Stack Development',
+  description: 'Hire Zaman Ishtiyaq to build AI automations, agentic systems, LLM pipelines, or full-stack web apps. 7+ years of experience. Currently at Atlan. Remote-friendly worldwide.',
   alternates: { canonical: 'https://zamanishtiyaq.work/hire' },
   openGraph: {
-    title: 'Hire Zaman Ishtiyaq — Freelance Web & AI Developer',
-    description: 'Custom websites, web apps, and AI tools built from idea to production. 7+ years of experience. Remote-friendly.',
+    title: 'Hire Zaman Ishtiyaq — AI Automations, Agentic Systems & Full-Stack Development',
+    description: 'AI automations, agentic systems, and full-stack products built from idea to production. 7+ years of experience. Remote-friendly.',
     url: 'https://zamanishtiyaq.work/hire',
   },
 };
 
 const services = [
   {
-    title: 'Custom Website',
-    description: 'Marketing sites, landing pages, portfolio sites, and artist websites — designed and built to convert. Fast, SEO-optimised, mobile-first.',
-    examples: ['Ali Saffudin — artist site', 'zamanishtiyaq.work — this site'],
-    color: '#bfdbfe',
+    title: 'AI Automations & Agentic Systems',
+    description: 'Multi-agent systems, LLM pipelines, and end-to-end AI automations — built with OpenAI Agents SDK, Temporal, and FastAPI. Agents that take real actions, not just chatbots.',
+    examples: ['Multi-agent restaurant analytics (OpenAI Agents SDK)', 'Durable AI pipelines with Temporal', 'LLM + tool-calling workflows'],
+    color: '#fde68a',
   },
   {
     title: 'Web Application',
@@ -27,10 +27,10 @@ const services = [
     color: '#bbf7d0',
   },
   {
-    title: 'AI Integration',
-    description: 'Add AI features to your existing product or build one from scratch — LLM pipelines, document analysis, content generation, chatbots.',
-    examples: ['OpenAI API integrations', 'Whisper voice transcription', 'Custom LLM workflows'],
-    color: '#fde68a',
+    title: 'Custom Website',
+    description: 'Marketing sites, landing pages, portfolio sites, and artist websites — designed and built to convert. Fast, SEO-optimised, mobile-first.',
+    examples: ['Ali Saffudin — artist site', 'zamanishtiyaq.work — this site'],
+    color: '#bfdbfe',
   },
   {
     title: 'iOS App',
@@ -119,14 +119,14 @@ export default function HirePage() {
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold text-black leading-tight mb-6">
-            Hire Me to Build<br />
+            AI Automations,<br />Agentic Systems<br />
             <span className="px-2 py-1 bg-[#facc15] border-[3px] border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] inline-block mt-2">
-              Your Website or App
+              & Full-Stack Products
             </span>
           </h1>
 
           <p className="text-lg sm:text-xl text-black/80 font-display max-w-2xl mb-8 leading-relaxed">
-            I&apos;m Zaman — a freelance full-stack developer with 7+ years of experience building for Goldman Sachs, BrightEdge, and Atlan. I take your idea from zero to a live, production-ready product.
+            I&apos;m Zaman — an AI engineer and full-stack developer with 7+ years at Goldman Sachs, BrightEdge, and Atlan. I build multi-agent systems, LLM pipelines, and production web apps — from idea to deployed product.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3">
@@ -184,9 +184,9 @@ export default function HirePage() {
           <h2 className="section-heading text-center mb-10">Why Work With Me</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
             {[
-              { label: 'Full ownership', body: 'I handle design, frontend, backend, and deployment — no hand-offs, no bottlenecks.' },
-              { label: 'Shipped products', body: '6 live projects including two App Store apps. I know what it takes to cross the finish line.' },
-              { label: 'Senior-level quality', body: '7+ years at Goldman Sachs, BrightEdge, and Atlan. Production-grade code, not just demos.' },
+              { label: 'AI-native engineering', body: 'Multi-agent systems with OpenAI Agents SDK, durable pipelines with Temporal, LLM integrations in production — not toy demos.' },
+              { label: 'Full ownership', body: 'I handle design, frontend, backend, AI integration, and deployment — one person, no hand-offs, no bottlenecks.' },
+              { label: 'Shipped products', body: '7+ years at Goldman Sachs, BrightEdge, and Atlan. 6 live indie projects. Production-grade, not proof-of-concept.' },
             ].map((item) => (
               <div key={item.label} className="neo-card rounded-2xl p-5 sm:p-6 bg-white hover:-translate-y-1 transition-transform duration-150">
                 <h3 className="text-lg sm:text-xl font-display font-extrabold text-black mb-2">{item.label}</h3>
@@ -219,7 +219,7 @@ export default function HirePage() {
             Ready to build something?
           </h2>
           <p className="text-base sm:text-lg text-white/70 font-display mb-8 max-w-xl mx-auto">
-            Send me a short brief — what you want to build, your timeline, and your budget. I&apos;ll reply within 24 hours.
+            AI automation, agentic system, or full-stack product — send me a short brief with what you want to build. I&apos;ll reply within 24 hours.
           </p>
           <a
             href={`mailto:${contactInfo.email}?subject=Project Enquiry`}
