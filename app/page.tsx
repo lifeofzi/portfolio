@@ -4,6 +4,7 @@ import { Hero } from '@/components/molecules/Hero';
 import { Timeline } from '@/components/organisms/Timeline';
 import { SkillsSection } from '@/components/organisms/SkillsSection';
 import { ProjectsTimeline } from '@/components/organisms/ProjectsTimeline';
+import { CallbackModal } from '@/components/molecules/CallbackModal';
 import { timelineData } from '@/data/timeline';
 
 export default function Home() {
@@ -70,11 +71,8 @@ export default function Home() {
                 <span className="px-2 py-1 bg-[#facc15] border-[3px] border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,0.85)]">Sell</span>
               </h2>
             </div>
-            <Link
-              href="/products"
-              className="btn-neo bg-black text-white self-start sm:self-auto"
-            >
-              View all products →
+            <Link href="/products" className="btn-neo bg-black text-white self-start sm:self-auto">
+              View all →
             </Link>
           </div>
 
@@ -108,6 +106,20 @@ export default function Home() {
               <p className="font-display font-bold text-black/50 text-sm">More coming soon</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Callback Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 border-b-[3px] border-black bg-[#fef3c7]">
+        <div className="max-w-xl mx-auto text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold font-display text-black mb-3">
+            Want a{' '}
+            <span className="px-2 py-1 bg-[#fca5a5] border-[3px] border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,0.85)]">Callback?</span>
+          </h2>
+          <p className="text-black/60 font-display mb-8">
+            Leave your WhatsApp and I&apos;ll be in touch.
+          </p>
+          <CallbackModal source="homepage" />
         </div>
       </section>
 

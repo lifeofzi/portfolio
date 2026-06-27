@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Navigation } from '@/components/molecules/Navigation';
 import { CheckoutSection } from './CheckoutSection';
+import { CallbackModal } from '@/components/molecules/CallbackModal';
 
 export const metadata: Metadata = {
   title: 'Supercharge — 814 Claude Code Skills for $1',
@@ -89,12 +90,7 @@ export default function SuperchargePage() {
             One slash command. Claude asks what you want. Claude does the install. You get back to building.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 items-start">
-            <CheckoutSection />
-            <div className="flex items-center gap-2 px-4 py-4 font-display text-sm text-black/60">
-              One-time purchase · Instant download · Works with Claude Code
-            </div>
-          </div>
+          <CheckoutSection />
         </div>
       </section>
 
