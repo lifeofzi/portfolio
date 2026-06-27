@@ -1,7 +1,7 @@
 const steps = [
   {
     number: '01',
-    title: 'Buy for $1',
+    title: 'Buy for ₹99',
     description: 'Download SKILL.md — one file, no subscription, yours forever.',
     color: '#facc15',
   },

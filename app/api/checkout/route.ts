@@ -19,8 +19,8 @@ export async function POST(req: NextRequest) {
     },
     body: JSON.stringify({
       order_id: orderId,
-      order_amount: 1,
-      order_currency: 'USD',
+      order_amount: 99,
+      order_currency: 'INR',
       customer_details: {
         customer_id: `GUEST_${crypto.randomUUID().replace(/-/g, '').slice(0, 8)}`,
         customer_email: email,

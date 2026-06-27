@@ -15,7 +15,7 @@ export function HighlightsSection() {
       <div className="section-inner">
         <div className="text-center mb-10 sm:mb-14">
           <h2 className="section-heading mb-3">Start with these</h2>
-          <p className="section-sub">Eight skills worth the $1 on their own</p>
+          <p className="section-sub">Eight skills worth the ₹99 on their own</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {highlights.map((h) => (
