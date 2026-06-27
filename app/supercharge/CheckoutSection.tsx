@@ -66,7 +66,7 @@ export function CheckoutSection() {
           />
 
           {/* Modal */}
-          <div className="relative w-full max-w-md bg-[#fef3c7] border-[3px] border-black rounded-2xl shadow-[8px_8px_0_0_rgba(0,0,0,0.85)] p-6 sm:p-8">
+          <div className="relative w-full max-w-md bg-[#fef3c7] border-[3px] border-black rounded-2xl shadow-[8px_8px_0_0_rgba(0,0,0,0.85)] p-6 sm:p-8 max-h-[90vh] overflow-y-auto">
             <button
               onClick={() => setOpen(false)}
               className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center border-[2px] border-black rounded-lg bg-white font-bold text-black hover:bg-black hover:text-white transition-colors"
