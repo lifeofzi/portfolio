@@ -11,11 +11,50 @@ const ArrowLeftIcon = () => (
   </svg>
 );
 
-/**
- * Organism: BlogPost Component
- * Displays a full blog post with neo-brutalist styling
- */
+type Segment =
+  | { type: 'code'; language: string; content: string }
+  | { type: 'line'; content: string };
+
+function parseSegments(content: string): Segment[] {
+  const lines = content.split('\n');
+  const segments: Segment[] = [];
+  let i = 0;
+
+  while (i < lines.length) {
+    const codeMatch = lines[i].match(/^```(\w*)$/);
+    if (codeMatch) {
+      const language = codeMatch[1] || '';
+      const codeLines: string[] = [];
+      i++;
+      while (i < lines.length && !lines[i].startsWith('```')) {
+        codeLines.push(lines[i]);
+        i++;
+      }
+      i++; // skip closing ```
+      segments.push({ type: 'code', language, content: codeLines.join('\n') });
+    } else {
+      segments.push({ type: 'line', content: lines[i] });
+      i++;
+    }
+  }
+
+  return segments;
+}
+
+function processInline(text: string): string {
+  return text
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/`([^`\n]+?)`/g, '<code class="px-1.5 py-0.5 bg-[#fef3c7] border-[2px] border-black rounded text-sm font-mono">$1</code>')
+    .replace(
+      /\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g,
+      '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-700 underline underline-offset-2 hover:text-blue-900 transition-colors font-semibold">$1</a>'
+    );
+}
+
 export const BlogPostDetail = ({ post }: { post: BlogPost }) => {
+  const segments = parseSegments(post.content);
+
   return (
     <article className="max-w-4xl mx-auto">
       {/* Back Button */}
@@ -29,7 +68,6 @@ export const BlogPostDetail = ({ post }: { post: BlogPost }) => {
 
       {/* Header */}
       <header className="mb-8">
-        {/* Category & Featured Badge */}
         <div className="flex items-center gap-3 mb-4">
           <span className="inline-block px-3 py-1 bg-[#facc15] border-[2px] border-black rounded-lg text-sm font-display font-bold text-black uppercase tracking-wide">
             {post.category}
@@ -41,23 +79,18 @@ export const BlogPostDetail = ({ post }: { post: BlogPost }) => {
           )}
         </div>
 
-        {/* Title */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-black mb-4 leading-tight">
           {post.title}
         </h1>
 
-        {/* Meta Info */}
         <div className="flex flex-wrap items-center gap-4 text-black/70 font-display mb-6">
-          <div className="flex items-center gap-2">
-            <span className="font-bold text-black">By {post.author}</span>
-          </div>
+          <span className="font-bold text-black">By {post.author}</span>
           <span>•</span>
           <span>{formatDate(post.publishedAt)}</span>
           <span>•</span>
           <span>{post.readTime} min read</span>
         </div>
 
-        {/* Tags */}
         {post.tags && post.tags.length > 0 && (
           <div className="flex flex-wrap gap-2 mb-8">
             {post.tags.map((tag) => (
@@ -73,65 +106,95 @@ export const BlogPostDetail = ({ post }: { post: BlogPost }) => {
       </header>
 
       {/* Content */}
-      <div className="prose prose-lg max-w-none">
-        <div className="neo-card rounded-2xl p-8 bg-white border-[3px] border-black shadow-[6px_6px_0_0_rgba(0,0,0,0.85)]">
-          <div className="blog-content font-display text-black leading-relaxed">
-            {post.content.split('\n').map((paragraph, idx) => {
-              // Handle headings
-              if (paragraph.startsWith('# ')) {
-                return <h2 key={idx} className="text-3xl font-display font-bold text-black mb-4 mt-8">{paragraph.substring(2)}</h2>;
-              }
-              if (paragraph.startsWith('## ')) {
-                return <h3 key={idx} className="text-2xl font-display font-bold text-black mb-3 mt-6">{paragraph.substring(3)}</h3>;
-              }
-              if (paragraph.startsWith('### ')) {
-                return <h4 key={idx} className="text-xl font-display font-bold text-black mb-2 mt-4">{paragraph.substring(4)}</h4>;
-              }
-              
-              // Handle bold text
-              let processedParagraph = paragraph;
-              processedParagraph = processedParagraph.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-              processedParagraph = processedParagraph.replace(/\*(.+?)\*/g, '<em>$1</em>');
-              
-              // Handle code blocks
-              processedParagraph = processedParagraph.replace(/`(.+?)`/g, '<code class="px-2 py-1 bg-[#fef3c7] border-[2px] border-black rounded text-sm font-mono">$1</code>');
-              
-              // Handle images: ![Alt text](/path/to/image.png)
-              const imageMatch = paragraph.match(/!\[([^\]]*)\]\(([^)]+)\)/);
-              if (imageMatch) {
-                const [, alt, src] = imageMatch;
-                return (
-                  <div key={idx} className="my-8">
-                    <div className="neo-card rounded-2xl overflow-hidden border-[3px] border-black shadow-[4px_4px_0_0_rgba(0,0,0,0.85)]">
-                      <Image
-                        src={src}
-                        alt={alt || 'Blog post image'}
-                        width={1200}
-                        height={600}
-                        className="w-full h-auto"
-                      />
-                    </div>
-                    {alt && (
-                      <p className="text-sm text-black/60 font-display mt-2 text-center italic">{alt}</p>
-                    )}
-                  </div>
-                );
-              }
-              
-              // Skip empty paragraphs
-              if (!paragraph.trim()) {
-                return <br key={idx} />;
-              }
-              
+      <div className="neo-card rounded-2xl p-6 sm:p-10 bg-white border-[3px] border-black shadow-[6px_6px_0_0_rgba(0,0,0,0.85)]">
+        <div className="blog-content font-display text-black leading-relaxed">
+          {segments.map((seg, idx) => {
+            if (seg.type === 'code') {
               return (
-                <p 
-                  key={idx} 
-                  className="mb-4 text-lg leading-relaxed"
-                  dangerouslySetInnerHTML={{ __html: processedParagraph }}
+                <div key={idx} className="my-6">
+                  {seg.language && (
+                    <div className="px-3 py-1 bg-black text-yellow-300 text-xs font-mono rounded-t-lg border-[3px] border-black border-b-0 inline-block">
+                      {seg.language}
+                    </div>
+                  )}
+                  <pre
+                    className={`bg-[#1e1e1e] text-[#d4d4d4] p-5 border-[3px] border-black shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] overflow-x-auto text-sm font-mono leading-relaxed whitespace-pre ${seg.language ? 'rounded-b-xl rounded-tr-xl' : 'rounded-xl'}`}
+                  >
+                    <code>{seg.content}</code>
+                  </pre>
+                </div>
+              );
+            }
+
+            const line = seg.content;
+
+            if (line.startsWith('# ')) {
+              return (
+                <h2 key={idx} className="text-3xl font-display font-bold text-black mb-4 mt-8 first:mt-0">
+                  {line.substring(2)}
+                </h2>
+              );
+            }
+            if (line.startsWith('## ')) {
+              return (
+                <h3 key={idx} className="text-2xl font-display font-bold text-black mb-3 mt-8">
+                  {line.substring(3)}
+                </h3>
+              );
+            }
+            if (line.startsWith('### ')) {
+              return (
+                <h4 key={idx} className="text-xl font-display font-bold text-black mb-2 mt-5">
+                  {line.substring(4)}
+                </h4>
+              );
+            }
+            if (line.trim() === '---') {
+              return <hr key={idx} className="my-8 border-[2px] border-black/15" />;
+            }
+            if (line.startsWith('- ')) {
+              return (
+                <li
+                  key={idx}
+                  className="ml-6 mb-2 text-lg leading-relaxed list-disc"
+                  dangerouslySetInnerHTML={{ __html: processInline(line.substring(2)) }}
                 />
               );
-            })}
-          </div>
+            }
+
+            const imageMatch = line.match(/!\[([^\]]*)\]\(([^)]+)\)/);
+            if (imageMatch) {
+              const [, alt, src] = imageMatch;
+              return (
+                <div key={idx} className="my-8">
+                  <div className="neo-card rounded-2xl overflow-hidden border-[3px] border-black shadow-[4px_4px_0_0_rgba(0,0,0,0.85)]">
+                    <Image
+                      src={src}
+                      alt={alt || 'Blog post image'}
+                      width={1200}
+                      height={600}
+                      className="w-full h-auto"
+                    />
+                  </div>
+                  {alt && (
+                    <p className="text-sm text-black/60 font-display mt-2 text-center italic">{alt}</p>
+                  )}
+                </div>
+              );
+            }
+
+            if (!line.trim()) {
+              return <div key={idx} className="h-2" />;
+            }
+
+            return (
+              <p
+                key={idx}
+                className="mb-4 text-lg leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: processInline(line) }}
+              />
+            );
+          })}
         </div>
       </div>
 
@@ -145,7 +208,7 @@ export const BlogPostDetail = ({ post }: { post: BlogPost }) => {
             <ArrowLeftIcon />
             Back to Blog
           </Link>
-          
+
           {post.projectId && (
             <Link
               href={`/projects/${post.projectId}`}
@@ -162,4 +225,3 @@ export const BlogPostDetail = ({ post }: { post: BlogPost }) => {
     </article>
   );
 };
-
