@@ -78,8 +78,8 @@ export function CheckoutSection() {
       )}
       <button
         onClick={handlePay}
-        disabled={loading}
-        className="btn-neo bg-black text-white text-base py-4 disabled:opacity-60 disabled:cursor-not-allowed"
+        disabled={loading || !email || !phone}
+        className="w-full btn-neo bg-black text-white disabled:opacity-40 disabled:cursor-not-allowed disabled:shadow-none disabled:translate-y-0"
       >
         {loading ? 'Starting checkout…' : 'Pay $1 and Download'}
       </button>
