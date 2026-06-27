@@ -1302,6 +1302,391 @@ The lipsync feature is shipping soon. The marketing studio is still in research,
     featured: false,
     projectId: 'ugc-ai-platform',
   },
+  {
+    slug: 'ai-automations-small-business-what-actually-works',
+    title: 'What AI Automations Can Actually Do for a Small Business (And What They Can\'t)',
+    excerpt: 'Most small businesses drown in manual tasks that follow a predictable pattern: pull data, analyze it, decide, act. That pattern is exactly what AI automations are built for — but only when the conditions are right.',
+    content: `# What AI Automations Can Actually Do for a Small Business (And What They Can't)
+
+**Quick answer:** AI automations for small businesses aren't chatbots. They're systems that pull real data from your tools, analyze it with a language model, make a decision, and write results back somewhere useful — a database, a CRM, a Slack channel. They work well for repetitive, data-driven tasks with clear inputs and outputs. They don't work well for anything requiring judgment, strategy, or relationship-building. If you have a task that takes someone 1+ hours per week and follows a predictable pattern, it's probably automatable.
+
+---
+
+I was talking to a restaurant owner about his reporting problem. Every Monday morning, one of his managers would spend two hours pulling sales data from their POS system, dropping it into a spreadsheet, and writing a summary for ownership. Same process. Every week. Without fail.
+
+It wasn't a hard job. It was a predictable one. Pull data. Analyze it. Format it. Send it.
+
+That's the pattern I look for. And once I see it, I know the job belongs to a machine.
+
+## The Real Problem: Manual Work That Shouldn't Be Manual
+
+Most small businesses aren't drowning in complex problems. They're drowning in repetitive ones.
+
+Think about the manual tasks that eat time at a typical small business. Someone exports a report from one system and pastes it into another. Someone checks the CRM, writes follow-up emails, logs the activity. Someone reads through submitted forms, decides who qualifies, and sends out next steps.
+
+These tasks feel different from each other. They're not. Underneath the surface, they all follow the same structure: pull data from somewhere, analyze or filter it, make a decision based on rules, act on that decision.
+
+That four-step pattern — pull, analyze, decide, act — is exactly what AI automation handles well. The LLM sits in the middle, handling the "analyze and decide" step. Everything else is just connecting the right data sources.
+
+The bottleneck isn't usually the analysis. It's the human time wasted on the pull and the act.
+
+## What Actually Works
+
+### Data Analysis and Reporting
+
+This is where I've seen the clearest wins. Take the restaurant system I built. The owner wanted to stop waiting for weekly summaries. He wanted to ask questions and get answers immediately.
+
+So I built a system where he types a question in plain English, an agent queries the database, an LLM interprets the results, and a response comes back in seconds. "How did coffee sales change after the price increase?" gets a real answer, not a scheduled report.
+
+The same pattern applies to almost any business with structured data — sales pipelines, inventory counts, customer behavior, ad spend. If the data exists somewhere, an automated system can analyze it and surface what matters.
+
+### Document Processing
+
+Offer letters, invoices, contracts, application forms. Documents that follow a template and need to be read, classified, and acted on.
+
+This is straightforward work for a language model. You feed it a PDF, tell it what to extract, and it pulls out the relevant fields with high accuracy. Connect that to a database write or a CRM update and you've eliminated an entire category of manual data entry.
+
+I built exactly this kind of system for offer letter analysis. Upload a document, get back a structured breakdown of compensation, risk factors, and contract terms. The LLM reads what a human would read, in seconds.
+
+### Content Generation Pipelines
+
+Drafting product descriptions, generating weekly update emails, creating variations of ad copy. These work well when the content follows a clear format and the inputs are structured.
+
+The key word is "pipelines." The automation doesn't just generate content — it pulls the right source data, generates the draft, and routes it for review or posts it directly. That full loop is what makes it useful.
+
+### Lead Enrichment and Qualification
+
+Someone fills out a form on your website. An automated system can look up their company, check it against your ideal customer criteria, score the lead, draft a personalized follow-up, and log everything to your CRM — before a human ever touches it.
+
+That used to require a team member monitoring a queue. Now it's a trigger in your system.
+
+### Scheduling and Coordination
+
+Anything that involves reading availability, matching constraints, and sending confirmations. Interview scheduling, appointment booking, meeting coordination. Rule-based decisions with structured inputs are fast and cheap to automate.
+
+## What Doesn't Work Yet
+
+Honest answer: anything requiring real-world judgment that isn't captured in your data.
+
+An AI system can tell you which customers are most likely to churn based on usage patterns. It cannot tell you whether you should drop your price to retain a specific customer whose situation you know personally from years of relationship. That's context the system doesn't have.
+
+Creative strategy is the same. You can automate the generation of five ad headline options. You cannot automate the judgment call about which one is right for where your brand needs to go next year.
+
+Relationship-building is off the table. Clients know when they're talking to a system. For high-stakes interactions — sales conversations, client conflict resolution, partnership discussions — automation is a liability, not an asset.
+
+The pattern I use to check: if a smart human making this decision would want to ask questions you haven't thought to include in the data, the task isn't ready for automation.
+
+## What "Agentic" Actually Means
+
+The word "agentic" gets used loosely. Here's what it means in practice.
+
+An agent is a language model that can call tools, check the results, and take next actions based on what it finds. Not just generating text — actually doing things. Querying a database. Calling an API. Writing data somewhere. Deciding what to do next based on the output.
+
+The restaurant system I built uses this architecture. When the owner asks a sales question, a Sales Agent queries the database and returns analysis. If the question includes "show me" or "visualize," the Sales Agent detects that, hands off to a Plotter Agent with the data, and the Plotter Agent generates a chart. A Response Agent formats the final output and sends it back.
+
+Three agents. Each has one job. They collaborate by passing context when one agent's output becomes another agent's input.
+
+This is different from a chatbot because the agents are actually doing work, not just generating text about work. They're touching real data, calling real tools, producing real outputs.
+
+The handoff model matters. One generalist agent trying to do everything gets confused. Specialized agents with clear responsibilities and explicit handoff rules are far more reliable. I learned this the hard way — my first version was one agent with every tool, and it constantly tried to plot data before querying for it.
+
+## The Stack I Use
+
+For orchestration, I use the OpenAI Agents SDK. It handles the agent loop, tool calls, and handoffs cleanly without forcing you to build all that scaffolding yourself.
+
+For long-running workflows — anything that takes more than a few seconds or has steps that might fail independently — I use Temporal. Temporal is durable execution: if step 3 of a 7-step pipeline fails, it retries step 3, not the whole pipeline. For AI workflows specifically, where an LLM call can time out or an API can flake, this matters a lot.
+
+The backend is FastAPI. Fast to write, easy to reason about, works well with async Python which is what the Agents SDK expects.
+
+For data, Neon (managed PostgreSQL). The agents introspect the schema at runtime, which means they write accurate SQL without needing hardcoded column names in every prompt.
+
+## How to Know If Your Business Is Ready
+
+Three questions. If the answer to all three is yes, the task is probably automatable.
+
+**Does it follow a predictable pattern?** The same steps, roughly the same inputs, roughly the same kind of output every time. If it does, you can describe it to a system.
+
+**Does it take someone 1+ hours per week?** Below that threshold, the setup cost usually isn't worth it in the near term. Above it, the math gets interesting quickly.
+
+**Is it data-driven?** Meaning: could a well-informed outsider make the same decision if you handed them the right data? If yes, an LLM can do it. If the decision requires institutional knowledge that lives only in someone's head, you're not there yet.
+
+A fourth question worth asking: do you actually have the data? The system I built for the restaurant owner works because Pet Pooja had years of structured transaction data. If your data is locked in PDFs, inconsistent spreadsheets, or just not captured at all, data cleanup comes before automation.
+
+## The Honest Close
+
+Setup takes time. Not weeks, usually, but real hours of design work before you write a single line of code. You have to understand the task deeply enough to describe it precisely. That means talking to whoever currently does the work and watching them do it, not just reading a job description.
+
+The payoff is real but measured in weeks and months. The restaurant system I built didn't show ROI on day one. It showed ROI after the owner stopped scheduling those Monday morning report sessions, after his managers reclaimed two hours per week, after he started making inventory decisions based on questions he could ask himself instead of waiting for someone to pull the numbers.
+
+Automation is a tool, not magic. It doesn't solve unclear processes or bad data. It amplifies what you already have. If you have a structured, repetitive, data-driven task and the discipline to set it up properly, the leverage is real.
+
+If you're trying to figure out whether something in your business fits that pattern, I'm happy to think through it with you.`,
+    author: 'Zaman Ishtiyaq',
+    publishedAt: '2026-06-27',
+    readTime: 9,
+    category: 'AI',
+    tags: ['AI', 'Automations', 'Agentic AI', 'Small Business', 'OpenAI', 'LLM'],
+    featured: true,
+  },
+  {
+    slug: 'what-hiring-managers-look-for-nextjs-developer',
+    title: 'What Hiring Managers Actually Look for in a Next.js Developer',
+    excerpt: 'Seven years shipping Next.js in production across Goldman Sachs, BrightEdge, and Atlan. Here\'s what actually moves the needle when you\'re being evaluated — and what doesn\'t matter as much as you think.',
+    content: `# What Hiring Managers Actually Look for in a Next.js Developer
+
+**Quick answer:** Hiring managers want to see three things from a Next.js developer: shipped product experience with real users, solid TypeScript competency, and genuine awareness of performance and SEO. Everything else is secondary.
+
+I've been a Next.js developer for over seven years. I've worked at Goldman Sachs, BrightEdge, and now Atlan. I've also reviewed enough portfolios and codebases as a senior engineer to tell you what actually moves the needle when you're being evaluated. This post is for developers who want the unfiltered version.
+
+---
+
+**Key Takeaways**
+
+- One shipped Next.js app with real users signals seniority. A GitHub full of tutorial clones doesn't.
+- TypeScript is a baseline in 2026, not a differentiator. Shaky types are a red flag.
+- App Router knowledge means understanding *why* it exists, not just that you've used it.
+- LLM integration is now a genuine differentiator for Next.js roles.
+
+---
+
+## The Portfolio vs. Resume Divide
+
+This is the most consistent signal I see when evaluating developers. A GitHub full of "todo-app-with-next" and starter template forks tells me you've been learning. One shipped Next.js app with a real domain, real users, and a README that explains your technical decisions tells me you've been building.
+
+It's not about commit count. It's not about stars. It's about evidence that you've dealt with real constraints: production deploys, performance under real traffic, integrating third-party APIs that don't behave the way the docs say they will.
+
+When I'm reviewing someone's work, the first thing I check is whether anything they built is actually live. If the answer is no, that's a gap. Not a dealbreaker, but a gap.
+
+### What "shipped" actually means
+
+Shipped means a real URL, not a Vercel preview link. It means the app handles edge cases. It means there's a README that isn't just the default Next.js boilerplate text. Explain why you made the routing decisions you made. Explain what you'd do differently. That kind of reflection is what separates someone who followed a tutorial from someone who understood what they were building.
+
+---
+
+## TypeScript Is a Baseline Now, Not a Differentiator
+
+Most teams in 2026 use TypeScript. Being shaky on types isn't a quirk anymore. It's a red flag.
+
+I'm not talking about basic prop typing. I'm talking about generic types, discriminated unions, and properly typing API responses, especially when the shape of that response can vary. If you're casting everything to \`any\` or writing \`as SomeType\` everywhere without understanding why, experienced reviewers will notice.
+
+The developers who impress me are the ones who use TypeScript to make their code self-documenting. A well-typed API client or a properly typed server action tells me you understand your own codebase. That matters more than whether you've memorized the TypeScript handbook.
+
+### A specific thing to practice
+
+Write a typed fetch wrapper that handles error states and success states as a discriminated union. If that sentence confused you, that's your starting point. Most Next.js candidates skip this because tutorials don't cover it. That's exactly why it's worth knowing.
+
+---
+
+## App Router vs. Pages Router: Know the Why, Not Just the What
+
+Hiring managers will ask about App Router. But the answer they're looking for isn't "yes, I've used it." They want to know whether you understand why it exists.
+
+App Router introduced React Server Components, nested layouts, and native streaming support. These aren't cosmetic changes. They fundamentally change how you think about data fetching and component boundaries. If you're using App Router but still fetching everything client-side because that's what you know, you've missed the point.
+
+Know the tradeoffs. Server Components can't use browser APIs or React hooks. Client Components re-introduce the client boundary. Streaming with Suspense changes how loading states work. Understanding these tradeoffs — and being able to articulate when you'd reach for each approach — is what signals a senior-level grasp of the framework.
+
+### Pages Router isn't dead
+
+A lot of production Next.js apps still use Pages Router. Don't pretend it doesn't exist. Being able to work in both, and knowing when a team might reasonably stick with Pages Router, shows pragmatism. Hiring managers notice that too.
+
+---
+
+## Performance and SEO Are Basic Competencies
+
+This is where most Next.js candidates reveal they're more junior than they think. Performance and SEO awareness are not advanced topics. They're baseline expectations for anyone calling themselves a Next.js developer.
+
+The framework gives you the tools: \`next/image\` for optimized images, \`next/font\` for font loading without layout shift, the Metadata API for structured SEO, and built-in Core Web Vitals reporting. If you haven't used these, you haven't used Next.js seriously.
+
+Interviewers will ask about Largest Contentful Paint, Cumulative Layout Shift, and Interaction to Next Paint. They want to know if you've actually measured these things in a real project, not just recited what they stand for.
+
+### What I tell junior developers
+
+Run Lighthouse on something you've built. Fix what it flags. Do that three or four times across different projects, and you'll have concrete examples to talk about in any interview. Most candidates skip this step entirely.
+
+---
+
+## The AI Integration Angle in 2026
+
+This is the differentiator right now. Teams are actively looking for Next.js developers who can build LLM-powered features — not just developers who've used ChatGPT.
+
+Practically, that means: API routes that call OpenAI or Anthropic, streaming responses using server-sent events or the Vercel AI SDK, and understanding the edge runtime tradeoffs when you need low latency. It also means knowing when to run inference on the edge versus calling an external API, and how to handle token limits and rate limits gracefully in a production app.
+
+I've built several projects combining Next.js with LLM backends. The developers who can do this fluently — who've dealt with streaming latency, prompt engineering for structured outputs, and error handling when the model returns something unexpected — are genuinely hard to find. If you can show that experience, you stand out.
+
+---
+
+## What Doesn't Actually Matter Much
+
+I'll save you some time. Deep \`next.config.js\` mastery is not a meaningful signal. Exhaustive knowledge of every Next.js feature — including ones you'd never use in a real project — doesn't impress anyone. And deep webpack knowledge is increasingly irrelevant as Turbopack continues to replace it.
+
+Hiring managers care about outcomes. They care about whether you can ship something that works, performs well, and that other developers can maintain. The framework is a tool. Know your tools well, but don't confuse tool knowledge with engineering judgment.
+
+---
+
+## Portfolio Advice: One Live App Beats Ten Clones
+
+If you're building your portfolio now, here's what I'd actually do. Pick one project. Make it something you'd use yourself or something that solves a real problem. Deploy it on a real domain. Write a README that explains your architecture decisions, what you'd do differently, and what technical problems you ran into.
+
+That single project, done seriously, is worth more than ten tutorial clones across ten repositories. Quality signals judgment. Volume signals busywork.
+
+---
+
+## A Note for Freelancers
+
+Freelance clients don't care about your Next.js version history. They care whether the site is fast, shows up in Google, and doesn't require a specialist to update. When you're pitching freelance work, frame your Next.js skills in those terms.
+
+Fast: talk about image optimization and Core Web Vitals scores you've achieved. Indexable: talk about the Metadata API and server-rendered content. Maintainable: talk about clean component structure and documentation you leave behind.
+
+That framing converts. The technical depth matters for getting hired at a company. For freelance clients, the outcome is what sells.
+
+---
+
+## The Honest Summary
+
+Here's what I'd tell someone getting ready for a Next.js interview or putting together a freelance pitch:
+
+Ship something real and put it on the internet. Know your TypeScript well enough that it makes your code better, not just valid. Understand App Router deeply enough to explain the tradeoffs. Know your Core Web Vitals. And if you can integrate an LLM into a Next.js app cleanly, say so explicitly — because that skill is in demand right now.
+
+The developers who stand out aren't the ones who've memorized the most. They're the ones who've built the most, reflected on what they built, and can explain the reasoning behind their decisions.
+
+That's it. Everything else is noise.`,
+    author: 'Zaman Ishtiyaq',
+    publishedAt: '2026-06-27',
+    readTime: 10,
+    category: 'Development',
+    tags: ['Next.js', 'Career', 'Web Development', 'TypeScript', 'Full-Stack', 'LLM'],
+    featured: false,
+  },
+  {
+    slug: 'shipping-two-ios-apps-solo-developer',
+    title: 'How I Shipped Two iOS Apps to the App Store as a Solo Developer',
+    excerpt: 'Yes, you can ship to the App Store alone. The real bottlenecks aren\'t technical — they\'re App Review timing, code signing, and scope creep. Here\'s what actually happened building Muhasaba and Spree.',
+    content: `# How I Shipped Two iOS Apps to the App Store as a Solo Developer
+
+**Quick answer:** Yes, you can ship to the App Store as a solo developer. The real bottlenecks aren't technical — they're App Review timing (unpredictable), code signing (annoying but solvable), and scope creep (the actual killer). If you cut ruthlessly, pick SwiftUI, and treat v1 as the smallest thing with real value, you can get there.
+
+---
+
+In 2026, I shipped two iOS apps to the App Store. Both are live. Both have real users. I built them alone, around a full-time job, without a co-founder.
+
+One is [Muhasaba](https://muhasaba.me) — an Islamic daily reflection app where you write or speak your thoughts and get AI-guided responses grounded in Quran and Sunnah. The other is [Spree](https://tryspree.app) — a wishlist app where you paste any product URL and it auto-imports the title, price, and image. Two different categories, two different problems, one developer.
+
+Here's what actually happened.
+
+---
+
+## Why These Apps Exist
+
+Both apps came from genuine personal frustration. That matters more than it sounds.
+
+With Muhasaba, I was already doing a daily reflection practice. I wanted something that could respond to my thoughts through an Islamic lens — not generic self-help prompts, not a basic journaling app. I wanted Quran and Sunnah woven into the feedback. Nothing like that existed, so I built it.
+
+With Spree, my wishlist was a Notes folder full of screenshots. Disorganized. No prices. No way to rank or compare. Every time someone asked what I wanted for a birthday, I had to dig through a chaotic mess. The app I wanted already existed in my head — I just had to build it.
+
+Neither app started as a business idea. They started as tools I actually needed. That's the honest origin story for both.
+
+---
+
+## The SwiftUI Decision
+
+When I started Muhasaba, I made a deliberate call: SwiftUI only, no UIKit.
+
+In 2025 and into 2026, SwiftUI has matured enough for a production app. Declarative syntax means faster iteration. State management is cleaner. You can go from idea to screen without the overhead UIKit demands. For a solo developer, that velocity matters.
+
+The tradeoffs are real. SwiftUI still has rough edges around certain animations and complex list behaviors. There are moments where you hit a wall and UIKit would have had a clear solution for years. But for most screens in a productivity or content app, SwiftUI moves faster — and as one person doing everything, faster is the constraint you optimize for.
+
+---
+
+## What Nobody Tells You About App Review
+
+The hardest part of App Review isn't rejection. It's the waiting.
+
+Muhasaba was approved in 36 hours. That's fast. But when you submit, you don't know it'll be 36 hours. Apple's review times can range from under a day to two weeks, depending on the category, the features, and factors nobody fully understands.
+
+So you plan for two weeks and hope for two days. That means you can't schedule a launch around a review submission. You submit, you wait, you do other work. When approval comes, you launch.
+
+For apps using AI or microphone access — which both of mine do — you need clear privacy justifications in your metadata. Muhasaba uses voice input via Whisper and reads microphone data. Spree accesses the network for URL scraping. Both required explicit usage descriptions. Reviewers read them. Make them clear.
+
+---
+
+## Code Signing Is Annoying, Not Hard
+
+Let me save you a few hours: enable automatic signing in Xcode.
+
+The Apple Developer Program costs $99 per year. You need it to submit to the App Store. Inside Xcode, under Signing and Capabilities, there's an option to let Xcode manage your signing automatically. Turn it on. Let it generate and rotate certificates and provisioning profiles for you.
+
+I spent time early on manually managing certificates. I rotated an expired certificate wrong, broke my build, and spent an afternoon fixing it. After switching to automatic signing, I haven't touched a provisioning profile manually since.
+
+The concepts are worth understanding — what a certificate is, what a provisioning profile does, the difference between development and distribution signing. But you don't need to manage them by hand. That's what the tooling is for.
+
+---
+
+## The Feature I Cut (And Why That Was Right)
+
+Both apps launched without features I had planned.
+
+Muhasaba had a community or social layer on the roadmap — a place to share reflections, see others' virtue tracking. It didn't ship in v1. Spree had a browser extension so you could save products without opening the app. Also didn't ship.
+
+Neither of those omissions was a failure. They were correct decisions.
+
+V1 should be the smallest thing that delivers the core value. For Muhasaba, the core value is: write a reflection, receive Islamic guidance. Everything else is a layer on top. For Spree, the core value is: paste a URL, get your product saved cleanly. The browser extension makes that easier — it's not the thing itself.
+
+If I had built both those features, I'd still be building. Instead, I have users, feedback, and a clear sense of what actually matters to people. That's worth more than a feature list.
+
+---
+
+## What Actually Gets People Downloading
+
+Shipping isn't the end of the work. It's the beginning of a different kind of work.
+
+For Muhasaba, the growth vector has been content. I built a learning section at [muhasaba.me/learn](https://muhasaba.me/learn) with articles on Islamic journaling, the practice of muhasaba, and virtue development. People search for those topics. They land on the page. They find the app. Organic search to landing page to App Store — that's the funnel.
+
+For Spree, the AI virtual try-on feature is what people share. When someone can paste a clothing product URL and see themselves wearing it, they show their friends. Word of mouth from a genuinely surprising feature does more than most marketing.
+
+Neither of those things happened by accident. I thought about what would give someone a reason to tell another person about the app, and I built toward that.
+
+---
+
+## The AI in Each App
+
+Both apps use AI. Neither uses it as a gimmick.
+
+Muhasaba uses Whisper for voice-to-text transcription of spoken reflections. It then uses GPT-4 to generate responses grounded in Quran and Sunnah — referenced properly, not hallucinated. The model is prompted carefully to stay within Islamic scholarly frameworks. That's the whole product premise.
+
+Spree uses a virtual try-on API that composites the user's photo with clothing product images. It's technically impressive, but the value is practical: you see what something looks like on you before buying. Returns drop. Confidence goes up.
+
+Both AI features add real value to the specific use case. That's the bar I'd recommend: if removing the AI feature makes the app worse in a meaningful way, keep it. If you're adding it because it sounds impressive, cut it.
+
+---
+
+## The Revenue Model
+
+Both apps are free with a Pro subscription. No ads.
+
+I thought about ads for about ten minutes. Then I thought about what it would feel like to have an ad appear after someone typed out a vulnerable reflection in Muhasaba. That was the end of that conversation.
+
+Pro unlocks unlimited usage — more AI responses, unlimited wishlist items. It's a clean value exchange. Free users get enough to understand what the app does. Pro users get the full experience.
+
+---
+
+## Would I Do It Again?
+
+Yes. Without hesitation.
+
+Building alone means you make faster decisions. You don't need to align with a co-founder on every call. You ship earlier because there's no one to defer to. And you learn the entire stack — design, backend, submission, marketing — because nobody else is doing any of it.
+
+That constraint isn't a disadvantage. It's a forcing function. It makes you figure out what actually matters in an app, and it strips away everything that doesn't.
+
+If you're sitting on an app idea and waiting for the right time or the right team, this is the post where I tell you that the right time is now and the right team is you. The App Store doesn't care how many people built the thing. It cares whether the thing works.
+
+Both of mine work. Yours can too.`,
+    author: 'Zaman Ishtiyaq',
+    publishedAt: '2026-06-27',
+    readTime: 10,
+    category: 'iOS',
+    tags: ['iOS', 'Swift', 'SwiftUI', 'App Store', 'Muhasaba', 'Spree', 'Solo Developer', 'AI'],
+    featured: false,
+  },
 ];
 
 /**
