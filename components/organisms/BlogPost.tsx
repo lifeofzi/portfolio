@@ -49,6 +49,10 @@ function processInline(text: string): string {
     .replace(
       /\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g,
       '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-700 underline underline-offset-2 hover:text-blue-900 transition-colors font-semibold">$1</a>'
+    )
+    .replace(
+      /\[([^\]]+)\]\((\/[^)]*)\)/g,
+      '<a href="$2" class="text-blue-700 underline underline-offset-2 hover:text-blue-900 transition-colors font-semibold">$1</a>'
     );
 }
 
@@ -185,6 +189,52 @@ export const BlogPostDetail = ({ post }: { post: BlogPost }) => {
 
             if (!line.trim()) {
               return <div key={idx} className="h-2" />;
+            }
+
+            // Table row — collect all consecutive table lines and render as one block
+            if (line.trim().startsWith('|')) {
+              // Only emit a table when this is the first row of the block
+              // (skip separator rows — they're consumed as part of the block)
+              const tableLines: string[] = [];
+              let j = idx;
+              while (j < segments.length && segments[j].type === 'line' && (segments[j] as { type: 'line'; content: string }).content.trim().startsWith('|')) {
+                tableLines.push((segments[j] as { type: 'line'; content: string }).content);
+                j++;
+              }
+              const isSeparator = /^\s*\|[\s\-|]+\|\s*$/.test(line);
+              if (isSeparator) return null;
+              const isFirstRow = idx === 0 || segments[idx - 1].type !== 'line' || !(segments[idx - 1] as { type: 'line'; content: string }).content.trim().startsWith('|');
+              if (!isFirstRow) return null;
+
+              const rows = tableLines.filter((r) => !/^\s*\|[\s\-|]+\|\s*$/.test(r));
+              const parseRow = (r: string) =>
+                r.split('|').map((c) => c.trim()).filter((_, i, a) => i > 0 && i < a.length - 1);
+
+              const [headerRow, ...bodyRows] = rows;
+              if (!headerRow) return null;
+              const headers = parseRow(headerRow);
+              return (
+                <div key={idx} className="my-6 overflow-x-auto">
+                  <table className="w-full border-[3px] border-black rounded-xl overflow-hidden shadow-[4px_4px_0_0_rgba(0,0,0,0.85)]">
+                    <thead>
+                      <tr className="bg-black text-white">
+                        {headers.map((h, hi) => (
+                          <th key={hi} className="px-4 py-3 text-left font-display font-bold text-sm" dangerouslySetInnerHTML={{ __html: processInline(h) }} />
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {bodyRows.map((row, ri) => (
+                        <tr key={ri} className={ri % 2 === 0 ? 'bg-white' : 'bg-[#fef3c7]'}>
+                          {parseRow(row).map((cell, ci) => (
+                            <td key={ci} className="px-4 py-3 border-t-[2px] border-black/10 text-sm font-display" dangerouslySetInnerHTML={{ __html: processInline(cell) }} />
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              );
             }
 
             return (
