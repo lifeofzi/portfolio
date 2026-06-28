@@ -1687,6 +1687,117 @@ Both of mine work. Yours can too.`,
     tags: ['iOS', 'Swift', 'SwiftUI', 'App Store', 'Muhasaba', 'Spree', 'Solo Developer', 'AI'],
     featured: false,
   },
+  {
+    slug: 'claude-seo-free-seo-audit-tool-claude-code',
+    title: 'claude-seo: Full SEO Audit in 15 Minutes — Free, Open Source, No Subscriptions',
+    excerpt: 'claude-seo is a Claude Code plugin that runs 25 AI specialist agents in parallel to audit your entire SEO stack in 15 minutes. Core Web Vitals, Schema, AI Search visibility, Local SEO, and a 32-page PDF report. MIT licensed, free forever.',
+    content: `# claude-seo: Full SEO Audit in 15 Minutes — Free, Open Source, No Subscriptions
+
+**Quick answer:** claude-seo is an open-source Claude Code plugin with 25 AI agents that audits your entire SEO stack in 15 minutes. It covers Core Web Vitals, Schema markup, AI Search visibility (ChatGPT, Perplexity), E-E-A-T, Local SEO, and auto-generates a 32-page PDF report. You're currently paying $99–$999/mo for tools that do less. This does more, for $0, forever.
+
+---
+
+## The Problem With SEO Tools in 2026
+
+SEO tools haven't kept up with how search actually works now.
+
+You're paying $999/month for Ahrefs, SEMrush, or similar — and none of them tell you whether ChatGPT or Perplexity can cite your content. They don't audit your AI Search visibility. They run one agent at a time. A full audit takes 4–8 hours of manual work across multiple dashboards.
+
+Meanwhile, AI search is eating traditional search traffic. If your site isn't optimised for GEO (Generative Engine Optimisation), you're invisible to a growing chunk of your potential audience — and your $999/month tool doesn't even check for it.
+
+---
+
+## What claude-seo Does
+
+claude-seo is a plugin for [Claude Code](https://claude.ai/code) — Anthropic's AI coding assistant — that turns your terminal into a full SEO audit station.
+
+One command. 25 agents run in parallel. 15 minutes later you have a complete audit.
+
+### What the 25 agents cover:
+
+**Core Web Vitals** — LCP, CLS, INP measured against real-world thresholds. Flags issues before Google penalises you.
+
+**Schema Markup** — Validates 20+ schema types. Checks JSON-LD implementation, required fields, and markup errors that kill rich results.
+
+**AI Search (GEO)** — This is the one no other tool does. Audits your content's visibility to ChatGPT, Perplexity, and Google AI Overviews. Checks passage-level citability, brand mentions, and llms.txt compliance.
+
+**E-E-A-T** — Evaluates Experience, Expertise, Authoritativeness, and Trustworthiness signals across your content and technical setup.
+
+**Local SEO** — GBP optimisation, NAP consistency, citations, review signals, and location page quality.
+
+**32-Page PDF Report** — Auto-generated. Every audit produces a formatted PDF you can share with clients, stakeholders, or your team.
+
+**SQLite Drift Monitoring** — Stores baseline metrics and flags regressions before Google does. A silent watchdog running in the background.
+
+---
+
+## Before vs After
+
+| | Before claude-seo | After claude-seo |
+|---|---|---|
+| Audit time | 4–8 hours | 15 minutes |
+| Monthly cost | $99–$999 | $0 |
+| AI search audit | Not available | Included |
+| Number of agents | 1 at a time | 18 running in parallel |
+
+---
+
+## How to Set It Up (60 Seconds)
+
+### Option 1 — Git Clone
+
+\`\`\`bash
+git clone https://github.com/AgricIDaniel/claude-seo
+cd claude-seo && bash install.sh
+\`\`\`
+
+### Option 2 — Claude Code Plugin Marketplace
+
+\`\`\`
+/plugin marketplace add claude-seo
+\`\`\`
+
+### Then run your first audit
+
+\`\`\`
+/seo audit https://yoursite.com  # full audit
+/seo schema                       # schema check only
+/seo geo                          # AI search visibility
+/seo local                        # local SEO audit
+\`\`\`
+
+One command. 15 minutes. 32-page report in your folder.
+
+---
+
+## Why I'm Sharing This
+
+I use claude-seo on every project I build. When I ran it on my own portfolio ([zamanishtiyaq.work](https://zamanishtiyaq.work)), it flagged three schema errors I didn't know existed and showed me my AI Search visibility score was lower than it should be for the keywords I was targeting.
+
+It's MIT licensed. The underlying repos are all public on GitHub. I'm not selling you the tool — I'm sharing a curated setup that installs everything in 60 seconds instead of you spending a weekend figuring out which repos are worth using.
+
+---
+
+## The Upsell (Optional, Not Required)
+
+claude-seo is 25 of the 814 skills I've packaged in [Supercharge](/supercharge) — a ₹99 one-time purchase that installs the full community skill library across engineering, iOS, design, marketing, content, and more.
+
+You don't need Supercharge to use claude-seo. But if you're building with Claude Code and want the full toolkit — that's where to go.
+
+---
+
+## Get claude-seo Free
+
+→ [Get the free tool at zamanishtiyaq.work/claude-seo](/claude-seo)
+
+Drop your email and I'll send you the GitHub link plus a quick-start guide. MIT licensed, free forever, no strings.`,
+    author: 'Zaman Ishtiyaq',
+    publishedAt: '2026-06-28',
+    readTime: 6,
+    category: 'Tools',
+    tags: ['SEO', 'Claude Code', 'AI', 'Open Source', 'Developer Tools', 'GEO', 'Free Tools'],
+    featured: true,
+  },
 ];
 
 /**
