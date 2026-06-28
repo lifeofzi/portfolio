@@ -16,10 +16,11 @@ export async function POST(req: NextRequest) {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ phone, whatsapp: whatsapp || '', email: email || '', source: source || 'unknown' }),
-    redirect: 'follow',
+    redirect: 'manual',
   });
 
-  if (!res.ok) {
+  // Google Apps Script returns 302 after executing doPost — treat any 2xx or 3xx as success
+  if (res.status >= 400) {
     return NextResponse.json({ error: 'Failed to save. Try again.' }, { status: 500 });
   }
 
