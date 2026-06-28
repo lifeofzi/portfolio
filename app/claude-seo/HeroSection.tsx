@@ -34,7 +34,12 @@ export function HeroSection() {
           ))}
         </div>
 
-        <p className="text-black/40 font-display text-sm">↓ Scroll to see what's included</p>
+        <div className="flex flex-wrap items-center gap-4">
+          <a href="#get-free" className="btn-neo bg-black text-white text-lg px-8 py-4">
+            Get it Free →
+          </a>
+          <p className="text-black/40 font-display text-sm">↓ 25 agents. 15 minutes. See exactly what runs.</p>
+        </div>
       </div>
     </section>
   );
