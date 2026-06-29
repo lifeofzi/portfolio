@@ -111,7 +111,7 @@ export const Navigation = () => {
         </div>
 
         {/* Mobile dropdown menu */}
-        <div className={`sm:hidden overflow-hidden transition-all duration-300 ease-in-out ${menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+        <div className={`sm:hidden overflow-hidden transition-all duration-300 ease-in-out ${menuOpen ? 'max-h-[520px] opacity-100' : 'max-h-0 opacity-0'}`}>
           <div className="mt-2 neo-card rounded-2xl bg-[#fde68a] px-4 py-4 space-y-2">
             {navItems.map((item) => {
               const isActive = pathname === item.href ||
