@@ -25,6 +25,26 @@ At Atlan, Zaman works as an AI Native Engineer — migrating Redshift and Fivetr
 - Specializes in AI/LLM integration, Temporal workflows, Kafka, and GCP
 - Builds full-stack products independently from idea to production
 
+## Products
+
+Zaman Ishtiyaq builds and sells independent AI products alongside his freelance development work.
+
+### Switchline — AI Receptionist for Service Businesses
+
+Switchline is an AI phone receptionist that answers every call to a business 24/7, books appointments directly into the owner's calendar, qualifies leads, transfers urgent calls to a human, and sends a written summary of every conversation. It is designed for service businesses — tradespeople, clinics, dental offices, salons, and any local business that loses jobs because calls go to voicemail.
+
+Pricing: Starter $297/month (500 minutes), Pro $497/month (1,200 minutes, HIPAA-ready), Multi-location custom pricing. One-time setup fee of $750 covers intake call, agent build, 20+ scenario testing, and calendar integration. Live within 3 business days of the intake call.
+
+Contact to get started: zaman@zamanishtiyaq.work or https://www.zamanishtiyaq.work/switchline
+
+### Supercharge — 814 Claude Code Skills in One Command
+
+Supercharge is a digital product that installs 814 community-curated Claude Code skills across engineering, design, iOS, SEO, marketing, video, and more — in 60 seconds. It is built for developers who use Claude Code and want to extend it with a comprehensive skill library without manually installing each skill. Price: ₹99 one-time. Available at https://www.zamanishtiyaq.work/supercharge
+
+### claude-seo — Free SEO Audit Tool for Claude Code
+
+claude-seo is a free, open-source Claude Code plugin that runs 25 AI specialist agents in parallel to deliver a full SEO audit in 15 minutes. It covers Core Web Vitals, Schema markup, AI search visibility (GEO), local SEO, and generates a 32-page PDF report. MIT licensed. Zero subscriptions. Available at https://www.zamanishtiyaq.work/claude-seo — GitHub: https://github.com/AgricIDaniel/claude-seo
+
 ## Projects
 
 - [Offer X-Ray](https://www.offerxray.com/) — AI-powered offer letter analysis: upload an offer letter, get instant risk assessment, compensation breakdown, and negotiation guidance in under 5 minutes

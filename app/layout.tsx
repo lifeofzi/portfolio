@@ -14,7 +14,7 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
-const BASE = 'https://zamanishtiyaq.work';
+const BASE = 'https://www.zamanishtiyaq.work';
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE),

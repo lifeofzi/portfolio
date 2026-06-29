@@ -3,20 +3,109 @@ import './switchline.css';
 import { LeadForm } from './LeadForm';
 import { SwitchlineNav } from './SwitchlineNav';
 
+const BASE = 'https://www.zamanishtiyaq.work';
+
 export const metadata: Metadata = {
-  title: 'Switchline — AI Front Desk · Plans & Pricing',
-  description: 'Switchline answers every call to your business 24/7 — books appointments, qualifies leads, transfers urgent calls. No voicemail. No missed leads.',
-  alternates: { canonical: 'https://zamanishtiyaq.work/switchline' },
+  title: 'Switchline — AI Receptionist for Service Businesses',
+  description: 'Switchline is an AI phone receptionist that answers every call 24/7, books appointments into your calendar, qualifies leads, and texts you a summary of every conversation. Plans from $297/mo.',
+  keywords: ['AI receptionist', 'AI phone answering service', 'virtual receptionist', 'AI front desk', 'HIPAA compliant answering service', 'AI appointment booking', '24/7 phone answering', 'small business phone answering', 'automated receptionist'],
+  alternates: { canonical: `${BASE}/switchline` },
   openGraph: {
-    title: 'Switchline — AI Front Desk · Plans & Pricing',
-    description: 'Your front desk, on every call. Answers 24/7, books appointments, texts you a summary of every conversation.',
-    url: 'https://zamanishtiyaq.work/switchline',
+    type: 'website',
+    title: 'Switchline — AI Receptionist for Service Businesses',
+    description: 'Answers every call 24/7. Books appointments. Qualifies leads. Texts you a summary. Plans from $297/mo. No voicemail. No missed leads.',
+    url: `${BASE}/switchline`,
+    images: [{ url: `${BASE}/switchline-og.png`, width: 1200, height: 630, alt: 'Switchline — AI Front Desk' }],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Switchline — AI Receptionist for Service Businesses',
+    description: 'Answers every call 24/7. Books appointments. Qualifies leads. Plans from $297/mo.',
+    images: [`${BASE}/switchline-og.png`],
+  },
+};
+
+const switchlineSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      '@id': `${BASE}/switchline#service`,
+      name: 'Switchline',
+      description: 'AI phone receptionist that answers every business call 24/7, books appointments directly into your calendar, qualifies leads, transfers urgent calls to a human, and sends a written summary of every conversation.',
+      provider: { '@id': `${BASE}/#person` },
+      serviceType: 'AI Phone Receptionist',
+      url: `${BASE}/switchline`,
+      offers: [
+        {
+          '@type': 'Offer',
+          name: 'Starter',
+          description: 'For solo operators and quieter front desks. Up to 500 talk-minutes per month.',
+          price: '297',
+          priceCurrency: 'USD',
+          priceSpecification: { '@type': 'UnitPriceSpecification', price: '297', priceCurrency: 'USD', unitCode: 'MON' },
+        },
+        {
+          '@type': 'Offer',
+          name: 'Pro',
+          description: 'For busy service businesses with steady call flow. Up to 1,200 talk-minutes per month. HIPAA-ready.',
+          price: '497',
+          priceCurrency: 'USD',
+          priceSpecification: { '@type': 'UnitPriceSpecification', price: '497', priceCurrency: 'USD', unitCode: 'MON' },
+        },
+        {
+          '@type': 'Offer',
+          name: 'Multi-location',
+          description: 'For multiple sites or high call volume. Custom pricing. HIPAA-ready.',
+          price: '0',
+          priceCurrency: 'USD',
+          eligibleCustomerType: 'Enterprise',
+        },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Does Switchline use my current phone number?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Yes. We simply forward your existing line so callers dial the same number they always have. Prefer a separate number for tracking? We can set one up too.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'What happens if someone needs a real person?',
+          acceptedAnswer: { '@type': 'Answer', text: 'On Pro and above, urgent or complex calls are transferred straight to you or your team — with the caller\'s details already captured, so nobody repeats themselves.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Will callers know Switchline is not a person?',
+          acceptedAnswer: { '@type': 'Answer', text: 'It sounds natural and handles real back-and-forth, including interruptions and changes mid-call. We set the tone to match your business, and we\'re upfront where disclosure is required.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How fast can a business go live with Switchline?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Most single-location setups are answering calls within 3 business days of the intake call.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'What if call volume increases?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Your plan\'s minute allowance covers normal months. If you have a busy stretch, extra minutes are billed at the flat rate on your plan — never a surprise. If you consistently run over, we\'ll move you to the right plan.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Is Switchline HIPAA-compliant for medical practices?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Yes. The Pro plan includes a signed Business Associate Agreement (BAA) — required for any practice handling patient information over the phone. We handle call data in a HIPAA-eligible environment. If you\'re a clinic, medspa, or dental office, just mention it when you book and we\'ll make sure everything is configured correctly from day one.' },
+        },
+      ],
+    },
+  ],
 };
 
 export default function SwitchlinePage() {
   return (
     <div className="sw">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(switchlineSchema) }} />
+
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       {/* eslint-disable-next-line @next/next/no-page-custom-font */}
@@ -28,9 +117,9 @@ export default function SwitchlinePage() {
       <section className="hero">
         <div className="wrap">
           <div className="hero-text">
-            <span className="eyebrow"><span className="live-dot" />Your front desk, on every call</span>
+            <span className="eyebrow"><span className="live-dot" />Switchline · AI Receptionist</span>
             <h1>The calls you miss are the jobs you <em>lose</em>.</h1>
-            <p className="sub">Switchline answers every call to your business — day, night, weekends, and when the line&apos;s already busy. It books appointments straight into your calendar, answers the questions callers actually ask, and texts you a summary of every conversation. No voicemail. No missed leads.</p>
+            <p className="sub">Switchline is an AI receptionist that answers every call to your business — day, night, weekends, and when the line&apos;s already busy. It books appointments straight into your calendar, answers the questions callers actually ask, and texts you a summary of every conversation. No voicemail. No missed leads. Plans from $297/mo.</p>
             <div className="hero-actions">
               <a className="btn-primary" href="#pricing">See plans &amp; pricing</a>
               <a className="btn-ghost" href="#how">How it works</a>
@@ -47,13 +136,12 @@ export default function SwitchlinePage() {
         </div>
       </section>
 
-
       {/* VALUE */}
       <section className="value">
         <div className="wrap">
-          <div className="stat"><div className="n">1&nbsp;in&nbsp;<span>3</span></div><div className="l">inbound calls to local businesses go unanswered — most never call back.</div></div>
+          <div className="stat"><div className="n">1&nbsp;in&nbsp;<span>3</span></div><div className="l">inbound calls to local businesses go unanswered — and most callers never call back. <span style={{ fontSize: '11px', opacity: 0.6 }}>(BIA Advisory Services)</span></div></div>
           <div className="stat"><div className="n"><span>24/7</span></div><div className="l">Answered on the first ring — after hours, holidays, and during your busiest stretch.</div></div>
-          <div className="stat"><div className="n"><span>~1/6</span></div><div className="l">the cost of a full-time front-desk hire, with no sick days and no hold music.</div></div>
+          <div className="stat"><div className="n"><span>~1/6</span></div><div className="l">the cost of a full-time front-desk hire at $45,000+/yr, with no sick days and no hold music.</div></div>
         </div>
       </section>
 
@@ -62,8 +150,8 @@ export default function SwitchlinePage() {
         <div className="wrap">
           <div className="section-head">
             <div className="kick">Plans &amp; pricing</div>
-            <h2>Simple monthly pricing. No per-minute surprises.</h2>
-            <p>Pick the plan that fits your call volume. Each plan includes a generous monthly minute allowance — if you go over, you only pay a flat rate for the extra. No contracts, month-to-month, cancel anytime.</p>
+            <h2>How much does an AI receptionist cost?</h2>
+            <p>Simple monthly pricing with no per-minute surprises. Each plan includes a generous minute allowance — if you go over, you only pay a flat rate for the extra. No contracts, month-to-month, cancel anytime.</p>
           </div>
 
           <div className="plans">
@@ -148,7 +236,7 @@ export default function SwitchlinePage() {
         <div className="wrap">
           <div className="section-head">
             <div className="kick">How it works</div>
-            <h2>Live in days, not weeks.</h2>
+            <h2>How does Switchline set up? Live in days, not weeks.</h2>
           </div>
           <div className="steps">
             <div className="step"><div className="num">Step 01</div><h3>We learn your business</h3><p>A short intake call — your services, hours, pricing, and the questions callers ask most.</p></div>
@@ -163,7 +251,7 @@ export default function SwitchlinePage() {
       <section className="section">
         <div className="wrap twocol">
           <div>
-            <h3><span className="live-dot" />What&apos;s included</h3>
+            <h2 className="section-subhead">What&apos;s included</h2>
             <ul className="clist">
               <li><span className="yes">✓</span> Natural, on-brand conversations — not a phone-tree menu</li>
               <li><span className="yes">✓</span> Appointment booking directly into your calendar</li>
@@ -174,7 +262,7 @@ export default function SwitchlinePage() {
             </ul>
           </div>
           <div>
-            <h3>Good to know</h3>
+            <h2 className="section-subhead">Good to know</h2>
             <ul className="clist">
               <li><span className="no">•</span> Month-to-month — no long contracts, cancel anytime</li>
               <li><span className="no">•</span> Minute allowances cover talk-time only; calls under 15 seconds aren&apos;t counted</li>
@@ -191,14 +279,14 @@ export default function SwitchlinePage() {
         <div className="wrap">
           <div className="section-head">
             <div className="kick">Questions</div>
-            <h2>The things owners ask first.</h2>
+            <h2>Common questions about AI receptionists.</h2>
           </div>
           <div className="qa"><h3>Does it use my current phone number?</h3><p>Yes. We simply forward your existing line so callers dial the same number they always have. Prefer a separate number for tracking? We can set one up too.</p></div>
           <div className="qa"><h3>What happens if someone needs a real person?</h3><p>On Pro and above, urgent or complex calls are transferred straight to you or your team — with the caller&apos;s details already captured, so nobody repeats themselves.</p></div>
           <div className="qa"><h3>Will callers know it&apos;s not a person?</h3><p>It sounds natural and handles real back-and-forth, including interruptions and changes mid-call. We set the tone to match your business, and we&apos;re upfront where disclosure is required.</p></div>
           <div className="qa"><h3>How fast can we go live?</h3><p>Most single-location setups are answering calls within 3 business days of the intake call.</p></div>
           <div className="qa"><h3>What if my call volume jumps?</h3><p>Your plan&apos;s minute allowance covers normal months. If you have a busy stretch, extra minutes are billed at the flat rate on your plan — never a surprise. If you consistently run over, we&apos;ll move you to the right plan.</p></div>
-          <div className="qa"><h3>Is this HIPAA-compliant for medical practices?</h3><p>Yes. The Pro plan includes a signed Business Associate Agreement (BAA) — required for any practice handling patient information over the phone. We handle call data in a HIPAA-eligible environment, and we&apos;ll walk you through the setup during onboarding.</p></div>
+          <div className="qa"><h3>Is this HIPAA-compliant for medical practices?</h3><p>Yes. The Pro plan includes a signed Business Associate Agreement (BAA) — required for any practice handling patient information over the phone. We handle call data in a HIPAA-eligible environment. If you&apos;re a clinic, medspa, or dental office, just mention it when you book and we&apos;ll make sure everything is configured correctly from day one.</p></div>
         </div>
       </section>
 
@@ -214,7 +302,7 @@ export default function SwitchlinePage() {
       <footer className="foot">
         <div className="wrap">
           <div className="brand" style={{ fontSize: '16px' }}><span className="live-dot" /><span>Switchline</span></div>
-          <div>The front desk that never sleeps. · <a href="mailto:zaman@zamanishtiyaq.work">zaman@zamanishtiyaq.work</a></div>
+          <div>The front desk that never sleeps. · <a href="mailto:zaman@zamanishtiyaq.work">zaman@zamanishtiyaq.work</a> · <a href="https://www.zamanishtiyaq.work">zamanishtiyaq.work</a></div>
         </div>
       </footer>
 
