@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './switchline.css';
 import { LeadForm } from './LeadForm';
+import { SwitchlineNav } from './SwitchlineNav';
 
 export const metadata: Metadata = {
   title: 'Switchline — AI Front Desk · Plans & Pricing',
@@ -21,28 +22,19 @@ export default function SwitchlinePage() {
       {/* eslint-disable-next-line @next/next/no-page-custom-font */}
       <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 
-      {/* NAV */}
-      <header className="nav">
-        <div className="wrap">
-          <div className="brand"><span className="live-dot" /><span>Switchline</span></div>
-          <nav className="nav-links" aria-label="Page sections">
-            <a className="nav-link" href="#pricing">Pricing</a>
-            <a className="nav-link" href="#how">How it works</a>
-            <a className="nav-link" href="#contact">Contact</a>
-          </nav>
-          <a className="nav-cta" href="#contact">Get in touch</a>
-        </div>
-      </header>
+      <SwitchlineNav />
 
       {/* HERO */}
       <section className="hero">
         <div className="wrap">
-          <span className="eyebrow"><span className="live-dot" />Your front desk, on every call</span>
-          <h1>The calls you miss are the jobs you <em>lose</em>.</h1>
-          <p className="sub">Switchline answers every call to your business — day, night, weekends, and when the line&apos;s already busy. It books appointments straight into your calendar, answers the questions callers actually ask, and texts you a summary of every conversation. No voicemail. No missed leads.</p>
-          <div className="hero-actions">
-            <a className="btn-primary" href="#pricing">See plans &amp; pricing</a>
-            <a className="btn-ghost" href="#how">How it works</a>
+          <div className="hero-text">
+            <span className="eyebrow"><span className="live-dot" />Your front desk, on every call</span>
+            <h1>The calls you miss are the jobs you <em>lose</em>.</h1>
+            <p className="sub">Switchline answers every call to your business — day, night, weekends, and when the line&apos;s already busy. It books appointments straight into your calendar, answers the questions callers actually ask, and texts you a summary of every conversation. No voicemail. No missed leads.</p>
+            <div className="hero-actions">
+              <a className="btn-primary" href="#pricing">See plans &amp; pricing</a>
+              <a className="btn-ghost" href="#how">How it works</a>
+            </div>
           </div>
 
           <div className="calllog" aria-label="Sample of calls handled">
@@ -54,6 +46,7 @@ export default function SwitchlinePage() {
           </div>
         </div>
       </section>
+
 
       {/* VALUE */}
       <section className="value">
@@ -131,7 +124,21 @@ export default function SwitchlinePage() {
           </div>
 
           <div className="setup-note">
-            <div className="st">One-time setup &amp; onboarding: <b>$750</b> <small>Includes: we learn your business on a short intake call, build your agent on your real services and FAQs, test it against 20+ real call scenarios, connect your calendar, and have you answering calls live — usually within 3 business days.</small></div>
+            <div className="setup-note-header">
+              <div>
+                <div className="kick" style={{ marginBottom: '6px' }}>One-time</div>
+                <div className="setup-price">Setup &amp; Onboarding — <span>$750</span></div>
+                <div className="setup-sub">Everything we do to get you live, included.</div>
+              </div>
+              <a className="btn-primary" href="#contact" style={{ whiteSpace: 'nowrap' }}>Get set up this week</a>
+            </div>
+            <ul className="feat setup-items">
+              <li><span className="ck">+</span> Short intake call — we learn your services, hours, pricing, and the questions callers actually ask</li>
+              <li><span className="ck">+</span> Custom agent built on your real business info and FAQs, not a generic template</li>
+              <li><span className="ck">+</span> Tested against 20+ real call scenarios before going live</li>
+              <li><span className="ck">+</span> Calendar connected — appointments booked directly, no manual hand-off</li>
+              <li><span className="ck">+</span> Live and answering calls within 3 business days of the intake call</li>
+            </ul>
           </div>
         </div>
       </section>
