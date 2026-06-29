@@ -159,6 +159,41 @@
 .sw .hipaa-badge.on-light{background:#eaf6f3;color:#1a7a60;border:1px solid #b2ddd4}
 .sw .hipaa-badge svg{width:13px;height:13px;flex:none}
 
+/* nav section links */
+.sw .nav-links{display:flex;align-items:center;gap:4px}
+.sw .nav-link{font-family:"Instrument Sans";font-size:14px;font-weight:500;color:var(--txt-onink-mut);padding:6px 12px;border-radius:999px;text-decoration:none;transition:color .15s ease,background .15s ease;white-space:nowrap}
+.sw .nav-link:hover{color:#fff;background:var(--ink-3)}
+
+/* lead form */
+.sw .sw-lead-wrap{margin-top:36px;max-width:480px;margin-left:auto;margin-right:auto}
+.sw .sw-lead-fields{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.sw .sw-lead-field{display:flex;flex-direction:column;gap:6px}
+.sw .sw-lead-field label{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--txt-onink-mut);text-transform:uppercase}
+.sw .sw-lead-field input{font-family:"Instrument Sans";font-size:15px;color:#fff;background:rgba(255,255,255,.07);border:1px solid var(--ink-3);border-radius:10px;padding:12px 14px;outline:none;transition:border-color .15s ease}
+.sw .sw-lead-field input::placeholder{color:var(--txt-onink-mut)}
+.sw .sw-lead-field input:focus{border-color:var(--signal)}
+.sw .sw-lead-error{font-size:13.5px;color:#f87171;margin-bottom:10px}
+.sw .sw-lead-submit{width:100%;font-family:"Instrument Sans";font-weight:700;font-size:16px;color:var(--ink);background:var(--signal);border:none;border-radius:999px;padding:15px;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,opacity .15s ease;box-shadow:0 8px 24px rgba(255,138,61,.28)}
+.sw .sw-lead-submit:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 12px 30px rgba(255,138,61,.36)}
+.sw .sw-lead-submit:disabled{opacity:.45;cursor:not-allowed}
+.sw .sw-lead-alt{margin-top:16px;font-size:14px;color:var(--txt-onink-mut);text-align:center}
+.sw .sw-lead-alt a{color:var(--mint);text-decoration:none;font-weight:600}
+.sw .sw-lead-alt a:hover{text-decoration:underline}
+.sw .sw-lead-done{text-align:center;padding:20px 0}
+.sw .sw-lead-done-icon{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:rgba(143,201,185,.2);color:var(--mint);font-size:22px;font-weight:700;margin-bottom:16px}
+.sw .sw-lead-done h3{font-family:"Bricolage Grotesque";font-size:22px;color:#fff;margin-bottom:8px}
+.sw .sw-lead-done p{color:var(--txt-onink-mut);font-size:15px}
+
+/* floating WhatsApp button */
+.sw-wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;font-family:"Instrument Sans";font-size:14px;font-weight:700;padding:13px 20px;border-radius:999px;text-decoration:none;box-shadow:0 8px 24px rgba(37,211,102,.35);transition:transform .15s ease,box-shadow .15s ease}
+.sw-wa-fab:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(37,211,102,.45)}
+.sw-wa-fab svg{width:20px;height:20px;flex:none}
+@keyframes sw-wa-pulse{0%,100%{box-shadow:0 8px 24px rgba(37,211,102,.35)}50%{box-shadow:0 8px 32px rgba(37,211,102,.6)}}
+.sw-wa-fab{animation:sw-wa-pulse 3s ease-in-out infinite}
+
+/* custom price size */
+.sw .custom-price{font-size:34px !important}
+
 @media (max-width:860px){
   .sw .value .wrap{grid-template-columns:1fr}
   .sw .plans{grid-template-columns:1fr}
@@ -166,6 +201,10 @@
   .sw .steps{grid-template-columns:1fr 1fr}
   .sw .twocol{grid-template-columns:1fr;gap:32px}
   .sw .call{grid-template-columns:64px 1fr auto}
+  .sw .nav-links{display:none}
+  .sw .sw-lead-fields{grid-template-columns:1fr}
+  .sw-wa-fab .sw-wa-label{display:none}
+  .sw-wa-fab{padding:14px}
 }
 @media (max-width:520px){
   .sw .steps{grid-template-columns:1fr}

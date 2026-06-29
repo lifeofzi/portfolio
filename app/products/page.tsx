@@ -4,11 +4,11 @@ import { Navigation } from '@/components/molecules/Navigation';
 
 export const metadata: Metadata = {
   title: 'Products — Zaman Ishtiyaq',
-  description: 'Digital products for vibe coders and developers. Tools that make Claude Code and AI development faster.',
+  description: 'AI tools, developer products, and services built by Zaman Ishtiyaq.',
   alternates: { canonical: 'https://zamanishtiyaq.work/products' },
   openGraph: {
     title: 'Products — Zaman Ishtiyaq',
-    description: 'Digital products for vibe coders and developers.',
+    description: 'AI tools, developer products, and services built by Zaman Ishtiyaq.',
     url: 'https://zamanishtiyaq.work/products',
   },
 };
@@ -25,11 +25,21 @@ const products = [
     badgeColor: '#bbf7d0',
     tags: ['Claude Code', 'Developer Tools', 'AI'],
   },
+  {
+    name: 'Switchline',
+    tagline: 'AI front desk that never sleeps.',
+    description: 'Answers every call 24/7, books appointments into your calendar, qualifies leads, and texts you a summary of every conversation. No voicemail. No missed jobs.',
+    price: 'From $297/mo',
+    href: '/switchline',
+    color: '#0C2A2E',
+    badge: 'Available now',
+    badgeColor: '#8FC9B9',
+    tags: ['AI Receptionist', 'Voice AI', 'Service Business'],
+    dark: true,
+  },
 ];
 
-const comingSoon = [
-  { name: 'More products dropping soon', color: '#bfdbfe' },
-];
+const comingSoon: { name: string; color: string }[] = [];
 
 export default function ProductsPage() {
   return (
@@ -43,13 +53,13 @@ export default function ProductsPage() {
             Digital Products
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold text-black leading-tight mb-4">
-            Tools for{' '}
+            Things I Build &amp;{' '}
             <span className="px-2 py-1 bg-[#facc15] border-[3px] border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] inline-block">
-              Vibe Coders
+              Sell
             </span>
           </h1>
           <p className="text-lg sm:text-xl text-black/70 font-display max-w-2xl leading-relaxed">
-            Digital products that make Claude Code and AI development faster. Built by a developer, for developers.
+            Developer tools, AI products, and services. Built to solve real problems.
           </p>
         </div>
       </section>
@@ -58,42 +68,47 @@ export default function ProductsPage() {
       <section className="section-pad border-b-[3px] border-black bg-white">
         <div className="section-inner">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {products.map((p) => (
-              <Link
-                key={p.name}
-                href={p.href}
-                className="neo-card rounded-2xl p-6 flex flex-col gap-4 hover:-translate-y-1 transition-transform duration-150 no-underline"
-                style={{ backgroundColor: p.color }}
-              >
-                <div className="flex items-start justify-between gap-2">
-                  <span
-                    className="px-3 py-1 text-xs font-display font-bold border-[2px] border-black rounded-full"
-                    style={{ backgroundColor: p.badgeColor }}
-                  >
-                    {p.badge}
-                  </span>
-                  <span className="text-xl font-display font-extrabold text-black">{p.price}</span>
-                </div>
-
-                <div>
-                  <h2 className="text-2xl font-display font-extrabold text-black mb-1">{p.name}</h2>
-                  <p className="text-sm font-display font-bold text-black/70 mb-3">{p.tagline}</p>
-                  <p className="text-sm font-display text-black/60 leading-relaxed">{p.description}</p>
-                </div>
-
-                <div className="flex flex-wrap gap-1.5 mt-auto">
-                  {p.tags.map((t) => (
-                    <span key={t} className="px-2 py-0.5 bg-black/10 border border-black/20 rounded text-xs font-mono text-black/60">
-                      {t}
+            {products.map((p) => {
+              const txt = p.dark ? 'text-white' : 'text-black';
+              const txtMut = p.dark ? 'text-white/60' : 'text-black/60';
+              const txtSub = p.dark ? 'text-white/70' : 'text-black/70';
+              return (
+                <Link
+                  key={p.name}
+                  href={p.href}
+                  className="neo-card rounded-2xl p-6 flex flex-col gap-4 hover:-translate-y-1 transition-transform duration-150 no-underline"
+                  style={{ backgroundColor: p.color }}
+                >
+                  <div className="flex items-start justify-between gap-2">
+                    <span
+                      className="px-3 py-1 text-xs font-display font-bold border-[2px] border-black rounded-full text-black"
+                      style={{ backgroundColor: p.badgeColor }}
+                    >
+                      {p.badge}
                     </span>
-                  ))}
-                </div>
+                    <span className={`text-xl font-display font-extrabold ${txt}`}>{p.price}</span>
+                  </div>
 
-                <div className="flex items-center gap-1.5 font-display text-sm font-bold text-black">
-                  Get it →
-                </div>
-              </Link>
-            ))}
+                  <div>
+                    <h2 className={`text-2xl font-display font-extrabold ${txt} mb-1`}>{p.name}</h2>
+                    <p className={`text-sm font-display font-bold ${txtSub} mb-3`}>{p.tagline}</p>
+                    <p className={`text-sm font-display ${txtMut} leading-relaxed`}>{p.description}</p>
+                  </div>
+
+                  <div className="flex flex-wrap gap-1.5 mt-auto">
+                    {p.tags.map((t) => (
+                      <span key={t} className={`px-2 py-0.5 ${p.dark ? 'bg-white/10 border-white/20 text-white/60' : 'bg-black/10 border-black/20 text-black/60'} border rounded text-xs font-mono`}>
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className={`flex items-center gap-1.5 font-display text-sm font-bold ${txt}`}>
+                    Learn more →
+                  </div>
+                </Link>
+              );
+            })}
 
             {/* Coming soon placeholders */}
             {comingSoon.map((c) => (
