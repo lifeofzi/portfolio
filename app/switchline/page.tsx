@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './switchline.css';
+import { LeadForm } from './LeadForm';
 
 export const metadata: Metadata = {
   title: 'Switchline — AI Front Desk · Plans & Pricing',
@@ -11,8 +12,6 @@ export const metadata: Metadata = {
     url: 'https://zamanishtiyaq.work/switchline',
   },
 };
-
-const BOOK_LINK = 'mailto:zaman.ishtiyaq@gmail.com?subject=Switchline%20%E2%80%94%20Book%20a%20Setup%20Call';
 
 export default function SwitchlinePage() {
   return (
@@ -26,7 +25,12 @@ export default function SwitchlinePage() {
       <header className="nav">
         <div className="wrap">
           <div className="brand"><span className="live-dot" /><span>Switchline</span></div>
-          <a className="nav-cta" href={BOOK_LINK}>Book a 15-min setup call</a>
+          <nav className="nav-links" aria-label="Page sections">
+            <a className="nav-link" href="#pricing">Pricing</a>
+            <a className="nav-link" href="#how">How it works</a>
+            <a className="nav-link" href="#contact">Contact</a>
+          </nav>
+          <a className="nav-cta" href="#contact">Get in touch</a>
         </div>
       </header>
 
@@ -83,7 +87,6 @@ export default function SwitchlinePage() {
                 <li><span className="ck">+</span> Text + email summary of every call</li>
                 <li><span className="ck">+</span> Keep your existing number, or a new one</li>
               </ul>
-              <a className="choose dark" href={BOOK_LINK}>Choose Starter</a>
             </div>
 
             {/* Pro (featured) */}
@@ -105,15 +108,14 @@ export default function SwitchlinePage() {
                 <li><span className="ck">+</span> Monthly call-insights report</li>
                 <li><span className="ck">+</span> Priority response on script changes</li>
               </ul>
-              <a className="choose amber" href={BOOK_LINK}>Choose Pro</a>
             </div>
 
             {/* Multi-location */}
             <div className="plan">
               <div className="pname">Multi-location</div>
               <p className="blurb">For multiple sites or high call volume.</p>
-              <div className="price"><span className="amt">$997</span><span className="per">/mo</span></div>
-              <div className="cap">Up to 3,000 talk-minutes / month<br />then $0.15/min</div>
+              <div className="price"><span className="amt custom-price">Custom</span></div>
+              <div className="cap">Volume-based minute pools<br />bespoke per your locations</div>
               <div className="hipaa-badge on-light">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
                 HIPAA-ready
@@ -125,13 +127,11 @@ export default function SwitchlinePage() {
                 <li><span className="ck">+</span> Calendar &amp; CRM integration</li>
                 <li><span className="ck">+</span> Dedicated support line</li>
               </ul>
-              <a className="choose dark" href={BOOK_LINK}>Choose Multi-location</a>
             </div>
           </div>
 
           <div className="setup-note">
             <div className="st">One-time setup &amp; onboarding: <b>$750</b> <small>Includes: we learn your business on a short intake call, build your agent on your real services and FAQs, test it against 20+ real call scenarios, connect your calendar, and have you answering calls live — usually within 3 business days.</small></div>
-            <a className="btn-primary" href={BOOK_LINK}>Get set up this week</a>
           </div>
         </div>
       </section>
@@ -191,25 +191,39 @@ export default function SwitchlinePage() {
           <div className="qa"><h3>Will callers know it&apos;s not a person?</h3><p>It sounds natural and handles real back-and-forth, including interruptions and changes mid-call. We set the tone to match your business, and we&apos;re upfront where disclosure is required.</p></div>
           <div className="qa"><h3>How fast can we go live?</h3><p>Most single-location setups are answering calls within 3 business days of the intake call.</p></div>
           <div className="qa"><h3>What if my call volume jumps?</h3><p>Your plan&apos;s minute allowance covers normal months. If you have a busy stretch, extra minutes are billed at the flat rate on your plan — never a surprise. If you consistently run over, we&apos;ll move you to the right plan.</p></div>
-          <div className="qa"><h3>Is this HIPAA-compliant for medical practices?</h3><p>Yes. The Pro plan includes a signed Business Associate Agreement (BAA) — required for any practice handling patient information over the phone. We handle call data in a HIPAA-eligible environment, and we&apos;ll walk you through the setup during onboarding. If you&apos;re a clinic, medspa, or dental office, just mention it when you book and we&apos;ll make sure everything is configured correctly from day one.</p></div>
+          <div className="qa"><h3>Is this HIPAA-compliant for medical practices?</h3><p>Yes. The Pro plan includes a signed Business Associate Agreement (BAA) — required for any practice handling patient information over the phone. We handle call data in a HIPAA-eligible environment, and we&apos;ll walk you through the setup during onboarding.</p></div>
         </div>
       </section>
 
-      {/* FINAL CTA */}
-      <section className="final" id="book">
+      {/* CONTACT / LEAD FORM */}
+      <section className="final" id="contact">
         <div className="wrap">
           <h2>Stop sending your customers to <em>voicemail</em>.</h2>
-          <p>Book a 15-minute call. We&apos;ll set up a live demo on your own business so you can hear it before you decide.</p>
-          <a className="btn-primary" href={BOOK_LINK}>Book your setup call</a>
+          <p>Drop your email and phone number — we&apos;ll reach out to set up a live demo on your own business so you can hear it before you decide.</p>
+          <LeadForm />
         </div>
       </section>
 
       <footer className="foot">
         <div className="wrap">
           <div className="brand" style={{ fontSize: '16px' }}><span className="live-dot" /><span>Switchline</span></div>
-          <div>The front desk that never sleeps. · <a href={BOOK_LINK}>Book a call</a></div>
+          <div>The front desk that never sleeps. · <a href="mailto:zaman@zamanishtiyaq.work">zaman@zamanishtiyaq.work</a></div>
         </div>
       </footer>
+
+      {/* WhatsApp FAB */}
+      <a
+        href="https://wa.me/918851985235?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Switchline%20AI%20Receptionist."
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Chat on WhatsApp"
+        className="sw-wa-fab"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+        </svg>
+        <span className="sw-wa-label">Chat on WhatsApp</span>
+      </a>
     </div>
   );
 }
