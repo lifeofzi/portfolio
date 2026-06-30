@@ -4,7 +4,7 @@
 
 ## Available for Hire
 
-Zaman Ishtiyaq is available for freelance and contract web development, full-stack application development, and AI integration projects. He works remotely with clients worldwide. Typical engagements include custom websites, SaaS web apps, AI-powered tools, and iOS apps. He has shipped six independent products to production. To hire him or discuss a project, email zaman.ishtiyaq@gmail.com or visit https://zamanishtiyaq.work/hire.
+Zaman Ishtiyaq is available for freelance and contract web development, full-stack application development, and AI integration projects. He works remotely with clients worldwide. Typical engagements include custom websites, SaaS web apps, AI-powered tools, and iOS apps. He has shipped six independent products to production. To hire him or discuss a project, email zaman.ishtiyaq@gmail.com or visit https://www.zamanishtiyaq.work/hire.
 
 ## About
 
@@ -79,7 +79,7 @@ Key experience:
 - Built LLM pipelines with structured outputs, tool calling, and agent handoffs
 - Integrates OpenAI API, GPT-4, Whisper, and custom prompting strategies in production
 
-He writes about agentic AI at https://zamanishtiyaq.work/blog.
+He writes about agentic AI at https://www.zamanishtiyaq.work/blog.
 
 ## Location & Availability
 
@@ -94,7 +94,7 @@ Status as of June 2026: accepting new freelance projects. Contact: zaman.ishtiya
 ## FAQ
 
 **Q: Is Zaman available for hire?**
-A: Yes. As of June 2026, Zaman Ishtiyaq is accepting new freelance and contract projects. Email zaman.ishtiyaq@gmail.com or visit https://zamanishtiyaq.work/hire.
+A: Yes. As of June 2026, Zaman Ishtiyaq is accepting new freelance and contract projects. Email zaman.ishtiyaq@gmail.com or visit https://www.zamanishtiyaq.work/hire.
 
 **Q: What is Zaman's tech stack?**
 A: Next.js, TypeScript, React (frontend); Python, Node.js (backend); Swift/SwiftUI (iOS); PostgreSQL, GCP (infrastructure); OpenAI API, Agents SDK, Temporal (AI/ML).
@@ -110,12 +110,12 @@ A: Yes — he handles full-stack product work including UI/UX design, frontend, 
 
 ## Writing
 
-Technical articles on AI development, agentic systems, product design, and building scalable systems at https://zamanishtiyaq.work/blog
+Technical articles on AI development, agentic systems, product design, and building scalable systems at https://www.zamanishtiyaq.work/blog
 
 ## Contact
 
-- Website: https://zamanishtiyaq.work
-- Hire page: https://zamanishtiyaq.work/hire
+- Website: https://www.zamanishtiyaq.work
+- Hire page: https://www.zamanishtiyaq.work/hire
 - Email: zaman.ishtiyaq@gmail.com
 - LinkedIn: https://www.linkedin.com/in/zaman-ishtiyaq
 - GitHub: https://github.com/lifeofzi

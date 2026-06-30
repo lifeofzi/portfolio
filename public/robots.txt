@@ -28,4 +28,4 @@ Allow: /
 User-agent: Bytespider
 Allow: /
 
-Sitemap: https://zamanishtiyaq.work/sitemap.xml
+Sitemap: https://www.zamanishtiyaq.work/sitemap.xml

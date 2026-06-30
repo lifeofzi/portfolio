@@ -106,11 +106,6 @@ export default function SwitchlinePage() {
     <div className="sw">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(switchlineSchema) }} />
 
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      {/* eslint-disable-next-line @next/next/no-page-custom-font */}
-      <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-
       <SwitchlineNav />
 
       {/* HERO */}

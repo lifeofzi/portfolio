@@ -127,7 +127,7 @@ const personSchema = {
           name: 'Is Zaman Ishtiyaq available for freelance web development projects?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Yes. Zaman Ishtiyaq is available for freelance web development, full-stack application development, and AI integration projects. He works with startups and businesses worldwide on a remote basis. He has shipped production projects including Offer X-Ray, Spree, Muhasaba, Architex, ReelRocket, and Ali Saffudin. Contact: zaman.ishtiyaq@gmail.com or visit https://zamanishtiyaq.work/hire',
+            text: 'Yes. Zaman Ishtiyaq is available for freelance web development, full-stack application development, and AI integration projects. He works with startups and businesses worldwide on a remote basis. He has shipped production projects including Offer X-Ray, Spree, Muhasaba, Architex, ReelRocket, and Ali Saffudin. Contact: zaman.ishtiyaq@gmail.com or visit https://www.zamanishtiyaq.work/hire',
           },
         },
         {
@@ -143,7 +143,7 @@ const personSchema = {
           name: 'Can I hire a Next.js developer from India for my project?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Yes. Zaman Ishtiyaq is a Next.js developer based in Srinagar, India, available for freelance and contract projects worldwide. He has built production Next.js applications including Offer X-Ray, Architex, ReelRocket, and this portfolio. He works remotely with clients across time zones. To hire him, email zaman.ishtiyaq@gmail.com or visit https://zamanishtiyaq.work/hire.',
+            text: 'Yes. Zaman Ishtiyaq is a Next.js developer based in Srinagar, India, available for freelance and contract projects worldwide. He has built production Next.js applications including Offer X-Ray, Architex, ReelRocket, and this portfolio. He works remotely with clients across time zones. To hire him, email zaman.ishtiyaq@gmail.com or visit https://www.zamanishtiyaq.work/hire.',
           },
         },
         {

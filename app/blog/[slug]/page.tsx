@@ -4,7 +4,7 @@ import { Navigation } from '@/components/molecules/Navigation';
 import { BlogPostDetail } from '@/components/organisms/BlogPost';
 import { getBlogPostBySlug, blogPosts } from '@/data/blog';
 
-const BASE = 'https://zamanishtiyaq.work';
+const BASE = 'https://www.zamanishtiyaq.work';
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;

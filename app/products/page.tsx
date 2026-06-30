@@ -5,11 +5,11 @@ import { Navigation } from '@/components/molecules/Navigation';
 export const metadata: Metadata = {
   title: 'Products — Zaman Ishtiyaq',
   description: 'AI tools, developer products, and services built by Zaman Ishtiyaq.',
-  alternates: { canonical: 'https://zamanishtiyaq.work/products' },
+  alternates: { canonical: 'https://www.zamanishtiyaq.work/products' },
   openGraph: {
     title: 'Products — Zaman Ishtiyaq',
     description: 'AI tools, developer products, and services built by Zaman Ishtiyaq.',
-    url: 'https://zamanishtiyaq.work/products',
+    url: 'https://www.zamanishtiyaq.work/products',
   },
 };
 
