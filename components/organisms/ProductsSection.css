@@ -1,0 +1,216 @@
+.ps-section {
+  padding: 80px 16px;
+  background: #fff;
+  border-top: 3px solid #000;
+  border-bottom: 3px solid #000;
+  font-family: var(--font-space-grotesk), var(--font-inter), system-ui, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.ps-inner {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+/* Header row */
+.ps-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.ps-header-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.ps-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #e9d5ff;
+  border: 3px solid #000;
+  border-radius: 999px;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.85);
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  width: fit-content;
+}
+
+.ps-title {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  color: #000;
+  line-height: 1.1;
+}
+
+.ps-title-highlight {
+  padding: 4px 8px;
+  background: #facc15;
+  border: 3px solid #000;
+  border-radius: 12px;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.85);
+}
+
+/* Product grid */
+.ps-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+/* Base card */
+.ps-card {
+  border: 3px solid #000;
+  border-radius: 18px;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.85);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-decoration: none;
+  transition: transform 150ms ease;
+  min-height: 220px;
+}
+
+.ps-card:hover {
+  transform: translateY(-4px);
+}
+
+.ps-card--yellow {
+  background: #facc15;
+}
+
+.ps-card--dark {
+  background: #0c2a2e;
+}
+
+.ps-card--placeholder {
+  background: #bfdbfe;
+  opacity: 0.4;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+.ps-card--placeholder:hover {
+  transform: none;
+}
+
+/* Card internals */
+.ps-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.ps-card-availability {
+  padding: 5px 12px;
+  background: #bbf7d0;
+  border: 2px solid #000;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #000;
+  line-height: 1.4;
+}
+
+.ps-card--dark .ps-card-availability {
+  background: rgba(143, 201, 185, 0.2);
+  border-color: rgba(143, 201, 185, 0.5);
+  color: #8fc9b9;
+}
+
+.ps-card-price {
+  font-size: 18px;
+  font-weight: 800;
+  color: #000;
+}
+
+.ps-card--dark .ps-card-price {
+  color: #ff8a3d;
+}
+
+.ps-card-body {
+  flex: 1;
+}
+
+.ps-card-name {
+  font-size: 24px;
+  font-weight: 800;
+  color: #000;
+  margin-bottom: 4px;
+  letter-spacing: -0.02em;
+}
+
+.ps-card--dark .ps-card-name {
+  color: #fff;
+}
+
+.ps-card-tagline {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.65);
+  margin-bottom: 8px;
+}
+
+.ps-card--dark .ps-card-tagline {
+  color: rgba(143, 201, 185, 0.9);
+}
+
+.ps-card-desc {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.55);
+  line-height: 1.6;
+}
+
+.ps-card--dark .ps-card-desc {
+  color: rgba(157, 180, 176, 0.85);
+}
+
+.ps-card-cta {
+  margin-top: auto;
+  font-size: 14px;
+  font-weight: 700;
+  color: #000;
+}
+
+.ps-card--dark .ps-card-cta {
+  color: #8fc9b9;
+}
+
+.ps-placeholder-label {
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (min-width: 640px) {
+  .ps-section {
+    padding: 80px 24px;
+  }
+
+  .ps-header {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .ps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .ps-section {
+    padding: 80px 32px;
+  }
+
+  .ps-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
