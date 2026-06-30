@@ -9,10 +9,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Blog — AI, Development & Product Design | Zaman Ishtiyaq',
     description: 'Articles on building AI products, scalable backend systems, and product design by Zaman Ishtiyaq.',
-    url: 'https://zamanishtiyaq.work/blog',
+    url: 'https://www.zamanishtiyaq.work/blog',
     type: 'website',
   },
-  alternates: { canonical: 'https://zamanishtiyaq.work/blog' },
+  alternates: { canonical: 'https://www.zamanishtiyaq.work/blog' },
 };
 
 export default function BlogPage() {

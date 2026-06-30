@@ -4,7 +4,7 @@ import { Navigation } from '@/components/molecules/Navigation';
 import { ProjectDetail } from '@/components/organisms/ProjectDetail';
 import { getProjectById, projects } from '@/data/projects';
 
-const BASE = 'https://zamanishtiyaq.work';
+const BASE = 'https://www.zamanishtiyaq.work';
 
 interface ProjectPageProps {
   params: Promise<{ id: string }>;

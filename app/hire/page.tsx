@@ -5,11 +5,11 @@ import { contactInfo } from '@/data/contact';
 export const metadata: Metadata = {
   title: 'Hire Zaman Ishtiyaq — AI Automations, Agentic Systems & Full-Stack Development',
   description: 'Hire Zaman Ishtiyaq to build AI automations, agentic systems, LLM pipelines, or full-stack web apps. 7+ years of experience. Currently at Atlan. Remote-friendly worldwide.',
-  alternates: { canonical: 'https://zamanishtiyaq.work/hire' },
+  alternates: { canonical: 'https://www.zamanishtiyaq.work/hire' },
   openGraph: {
     title: 'Hire Zaman Ishtiyaq — AI Automations, Agentic Systems & Full-Stack Development',
     description: 'AI automations, agentic systems, and full-stack products built from idea to production. 7+ years of experience. Remote-friendly.',
-    url: 'https://zamanishtiyaq.work/hire',
+    url: 'https://www.zamanishtiyaq.work/hire',
   },
 };
 
@@ -59,7 +59,7 @@ const faqs = [
   },
 ];
 
-const BASE = 'https://zamanishtiyaq.work';
+const BASE = 'https://www.zamanishtiyaq.work';
 
 const hireSchema = {
   '@context': 'https://schema.org',
