@@ -140,6 +140,23 @@ export default function SwitchlinePage() {
         </div>
       </section>
 
+      {/* DEMO */}
+      <section className="demo">
+        <div className="wrap">
+          <div className="demo-inner">
+            <span className="demo-label"><span className="live-dot" />Live demo — try it now</span>
+            <h2>We&apos;ve set up a sample demo you can try right now. Call this number and talk to Taylor, a digital scheduling assistant for Trudy Auto Services:</h2>
+            <a className="demo-phone" href="tel:+18312499939" aria-label="Call Switchline demo">
+              <svg className="demo-phone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              <span className="demo-phone-num">+1 (831) 249-9939</span>
+            </a>
+            <p className="demo-sub">US number · standard call rates apply · demo runs 24/7</p>
+          </div>
+        </div>
+      </section>
+
       {/* PRICING */}
       <section className="section" id="pricing">
         <div className="wrap">
