@@ -80,6 +80,18 @@
 .sw .stat .n span{color:var(--signal)}
 .sw .stat .l{margin-top:6px;color:var(--txt-onink-mut);font-size:14.5px;max-width:26ch}
 
+/* demo banner */
+.sw .demo{background:var(--signal-soft);border-top:1px solid #ffd0a8;border-bottom:1px solid #ffd0a8;padding:56px 0}
+.sw .demo-inner{display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px}
+.sw .demo-label{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--signal);background:rgba(255,138,61,.12);border:1px solid rgba(255,138,61,.3);border-radius:999px;padding:5px 14px}
+.sw .demo-label .live-dot{width:7px;height:7px}
+.sw .demo h2{font-size:clamp(20px,3vw,26px);color:var(--ink);font-weight:700;max-width:52ch;margin:0 auto}
+.sw .demo-phone{display:inline-flex;align-items:center;gap:14px;background:var(--ink);color:#fff;border-radius:16px;padding:18px 32px;text-decoration:none;margin-top:4px;transition:transform .15s ease,box-shadow .15s ease;box-shadow:0 8px 28px rgba(12,42,46,.2)}
+.sw .demo-phone:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(12,42,46,.28)}
+.sw .demo-phone-icon{width:22px;height:22px;flex:none;color:var(--signal)}
+.sw .demo-phone-num{font-family:var(--font-space-mono);font-size:clamp(22px,3.5vw,32px);font-weight:700;letter-spacing:0.02em}
+.sw .demo-sub{font-size:14px;color:var(--txt-mut);margin-top:2px}
+
 /* section */
 .sw .section{padding:84px 0}
 .sw .section-head{max-width:60ch;margin-bottom:48px}
