@@ -5,10 +5,6 @@ import Image from 'next/image';
 import { profileInfo } from '@/data/profile';
 import { contactInfo } from '@/data/contact';
 
-/**
- * Molecule: Hero Component
- * Neo-brutalist hero with bold color blocking and chunky borders
- */
 export const Hero = () => {
   const [mounted, setMounted] = useState(false);
 

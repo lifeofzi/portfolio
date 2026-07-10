@@ -6,23 +6,25 @@ import { ProjectsTimeline } from '@/components/organisms/ProjectsTimeline';
 import { ProductsSection } from '@/components/organisms/ProductsSection';
 import { CallbackModal } from '@/components/molecules/CallbackModal';
 import { timelineData } from '@/data/timeline';
+import styles from './page.module.css';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#fef3c7] text-gray-900">
+    <main className={styles.page}>
       <Navigation />
-      
+
       {/* Hero Section */}
       <Hero />
 
       {/* Timeline Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 relative bg-white border-y-[3px] border-black">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold font-display mb-4 text-black">
-              Experience <span className="px-2 py-1 bg-[#facc15] border-[3px] border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,0.85)]">& Education</span>
+      <section className={styles.timelineSection}>
+        <div className={styles.container}>
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>
+              Experience{' '}
+              <span className={styles.badgeGold}>& Education</span>
             </h2>
-            <p className="text-lg sm:text-xl text-black/80 max-w-2xl mx-auto font-display">
+            <p className={styles.sectionSubtitle}>
               A journey through my professional growth
             </p>
           </div>
@@ -31,26 +33,25 @@ export default function Home() {
       </section>
 
       {/* Projects Timeline Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 relative bg-[#fef08a] border-y-[3px] border-black overflow-hidden">
-        {/* Neo-brutalist dots + shapes */}
-        <div className="absolute inset-0 text-black opacity-20">
+      <section className={styles.projectsSection}>
+        <div className={styles.projectsDots}>
           <div className="w-full h-full neo-dot-grid" />
         </div>
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-6 top-10 w-20 h-20 bg-white border-[3px] border-black shadow-[5px_5px_0_0_rgba(0,0,0,0.85)] rotate-[-4deg]" />
-          <div className="absolute right-10 top-16 w-24 h-14 bg-[#bfdbfe] border-[3px] border-black shadow-[5px_5px_0_0_rgba(0,0,0,0.85)] rotate-3" />
-          <div className="absolute left-1/3 bottom-6 w-28 h-10 bg-[#fca5a5] border-[3px] border-black shadow-[5px_5px_0_0_rgba(0,0,0,0.85)] -rotate-2" />
+        <div className={styles.projectsShapes}>
+          <div className={styles.projectsShape1} />
+          <div className={styles.projectsShape2} />
+          <div className={styles.projectsShape3} />
         </div>
-        <div className="max-w-7xl mx-auto relative">
-          <div className="text-center mb-16 space-y-4">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-black text-white font-display text-sm uppercase tracking-wide border-[3px] border-black shadow-[5px_5px_0_0_rgba(0,0,0,0.85)] rounded-xl">
+        <div className={styles.projectsContent}>
+          <div className={styles.projectsHeader}>
+            <div className={styles.projectsFeaturedBadge}>
               Featured Projects
             </div>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold font-display text-black">
-              <span className="px-2 py-1 bg-white border-[3px] border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,0.85)]">Timeline</span>{' '}
-              <span className="px-2 py-1 bg-[#fef3c7] border-[3px] border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,0.85)]">of Builds</span>
+            <h2 className={styles.sectionTitle}>
+              <span className={styles.badgeWhite}>Timeline</span>{' '}
+              <span className={styles.badgeCream}>of Builds</span>
             </h2>
-            <p className="text-lg sm:text-xl text-black/80 max-w-2xl mx-auto font-display">
+            <p className={styles.sectionSubtitle}>
               A timeline of projects I&apos;ve built and deployed
             </p>
           </div>
@@ -62,13 +63,13 @@ export default function Home() {
       <ProductsSection />
 
       {/* Callback Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 border-b-[3px] border-black bg-[#fef3c7]">
-        <div className="max-w-xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold font-display text-black mb-3">
+      <section className={styles.callbackSection}>
+        <div className={styles.containerNarrow}>
+          <h2 className={styles.callbackTitle}>
             Want a{' '}
-            <span className="px-2 py-1 bg-[#fca5a5] border-[3px] border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,0.85)]">Callback?</span>
+            <span className={styles.badgePink}>Callback?</span>
           </h2>
-          <p className="text-black/60 font-display mb-8">
+          <p className={styles.callbackSubtitle}>
             Leave your WhatsApp and I&apos;ll be in touch.
           </p>
           <CallbackModal source="homepage" />
@@ -79,9 +80,9 @@ export default function Home() {
       <SkillsSection />
 
       {/* Footer */}
-      <footer className="py-10 px-4 sm:px-6 lg:px-8 border-t-[3px] border-black bg-white">
-        <div className="max-w-7xl mx-auto text-center">
-          <p className="text-black font-display text-sm">
+      <footer className={styles.footer}>
+        <div className={styles.container}>
+          <p className={`${styles.footerText} text-center`}>
             &copy; {new Date().getFullYear()} Zaman Ishtiyaq. All rights reserved.
           </p>
         </div>
@@ -89,4 +90,3 @@ export default function Home() {
     </main>
   );
 }
-
