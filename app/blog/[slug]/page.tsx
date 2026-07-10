@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Navigation } from '@/components/molecules/Navigation';
 import { BlogPostDetail } from '@/components/organisms/BlogPost';
-import { getBlogPostBySlug, blogPosts } from '@/data/blog';
+import { getBlogPostBySlug, blogPosts, type BlogPost } from '@/data/blog';
 
 const BASE = 'https://www.zamanishtiyaq.work';
 
@@ -54,6 +54,21 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
+  const relatedPosts: BlogPost[] = blogPosts
+    .filter((p) => p.slug !== post.slug && p.tags.some((t) => post.tags.includes(t)))
+    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+    .slice(0, 3);
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: BASE },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${BASE}/blog` },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `${BASE}/blog/${post.slug}` },
+    ],
+  };
+
   const blogPostingSchema = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -76,15 +91,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <main className="min-h-screen bg-[#fef3c7] text-gray-900">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }} />
       <Navigation />
 
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-white border-b-[3px] border-black">
         <div className="max-w-7xl mx-auto">
-          <BlogPostDetail post={post} />
+          <BlogPostDetail post={post} relatedPosts={relatedPosts} />
         </div>
       </section>
 

@@ -56,7 +56,7 @@ function processInline(text: string): string {
     );
 }
 
-export const BlogPostDetail = ({ post }: { post: BlogPost }) => {
+export const BlogPostDetail = ({ post, relatedPosts }: { post: BlogPost; relatedPosts?: BlogPost[] }) => {
   const segments = parseSegments(post.content);
 
   return (
@@ -272,6 +272,45 @@ export const BlogPostDetail = ({ post }: { post: BlogPost }) => {
           )}
         </div>
       </footer>
+
+      {/* Hire CTA */}
+      <div className="mt-10 neo-card rounded-2xl p-6 sm:p-8 bg-[#facc15] border-[3px] border-black shadow-[6px_6px_0_0_rgba(0,0,0,0.85)]">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div>
+            <p className="text-xs font-display font-bold text-black/50 uppercase tracking-widest mb-1">Want to build something like this?</p>
+            <h2 className="text-xl sm:text-2xl font-display font-bold text-black mb-1">I&apos;m available for freelance projects</h2>
+            <p className="text-black/70 font-display text-sm">AI systems, full-stack web apps, iOS — from idea to deployed product.</p>
+          </div>
+          <Link
+            href="/hire"
+            className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-black text-white font-display font-bold rounded-xl border-[3px] border-black shadow-[4px_4px_0_0_rgba(0,0,0,0.4)] hover:-translate-y-1 transition-transform duration-150 whitespace-nowrap"
+          >
+            Hire Me ↗
+          </Link>
+        </div>
+      </div>
+
+      {/* Related Posts */}
+      {relatedPosts && relatedPosts.length > 0 && (
+        <div className="mt-14">
+          <h2 className="text-2xl font-display font-bold text-black mb-6">Related Posts</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {relatedPosts.map((related) => (
+              <Link
+                key={related.slug}
+                href={`/blog/${related.slug}`}
+                className="neo-card rounded-xl p-5 bg-white border-[3px] border-black shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] hover:-translate-y-1 transition-transform duration-150 block"
+              >
+                <span className="inline-block px-2 py-0.5 bg-[#facc15] border-[2px] border-black rounded text-xs font-display font-bold text-black uppercase tracking-wide mb-2">
+                  {related.category}
+                </span>
+                <h3 className="text-base font-display font-bold text-black leading-snug mb-2 line-clamp-2">{related.title}</h3>
+                <p className="text-sm text-black/50 font-display">{related.readTime} min read</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </article>
   );
 };

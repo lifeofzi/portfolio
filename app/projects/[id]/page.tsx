@@ -75,12 +75,20 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         author: { '@type': 'Person', '@id': `${BASE}/#person`, name: 'Zaman Ishtiyaq' },
       };
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: BASE },
+      { '@type': 'ListItem', position: 2, name: 'Projects', item: `${BASE}/projects` },
+      { '@type': 'ListItem', position: 3, name: project.title, item: `${BASE}/projects/${project.id}` },
+    ],
+  };
+
   return (
     <main className="min-h-screen bg-white text-gray-900">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }} />
       <Navigation />
       <ProjectDetail project={project} />
     </main>
