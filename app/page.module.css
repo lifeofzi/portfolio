@@ -37,11 +37,15 @@
 }
 
 .sectionTitle {
-  @apply text-4xl sm:text-5xl md:text-6xl font-bold font-display mb-4 text-black;
+  @apply text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-black;
+  font-family: var(--font-space-grotesk), var(--font-inter), system-ui, sans-serif;
+  letter-spacing: -0.01em;
 }
 
 .sectionSubtitle {
-  @apply text-lg sm:text-xl text-black/80 max-w-2xl mx-auto font-display;
+  @apply text-lg sm:text-xl text-black/80 max-w-2xl mx-auto;
+  font-family: var(--font-space-grotesk), var(--font-inter), system-ui, sans-serif;
+  letter-spacing: -0.01em;
 }
 
 /* ─── Timeline section (white) ──────────────────────────────── */
@@ -85,7 +89,9 @@
 }
 
 .projectsFeaturedBadge {
-  @apply inline-flex items-center gap-2 px-4 py-2 bg-black text-white font-display text-sm uppercase tracking-wide border-[3px] border-black shadow-[5px_5px_0_0_rgba(0,0,0,0.85)] rounded-xl;
+  @apply inline-flex items-center gap-2 px-4 py-2 bg-black text-white text-sm uppercase tracking-wide border-[3px] border-black shadow-[5px_5px_0_0_rgba(0,0,0,0.85)] rounded-xl;
+  font-family: var(--font-space-grotesk), var(--font-inter), system-ui, sans-serif;
+  letter-spacing: -0.01em;
 }
 
 /* ─── Callback section ──────────────────────────────────────── */
@@ -95,11 +101,15 @@
 }
 
 .callbackTitle {
-  @apply text-3xl sm:text-4xl font-bold font-display text-black mb-3;
+  @apply text-3xl sm:text-4xl font-bold text-black mb-3;
+  font-family: var(--font-space-grotesk), var(--font-inter), system-ui, sans-serif;
+  letter-spacing: -0.01em;
 }
 
 .callbackSubtitle {
-  @apply text-black/60 font-display mb-8;
+  @apply text-black/60 mb-8;
+  font-family: var(--font-space-grotesk), var(--font-inter), system-ui, sans-serif;
+  letter-spacing: -0.01em;
 }
 
 /* ─── Footer ────────────────────────────────────────────────── */
@@ -109,5 +119,7 @@
 }
 
 .footerText {
-  @apply text-black font-display text-sm;
+  @apply text-black text-sm;
+  font-family: var(--font-space-grotesk), var(--font-inter), system-ui, sans-serif;
+  letter-spacing: -0.01em;
 }
