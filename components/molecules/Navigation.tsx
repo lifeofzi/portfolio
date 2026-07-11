@@ -17,6 +17,7 @@ export const Navigation = () => {
     { href: '/blog', label: 'Blog', bg: 'bg-[#fce7f3]' },
     { href: '/products', label: 'Products', bg: 'bg-[#e9d5ff]' },
     { href: '/hire', label: 'Hire Me', bg: 'bg-[#bbf7d0]' },
+    { href: '/design', label: 'Web Design', bg: 'bg-[#fde68a]' },
   ];
 
   const socialLinks = [

@@ -4,6 +4,7 @@
 ## Key Pages
 - [Home](https://www.zamanishtiyaq.work): Portfolio homepage with experience, projects, and skills overview
 - [Hire Me](https://www.zamanishtiyaq.work/hire): Services, pricing model, and how to start a project
+- [Website Design](https://www.zamanishtiyaq.work/design): Fixed-price website design services — Starter ($299), Standard ($749), Custom (from $1,800). Landing pages, multi-page sites, and custom platforms.
 - [Projects](https://www.zamanishtiyaq.work/projects): Offer X-Ray, Architex, ReelRocket, Muhasaba, Spree, Ali Saffudin, Villa Cottages
 - [Blog](https://www.zamanishtiyaq.work/blog): Writing on AI engineering, agentic systems, product development, and indie apps
 - [Products](https://www.zamanishtiyaq.work/products): Live products built and shipped by Zaman
@@ -24,7 +25,7 @@ Zaman Ishtiyaq is a Full-Stack and AI Engineer based in Srinagar, Jammu & Kashmi
 ## Services
 - AI Automations & Agentic Systems: Multi-agent systems, LLM pipelines, and end-to-end AI automations using OpenAI Agents SDK and Temporal
 - Full-Stack Web Applications: SaaS products, dashboards, and tools — Next.js, TypeScript, React, Python
-- Custom Websites: Marketing sites, landing pages, and portfolio sites
+- Custom Websites: Marketing sites, landing pages, and portfolio sites — see /design for packages and pricing
 - iOS App Development: Native Swift/SwiftUI apps shipped to the App Store
 
 ## Contact

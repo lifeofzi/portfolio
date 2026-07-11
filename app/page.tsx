@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Navigation } from '@/components/molecules/Navigation';
 import { Hero } from '@/components/molecules/Hero';
 import { Timeline } from '@/components/organisms/Timeline';
@@ -61,6 +62,27 @@ export default function Home() {
 
       {/* Products Section */}
       <ProductsSection />
+
+      {/* Design Teaser Section */}
+      <section className={styles.designTeaserSection}>
+        <div className={styles.container}>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#fde68a] border-[3px] border-black rounded-full shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] mb-6 font-display text-sm font-bold">
+            Website Design
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-black mb-4">
+            Need a website?
+          </h2>
+          <p className="text-base sm:text-lg font-display text-black/70 mb-8 max-w-lg mx-auto">
+            Landing pages, multi-page sites, and custom builds — designed and built end-to-end. Fixed price, fast delivery.
+          </p>
+          <Link
+            href="/design"
+            className="btn-neo bg-black text-white inline-flex"
+          >
+            See services &amp; pricing →
+          </Link>
+        </div>
+      </section>
 
       {/* Callback Section */}
       <section className={styles.callbackSection}>

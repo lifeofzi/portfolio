@@ -123,3 +123,11 @@
   font-family: var(--font-space-grotesk), var(--font-inter), system-ui, sans-serif;
   letter-spacing: -0.01em;
 }
+
+/* Design teaser section */
+.designTeaserSection {
+  padding: 5rem 1rem;
+  background: #ffffff;
+  border-bottom: 3px solid #000;
+  text-align: center;
+}
