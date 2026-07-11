@@ -3,12 +3,12 @@ import { Navigation } from '@/components/molecules/Navigation';
 import { contactInfo } from '@/data/contact';
 
 export const metadata: Metadata = {
-  title: 'Hire Zaman Ishtiyaq — AI Automations, Agentic Systems & Full-Stack Development',
-  description: 'Hire Zaman Ishtiyaq to build AI automations, agentic systems, LLM pipelines, or full-stack web apps. 7+ years of experience. Currently at Atlan. Remote-friendly worldwide.',
+  title: 'Hire Zaman Ishtiyaq — AI-Native Backend Engineer',
+  description: 'Hire Zaman Ishtiyaq — AI-Native Backend Engineer. Agent systems, LLM pipelines, durable workflows, and full-stack products built to Goldman Sachs and BrightEdge production standards. Remote worldwide.',
   alternates: { canonical: 'https://www.zamanishtiyaq.work/hire' },
   openGraph: {
     title: 'Hire Zaman Ishtiyaq — AI Automations, Agentic Systems & Full-Stack Development',
-    description: 'AI automations, agentic systems, and full-stack products built from idea to production. 7+ years of experience. Remote-friendly.',
+    description: 'AI-Native Backend Engineer for hire. Agent systems, LLM pipelines, and full-stack products built to Goldman Sachs and BrightEdge production standards. Remote worldwide.',
     url: 'https://www.zamanishtiyaq.work/hire',
   },
 };
@@ -126,7 +126,7 @@ export default function HirePage() {
           </h1>
 
           <p className="text-lg sm:text-xl text-black/80 font-display max-w-2xl mb-8 leading-relaxed">
-            I&apos;m Zaman — an AI engineer and full-stack developer with 7+ years at Goldman Sachs, BrightEdge, and Atlan. I build multi-agent systems, LLM pipelines, and production web apps — from idea to deployed product.
+            I&apos;m Zaman — an AI-native backend engineer with 7+ years at Goldman Sachs (market risk systems), BrightEdge (200K+ daily API requests, 250+ Fortune 500 clients), and Atlan. I build the backend infrastructure AI products run on.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3">
@@ -186,7 +186,7 @@ export default function HirePage() {
             {[
               { label: 'AI-native engineering', body: 'Multi-agent systems with OpenAI Agents SDK, durable pipelines with Temporal, LLM integrations in production — not toy demos.' },
               { label: 'Full ownership', body: 'I handle design, frontend, backend, AI integration, and deployment — one person, no hand-offs, no bottlenecks.' },
-              { label: 'Shipped products', body: '7+ years at Goldman Sachs, BrightEdge, and Atlan. 6 live indie projects. Production-grade, not proof-of-concept.' },
+              { label: 'Shipped products', body: '7+ years at Goldman Sachs (market risk systems), BrightEdge (250+ Fortune 500 clients), and Atlan (Gartner Magic Quadrant Leader). 6 live indie projects. Production-grade, not proof-of-concept.' },
             ].map((item) => (
               <div key={item.label} className="neo-card rounded-2xl p-5 sm:p-6 bg-white hover:-translate-y-1 transition-transform duration-150">
                 <h3 className="text-lg sm:text-xl font-display font-extrabold text-black mb-2">{item.label}</h3>

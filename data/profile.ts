@@ -3,7 +3,7 @@
  */
 export const profileInfo = {
   name: 'Zaman Ishtiyaq',
-  title: 'Freelance Full-Stack & AI Developer — Available for Hire',
-  bio: 'I build websites, web apps, and AI-powered products for startups and businesses. 7+ years of experience at Goldman Sachs, BrightEdge, and Atlan. Two apps live on the App Store. Remote-friendly worldwide.',
+  title: 'AI-Native Backend Engineer — Available for Hire',
+  bio: 'I build the backend infrastructure AI products run on — agent systems, LLM pipelines, and durable execution workflows. 7+ years at Goldman Sachs (market risk systems), BrightEdge (200K+ daily API requests, 250+ Fortune 500 clients), and Atlan (enterprise AI infrastructure, Gartner Magic Quadrant Leader). IIT Bhubaneswar. Remote worldwide.',
 };
 

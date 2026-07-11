@@ -21,10 +21,10 @@ const BASE = 'https://www.zamanishtiyaq.work';
 export const metadata: Metadata = {
   metadataBase: new URL(BASE),
   title: {
-    default: 'Zaman Ishtiyaq — Full-Stack & AI Engineer',
+    default: 'Zaman Ishtiyaq — AI-Native Backend Engineer',
     template: '%s | Zaman Ishtiyaq',
   },
-  description: 'Zaman Ishtiyaq — Full-Stack & AI Developer available for hire. Building websites, web apps, and AI products for startups worldwide. 7+ years at Goldman Sachs, BrightEdge, Atlan.',
+  description: 'Zaman Ishtiyaq — AI-Native Backend Engineer available for hire. Building the backend infrastructure AI products run on: agent systems, LLM pipelines, durable workflows. 7+ years at Goldman Sachs, BrightEdge, Atlan. IIT Bhubaneswar.',
   keywords: ['Zaman Ishtiyaq', 'full-stack engineer', 'AI engineer', 'Next.js developer', 'iOS developer', 'software engineer', 'freelance web developer', 'web developer Kashmir', 'web developer Srinagar', 'hire Next.js developer India', 'AI integration developer', 'agentic AI systems', 'multi-agent architecture', 'Atlan', 'BrightEdge', 'Goldman Sachs'],
   authors: [{ name: 'Zaman Ishtiyaq', url: BASE }],
   creator: 'Zaman Ishtiyaq',
@@ -33,16 +33,16 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: BASE,
     siteName: 'Zaman Ishtiyaq',
-    title: 'Zaman Ishtiyaq — Full-Stack & AI Engineer',
-    description: 'Portfolio of Zaman Ishtiyaq, Senior Software Engineer and AI Native Engineer. Building scalable AI products, data systems, and iOS apps.',
+    title: 'Zaman Ishtiyaq — AI-Native Backend Engineer',
+    description: 'AI-Native Backend Engineer with 7+ years at Goldman Sachs (market risk systems), BrightEdge (200K+ daily API requests, 250+ Fortune 500 clients), and Atlan. Builds agent systems, LLM pipelines, and durable execution workflows.',
     images: [{ url: '/me.png', width: 800, height: 800, alt: 'Zaman Ishtiyaq' }],
   },
   twitter: {
     card: 'summary_large_image',
     site: '@i_am_za_man',
     creator: '@i_am_za_man',
-    title: 'Zaman Ishtiyaq — Full-Stack & AI Engineer',
-    description: 'Portfolio of Zaman Ishtiyaq, Senior Software Engineer and AI Native Engineer.',
+    title: 'Zaman Ishtiyaq — AI-Native Backend Engineer',
+    description: 'AI-Native Backend Engineer. Goldman Sachs → BrightEdge → Atlan. Builds agent systems, LLM pipelines, and the backend infrastructure AI products run on.',
     images: ['/me.png'],
   },
   icons: {
@@ -68,7 +68,7 @@ const personSchema = {
       '@type': 'Person',
       '@id': `${BASE}/#person`,
       name: 'Zaman Ishtiyaq',
-      description: 'Full-Stack and AI Engineer with 7+ years of experience building AI-native products, data pipelines, and iOS apps. Currently AI Native Engineer at Atlan. IIT Bhubaneswar Computer Science graduate.',
+      description: 'AI-Native Backend Engineer with 7+ years building production backend systems and AI infrastructure at Goldman Sachs, BrightEdge, and Atlan. IIT Bhubaneswar Computer Science graduate.',
       url: BASE,
       image: `${BASE}/me.png`,
       jobTitle: 'AI Native Engineer',
@@ -94,7 +94,7 @@ const personSchema = {
       '@id': `${BASE}/#website`,
       url: BASE,
       name: 'Zaman Ishtiyaq',
-      description: 'Portfolio of Zaman Ishtiyaq, Full-Stack and AI Engineer. Building AI-native products, data systems, and iOS apps. Currently at Atlan.',
+      description: 'Portfolio of Zaman Ishtiyaq, AI-Native Backend Engineer. Building agent systems, LLM pipelines, and durable execution workflows. Currently at Atlan.',
       publisher: { '@id': `${BASE}/#person` },
     },
     {
@@ -105,7 +105,7 @@ const personSchema = {
           name: 'Who is Zaman Ishtiyaq?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Zaman Ishtiyaq is a Full-Stack and AI Engineer with 7+ years of experience, currently working as an AI Native Engineer at Atlan. He previously worked at Goldman Sachs (5 years) and BrightEdge (2+ years). He is an IIT Bhubaneswar Computer Science graduate and an independent app developer with two iOS apps live on the App Store: Muhasaba and Spree.',
+            text: 'Zaman Ishtiyaq is an AI-Native Backend Engineer with 7+ years of experience, currently working as an AI Native Engineer at Atlan (Gartner Magic Quadrant Leader for Data & Analytics Governance). He previously worked at Goldman Sachs (5 years, market risk systems) and BrightEdge (lead backend engineer on AI Catalyst, 200K+ daily API requests, 250+ Fortune 500 clients). He is an IIT Bhubaneswar Computer Science graduate and an independent app developer with two iOS apps live on the App Store: Muhasaba and Spree.',
           },
         },
         {
@@ -169,7 +169,7 @@ const personSchema = {
           name: 'Is there a good web developer in Kashmir or Srinagar?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Zaman Ishtiyaq is a Srinagar-based (Kashmir, India) full-stack and AI developer with 7+ years of professional experience at Goldman Sachs, BrightEdge, and Atlan. He is available for freelance web development projects for clients locally in Kashmir and internationally worldwide. He builds custom websites, web apps, and AI-powered tools. Contact: zaman.ishtiyaq@gmail.com.',
+            text: 'Zaman Ishtiyaq is a Srinagar-based (Kashmir, India) AI-Native Backend Engineer with 7+ years of professional experience at Goldman Sachs, BrightEdge, and Atlan. He is available for freelance projects worldwide — agent systems, LLM pipelines, full-stack web apps, and iOS apps. IIT Bhubaneswar graduate. Contact: zaman.ishtiyaq@gmail.com.',
           },
         },
         {
@@ -204,7 +204,7 @@ const personSchema = {
       name: 'Freelance Web & AI Development',
       provider: { '@id': `${BASE}/#person` },
       serviceType: ['Web Development', 'Full-Stack Development', 'AI Integration', 'iOS App Development'],
-      description: 'Custom website and web application development for startups and businesses. Services include full-stack web apps (Next.js, React, TypeScript), AI/LLM feature integration, iOS apps (Swift/SwiftUI), and API development. Remote-friendly, fixed-price or hourly.',
+      description: 'AI-native backend engineering and full-stack development for startups and businesses. Services include agent systems, LLM pipelines, durable execution workflows (Temporal), full-stack web apps (Next.js, React, TypeScript), and iOS apps (Swift/SwiftUI). Remote worldwide, fixed-price or hourly.',
       areaServed: 'Worldwide',
       url: `${BASE}/hire`,
       availableChannel: {
