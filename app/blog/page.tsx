@@ -3,9 +3,24 @@ import { Navigation } from '@/components/molecules/Navigation';
 import { BlogList } from '@/components/organisms/BlogList';
 import { blogPosts } from '@/data/blog';
 
+const BASE = 'https://www.zamanishtiyaq.work';
+
+const blogListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  '@id': `${BASE}/blog`,
+  url: `${BASE}/blog`,
+  name: 'Blog — Zaman Ishtiyaq',
+  description: 'Writing on AI engineering, agentic systems, and product development by Zaman Ishtiyaq.',
+  author: { '@id': `${BASE}/#person` },
+  publisher: { '@id': `${BASE}/#person` },
+  isPartOf: { '@id': `${BASE}/#website` },
+  inLanguage: 'en',
+};
+
 export const metadata: Metadata = {
-  title: 'Blog — AI, Development & Product Design',
-  description: 'Articles on building AI products, scalable backend systems, and product design by Zaman Ishtiyaq — Senior Software Engineer and AI Native Engineer at Atlan.',
+  title: 'Blog — Zaman Ishtiyaq',
+  description: 'Writing on AI engineering, agentic systems, and product development by Zaman Ishtiyaq — AI-Native Backend Engineer.',
   openGraph: {
     title: 'Blog — AI, Development & Product Design | Zaman Ishtiyaq',
     description: 'Articles on building AI products, scalable backend systems, and product design by Zaman Ishtiyaq.',
@@ -23,6 +38,10 @@ export default function BlogPage() {
 
   return (
     <main className="min-h-screen bg-[#fef3c7] text-gray-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogListSchema) }}
+      />
       <Navigation />
       
       {/* Blog Header */}

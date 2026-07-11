@@ -49,11 +49,12 @@ export const Hero = () => {
 
             <div className="space-y-4 text-center lg:text-left">
               <p className="font-display text-lg text-black">Hello, I&apos;m</p>
-              <h1 className="font-display text-5xl sm:text-6xl md:text-7xl font-bold leading-tight text-black" aria-label={profileInfo.name}>
-                <span className="block neo-underline inline-block" aria-hidden="true">{profileInfo.name.split(' ')[0]}</span>{' '}
-                <span className="block sm:inline-block px-3 py-1 bg-[#bfdbfe] border-[3px] border-black shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] rounded-xl mt-2 sm:mt-0" aria-hidden="true">
+              <h1 className="font-display text-5xl sm:text-6xl md:text-7xl font-bold leading-tight text-black">
+                <span className="block neo-underline inline-block">{profileInfo.name.split(' ')[0]}</span>{' '}
+                <span className="block sm:inline-block px-3 py-1 bg-[#bfdbfe] border-[3px] border-black shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] rounded-xl mt-2 sm:mt-0">
                   {profileInfo.name.split(' ')[1] || ''}
                 </span>
+                <span className="sr-only"> — AI-Native Backend Engineer</span>
               </h1>
               <p className="text-xl sm:text-2xl font-display text-black max-w-2xl">
                 {profileInfo.title}
@@ -64,21 +65,18 @@ export const Hero = () => {
 
               <div className="flex flex-col sm:flex-row gap-3 pt-4">
                 <a
-                  href={`mailto:${contactInfo.email}`}
+                  href="/hire"
                   className="font-display text-lg px-6 py-3 bg-[#facc15] border-[3px] border-black rounded-xl shadow-[6px_6px_0_0_rgba(0,0,0,0.85)] hover:-translate-y-1 transition-transform duration-150 text-black flex items-center justify-center gap-2"
                 >
-                  Let&apos;s Connect
-                  <span className="text-sm">↗</span>
+                  Hire Me
+                  <span className="text-sm">→</span>
                 </a>
                 <a
-                  href="/Zaman_Ishtiyaq_Resume.pdf"
-                  download="Zaman_Ishtiyaq_Resume.pdf"
+                  href="/projects"
                   className="font-display text-lg px-6 py-3 bg-white border-[3px] border-black rounded-xl shadow-[6px_6px_0_0_rgba(0,0,0,0.85)] hover:-translate-y-1 transition-transform duration-150 text-black flex items-center justify-center gap-2"
                 >
-                  Download Resume
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
+                  See My Work
+                  <span className="text-sm">→</span>
                 </a>
               </div>
 

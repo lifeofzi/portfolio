@@ -51,16 +51,22 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     notFound();
   }
 
-  const isMuhasaba = project.id === 'muhasaba';
+  const mobileAppMeta: Record<string, { category: string; downloadUrl: string }> = {
+    muhasaba: { category: 'LifestyleApplication', downloadUrl: 'https://muhasaba.me/' },
+    spree:    { category: 'ShoppingApplication',  downloadUrl: 'https://www.tryspree.app/' },
+  };
 
-  const softwareSchema = isMuhasaba
+  const isMobileApp = project.id in mobileAppMeta;
+
+  const softwareSchema = isMobileApp
     ? {
         '@context': 'https://schema.org',
         '@type': 'MobileApplication',
         name: project.title,
         description: project.description,
         url: project.url,
-        applicationCategory: 'LifestyleApplication',
+        downloadUrl: mobileAppMeta[project.id].downloadUrl,
+        applicationCategory: mobileAppMeta[project.id].category,
         operatingSystem: 'iOS',
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
         author: { '@type': 'Person', '@id': `${BASE}/#person`, name: 'Zaman Ishtiyaq' },

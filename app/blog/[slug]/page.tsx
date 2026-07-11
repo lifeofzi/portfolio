@@ -84,9 +84,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     },
     publisher: { '@id': `${BASE}/#person` },
     url: `${BASE}/blog/${post.slug}`,
-    image: post.image || `${BASE}/me.png`,
-    mainEntityOfPage: { '@type': 'WebPage', '@id': `${BASE}/blog/${post.slug}` },
+    image: post.image ? `${BASE}${post.image}` : `${BASE}/me.png`,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${BASE}/blog/${post.slug}`,
+      isPartOf: { '@id': `${BASE}/#website` },
+    },
     keywords: post.tags.join(', '),
+    articleSection: post.category,
+    inLanguage: 'en',
   };
 
   return (

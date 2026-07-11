@@ -23,9 +23,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/switchline`,        lastModified: new Date('2026-07-07'), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE}/supercharge`,       lastModified: new Date('2026-06-01'), changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/claude-seo`,        lastModified: new Date('2026-06-28'), changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/hire`,              lastModified: new Date('2026-07-07'), changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/hire`,              lastModified: new Date('2026-07-07'), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE}/design`,            lastModified: new Date('2026-07-11'), changeFrequency: 'monthly' as const, priority: 0.9 },
-    { url: `${BASE}/contact`,           lastModified: new Date('2026-06-01'), changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${BASE}/contact`,           lastModified: new Date('2026-07-11'), changeFrequency: 'monthly', priority: 0.5 },
   ];
 
   const blogRoutes: MetadataRoute.Sitemap = blogPosts.map((post) => ({

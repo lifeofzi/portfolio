@@ -2,6 +2,20 @@ import type { Metadata } from 'next';
 import { Navigation } from '@/components/molecules/Navigation';
 import { ProjectsTimeline } from '@/components/organisms/ProjectsTimeline';
 
+const BASE = 'https://www.zamanishtiyaq.work';
+
+const projectsSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': `${BASE}/projects`,
+  url: `${BASE}/projects`,
+  name: 'Projects — Zaman Ishtiyaq',
+  description: 'AI-powered products, SaaS platforms, and web applications built by Zaman Ishtiyaq — including Offer X-Ray, Architex, ReelRocket, Muhasaba, and Spree.',
+  author: { '@id': `${BASE}/#person` },
+  isPartOf: { '@id': `${BASE}/#website` },
+  inLanguage: 'en',
+};
+
 export const metadata: Metadata = {
   title: 'Projects — Web & AI Applications',
   description: 'AI-powered products, SaaS platforms, and web applications built by Zaman Ishtiyaq — including Offer X-Ray, Architex, ReelRocket, Muhasaba, and more.',
@@ -17,6 +31,10 @@ export const metadata: Metadata = {
 export default function ProjectsPage() {
   return (
     <main className="min-h-screen bg-[#fef3c7] text-gray-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectsSchema) }}
+      />
       <Navigation />
       
       {/* Projects Timeline Section */}

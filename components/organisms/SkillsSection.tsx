@@ -112,9 +112,10 @@ const SkillLogo = ({ skill, Icon }: { skill: string; Icon?: IconType }) => {
 
   return (
     <div className="relative w-16 h-16 flex-shrink-0 flex items-center justify-center">
-      <Icon 
+      <Icon
         className="w-full h-full transition-all duration-300 group-hover:scale-110"
         style={{ color: brandColor }}
+        aria-hidden="true"
       />
     </div>
   );
@@ -164,7 +165,7 @@ export const SkillsSection = () => {
                       <>
                         {/* Smaller icon on mobile */}
                         <div className="w-8 h-8 sm:hidden flex items-center justify-center">
-                          <Icon style={{ color: getBrandColor(skill), width: '100%', height: '100%' }} />
+                          <Icon style={{ color: getBrandColor(skill), width: '100%', height: '100%' }} aria-hidden="true" />
                         </div>
                         <div className="hidden sm:block">
                           <SkillLogo skill={skill} Icon={Icon} />

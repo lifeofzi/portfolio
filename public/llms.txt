@@ -1,5 +1,7 @@
-# Zaman Ishtiyaq — Full-Stack & AI Engineer
-> Portfolio of Zaman Ishtiyaq. Freelance full-stack developer and AI engineer with 7+ years of experience at Goldman Sachs, BrightEdge, and Atlan. IIT Bhubaneswar Computer Science graduate. Two iOS apps live on the App Store. Available for freelance projects worldwide.
+# Zaman Ishtiyaq — AI-Native Backend Engineer
+> Portfolio of Zaman Ishtiyaq. AI-Native Backend Engineer with 7+ years of experience at Goldman Sachs, BrightEdge, and Atlan. IIT Bhubaneswar Computer Science graduate. Two iOS apps live on the App Store. Available for freelance projects worldwide.
+> License: CC-BY-4.0
+> Updated: 2026-07-11
 
 ## Key Pages
 - [Home](https://www.zamanishtiyaq.work): Portfolio homepage with experience, projects, and skills overview
@@ -11,7 +13,7 @@
 - [Contact](https://www.zamanishtiyaq.work/contact): Direct contact form
 
 ## About Zaman Ishtiyaq
-Zaman Ishtiyaq is a Full-Stack and AI Engineer based in Srinagar, Jammu & Kashmir, India. He specialises in AI/LLM integration, multi-agent systems, full-stack web development (Next.js, TypeScript, React), and native iOS development (Swift, SwiftUI). He has 7+ years of professional experience including 5 years at Goldman Sachs and 2+ years at BrightEdge, and is currently an AI Native Engineer at Atlan.
+Zaman Ishtiyaq is an AI-Native Backend Engineer. He has 7+ years of professional experience including 5 years at Goldman Sachs (market risk systems), lead backend engineer at BrightEdge (200K+ daily API requests, 250+ Fortune 500 clients on AI Catalyst), and is currently building AI-native data pipeline infrastructure at Atlan (Gartner Magic Quadrant Leader for Data & Analytics Governance). He is an IIT Bhubaneswar Computer Science graduate. He specialises in agent systems, LLM pipelines, durable execution workflows (Temporal, Kafka, GCP), full-stack web development (Next.js, TypeScript, React), and native iOS development (Swift, SwiftUI). Available for remote freelance projects worldwide.
 
 ## Projects Built
 - Offer X-Ray (offerxray.com): AI-powered offer letter analysis tool using GPT-4 — users upload a job offer and receive risk assessment, compensation breakdown, and negotiation guidance in under 5 minutes
@@ -28,9 +30,13 @@ Zaman Ishtiyaq is a Full-Stack and AI Engineer based in Srinagar, Jammu & Kashmi
 - Custom Websites: Marketing sites, landing pages, and portfolio sites — see /design for packages and pricing
 - iOS App Development: Native Swift/SwiftUI apps shipped to the App Store
 
+## How to Hire
+Zaman is available for freelance and contract backend/AI engineering projects. He works remotely with clients worldwide and responds within 24 hours. To start: book a free 30-min call at https://www.zamanishtiyaq.work/contact, or email directly. Typical engagements include agentic AI systems, LLM pipeline integrations, full-stack web applications, and iOS apps.
+
 ## Contact
 - Email: zaman.ishtiyaq@gmail.com
 - LinkedIn: https://www.linkedin.com/in/zaman-ishtiyaq
 - GitHub: https://github.com/lifeofzi
 - Twitter/X: https://x.com/i_am_za_man
 - Hire page: https://www.zamanishtiyaq.work/hire
+- Contact page: https://www.zamanishtiyaq.work/contact

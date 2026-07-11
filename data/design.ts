@@ -41,7 +41,7 @@ export const pricingTiers: PricingTier[] = [
       '1-page website',
       'Mobile-optimized',
       'Contact form',
-      'Basic on-page SEO',
+      'On-page SEO + GEO basics',
     ],
     revisions: '2 revisions',
     popular: false,
@@ -56,7 +56,7 @@ export const pricingTiers: PricingTier[] = [
     bullets: [
       '3–5 pages',
       'CMS-ready (blog/portfolio)',
-      'SEO basics + analytics',
+      'SEO + GEO setup + analytics',
       'Mobile-optimized',
       'Contact form',
     ],
@@ -73,7 +73,7 @@ export const pricingTiers: PricingTier[] = [
     bullets: [
       'Multi-page, any scope',
       'Custom features (booking, dashboards, integrations)',
-      'Full SEO setup + analytics',
+      'Full SEO + GEO setup + analytics',
       'Performance optimization',
     ],
     revisions: 'Unlimited (in scope)',

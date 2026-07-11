@@ -108,7 +108,7 @@ export default async function Image() {
               alignSelf: 'flex-start',
             }}
           >
-            Full-Stack &amp; AI Engineer
+            AI-Native Backend Engineer
           </div>
 
           {/* Bio */}

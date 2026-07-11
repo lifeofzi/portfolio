@@ -9,6 +9,7 @@ const navLinks = [
   { href: '/products', label: 'Products' },
   { href: '/hire', label: 'Hire Me' },
   { href: '/design', label: 'Web Design' },
+  { href: '/contact', label: 'Get in Touch' },
 ];
 
 export function Footer() {
@@ -26,7 +27,7 @@ export function Footer() {
               <span className={styles.logoLast}>Ishtiyaq</span>
             </div>
             <p className={styles.tagline}>AI-Native Backend Engineer</p>
-            <p className={styles.location}>Srinagar, India · Remote worldwide</p>
+            <p className={styles.location}>Remote worldwide</p>
             <span className={styles.badge}>
               <span className={styles.badgeDot} />
               Available for projects
