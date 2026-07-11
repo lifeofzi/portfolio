@@ -83,12 +83,12 @@ export const Navigation = () => {
                   </CustomLink>
                 );
               })}
-              <a
-                href={`mailto:${contactInfo.email}`}
-                className="font-display text-sm px-3 py-2 bg-[#fca5a5] border-[3px] border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] hover:-translate-y-0.5 transition-transform duration-200 no-underline text-black"
+              <CustomLink
+                href="/contact"
+                className={`font-display text-sm px-3 py-2 bg-[#fca5a5] border-[3px] border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] hover:-translate-y-0.5 transition-transform duration-200 !text-black no-underline ${pathname === '/contact' ? '-translate-y-0.5' : ''}`}
               >
                 Get in Touch
-              </a>
+              </CustomLink>
             </div>
 
             {/* Social icons — desktop only */}
@@ -129,13 +129,13 @@ export const Navigation = () => {
                 </CustomLink>
               );
             })}
-            <a
-              href={`mailto:${contactInfo.email}`}
+            <CustomLink
+              href="/contact"
               onClick={() => setMenuOpen(false)}
-              className="block font-display font-bold text-base px-4 py-3 bg-[#fca5a5] border-[3px] border-black rounded-xl no-underline text-black"
+              className={`block font-display font-bold text-base px-4 py-3 bg-[#fca5a5] border-[3px] border-black rounded-xl !text-black no-underline ${pathname === '/contact' ? 'shadow-[4px_4px_0_0_rgba(0,0,0,0.85)]' : ''}`}
             >
               Get in Touch
-            </a>
+            </CustomLink>
             <div className="flex items-center gap-3 pt-2">
               {socialLinks.map((social) => (
                 <SocialIcon key={social.label} href={social.href} icon={social.icon} label={social.label} />

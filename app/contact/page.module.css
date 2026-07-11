@@ -1,0 +1,113 @@
+.hero {
+  padding: 9rem 1rem 4rem;
+  background: #fef3c7;
+  border-bottom: 3px solid #000;
+}
+
+@media (min-width: 640px) { .hero { padding-left: 1.5rem; padding-right: 1.5rem; } }
+@media (min-width: 1024px) { .hero { padding-left: 2rem; padding-right: 2rem; } }
+
+.heroInner {
+  max-width: 48rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #000;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  font-family: var(--font-space-grotesk), var(--font-inter), system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 640px) { .heading { font-size: 3.5rem; } }
+@media (min-width: 768px) { .heading { font-size: 4rem; } }
+
+.subtext {
+  font-size: 1.125rem;
+  color: rgba(0, 0, 0, 0.65);
+  line-height: 1.6;
+  max-width: 36rem;
+  margin: 0 auto;
+  font-family: var(--font-space-grotesk), var(--font-inter), system-ui, sans-serif;
+}
+
+@media (min-width: 640px) { .subtext { font-size: 1.25rem; } }
+
+/* ── Cards section ── */
+.section {
+  background: #fff;
+  padding: 4rem 1rem;
+}
+
+@media (min-width: 640px) { .section { padding: 5rem 1.5rem; } }
+@media (min-width: 1024px) { .section { padding: 5rem 2rem; } }
+
+.grid {
+  max-width: 56rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ── Individual card ── */
+.card {
+  border-radius: 1.25rem;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.cardIcon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cardLabel {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.45);
+  font-family: var(--font-space-grotesk), var(--font-inter), system-ui, sans-serif;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #000;
+  margin-bottom: 0.25rem;
+  font-family: var(--font-space-grotesk), var(--font-inter), system-ui, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.cardDesc {
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.6);
+  line-height: 1.6;
+  font-family: var(--font-space-grotesk), var(--font-inter), system-ui, sans-serif;
+  flex: 1;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}

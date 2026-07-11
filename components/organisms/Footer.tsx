@@ -25,7 +25,7 @@ export function Footer() {
               <span className={styles.logoFirst}>Zaman</span>
               <span className={styles.logoLast}>Ishtiyaq</span>
             </div>
-            <p className={styles.tagline}>Full-Stack &amp; AI Engineer</p>
+            <p className={styles.tagline}>AI-Native Backend Engineer</p>
             <p className={styles.location}>Srinagar, India · Remote worldwide</p>
             <span className={styles.badge}>
               <span className={styles.badgeDot} />
