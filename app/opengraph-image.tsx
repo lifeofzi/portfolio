@@ -150,6 +150,7 @@ export default async function Image() {
           >
             <img
               src={photoSrc}
+              alt=""
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
           </div>

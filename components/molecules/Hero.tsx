@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { profileInfo } from '@/data/profile';
 import { contactInfo } from '@/data/contact';
 
@@ -64,20 +65,20 @@ export const Hero = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 pt-4">
-                <a
+                <Link
                   href="/hire"
                   className="font-display text-lg px-6 py-3 bg-[#facc15] border-[3px] border-black rounded-xl shadow-[6px_6px_0_0_rgba(0,0,0,0.85)] hover:-translate-y-1 transition-transform duration-150 text-black flex items-center justify-center gap-2"
                 >
                   Hire Me
                   <span className="text-sm">→</span>
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/projects"
                   className="font-display text-lg px-6 py-3 bg-white border-[3px] border-black rounded-xl shadow-[6px_6px_0_0_rgba(0,0,0,0.85)] hover:-translate-y-1 transition-transform duration-150 text-black flex items-center justify-center gap-2"
                 >
                   See My Work
                   <span className="text-sm">→</span>
-                </a>
+                </Link>
               </div>
 
               <div className="flex items-center gap-3 pt-4">
