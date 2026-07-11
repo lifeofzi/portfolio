@@ -94,7 +94,6 @@ export function Footer() {
 
         <div className={styles.bottom}>
           <p className={styles.copyright}>© {year} Zaman Ishtiyaq. All rights reserved.</p>
-          <p className={styles.builtWith}>Built with Next.js &amp; Deployed on Vercel</p>
         </div>
       </div>
     </footer>
