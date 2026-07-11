@@ -1,0 +1,202 @@
+.footer {
+  background: #000;
+  color: #fff;
+  padding: 3rem 1rem 2rem;
+}
+
+@media (min-width: 640px) {
+  .footer { padding: 4rem 1.5rem 2.5rem; }
+}
+
+@media (min-width: 1024px) {
+  .footer { padding: 4rem 2rem 2.5rem; }
+}
+
+.inner {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+/* ── 3-column grid ── */
+.top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media (min-width: 640px) {
+  .top {
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+}
+
+/* ── Brand column ── */
+.logoMark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.875rem;
+  font-family: var(--font-space-grotesk), var(--font-inter), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+}
+
+.logoFirst {
+  padding: 0.125rem 0.625rem;
+  background: #fff;
+  color: #000;
+  border: 2px solid #fff;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 0 rgba(255, 255, 255, 0.3);
+}
+
+.logoLast {
+  padding: 0.125rem 0.625rem;
+  background: #000;
+  color: #facc15;
+  border: 2px solid #facc15;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 0 rgba(250, 204, 21, 0.4);
+}
+
+.tagline {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 0.375rem;
+  font-family: var(--font-space-grotesk), var(--font-inter), system-ui, sans-serif;
+}
+
+.location {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 1rem;
+  font-family: var(--font-space-grotesk), var(--font-inter), system-ui, sans-serif;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3125rem 0.75rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: var(--font-space-grotesk), var(--font-inter), system-ui, sans-serif;
+}
+
+.badgeDot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background: #4ade80;
+  flex-shrink: 0;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* ── Nav / Connect columns ── */
+.colHeading {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  margin-bottom: 1rem;
+  font-family: var(--font-space-grotesk), var(--font-inter), system-ui, sans-serif;
+}
+
+.navLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.navLink {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  font-family: var(--font-space-grotesk), var(--font-inter), system-ui, sans-serif;
+  transition: color 150ms ease;
+}
+
+.navLink:hover { color: #fff; }
+
+/* ── Social ── */
+.socialRow {
+  display: flex;
+  gap: 0.625rem;
+  margin-bottom: 1.25rem;
+}
+
+.socialLink {
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: border-color 150ms ease, color 150ms ease, background 150ms ease;
+}
+
+.socialLink:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.emailLink {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  font-family: var(--font-space-grotesk), var(--font-inter), system-ui, sans-serif;
+  transition: color 150ms ease;
+  word-break: break-all;
+}
+
+.emailLink:hover { color: #facc15; }
+
+/* ── Bottom bar ── */
+.divider {
+  margin: 2.5rem 0 1.5rem;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+@media (min-width: 640px) {
+  .bottom {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.copyright {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.35);
+  font-family: var(--font-space-grotesk), var(--font-inter), system-ui, sans-serif;
+}
+
+.builtWith {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.25);
+  font-family: var(--font-space-grotesk), var(--font-inter), system-ui, sans-serif;
+}

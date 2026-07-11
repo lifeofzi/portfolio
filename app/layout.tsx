@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
+import { Footer } from "@/components/organisms/Footer";
 import "./globals.css";
 
 const inter = Inter({
@@ -234,6 +235,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         {children}
+        <Footer />
         <SpeedInsights />
         <Analytics />
       </body>
