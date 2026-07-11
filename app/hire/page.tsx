@@ -213,17 +213,17 @@ export default function HirePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 sm:py-20 bg-black text-white">
+      <section className="py-16 sm:py-20 bg-[#fde68a] border-b-[3px] border-black">
         <div className="max-w-3xl mx-auto text-center px-4">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold mb-4 text-black">
             Ready to build something?
           </h2>
-          <p className="text-base sm:text-lg text-white/70 font-display mb-8 max-w-xl mx-auto">
+          <p className="text-base sm:text-lg text-black/65 font-display mb-8 max-w-xl mx-auto">
             AI automation, agentic system, or full-stack product — send me a short brief with what you want to build. I&apos;ll reply within 24 hours.
           </p>
           <a
             href={`mailto:${contactInfo.email}?subject=Project Enquiry`}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#facc15] text-black font-display font-bold text-lg border-[3px] border-[#facc15] rounded-xl shadow-[6px_6px_0_0_rgba(255,255,255,0.3)] hover:-translate-y-1 transition-transform duration-150"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-black text-white font-display font-bold text-lg border-[3px] border-black rounded-xl shadow-[6px_6px_0_0_rgba(0,0,0,0.2)] hover:-translate-y-1 transition-transform duration-150"
           >
             Email zaman.ishtiyaq@gmail.com
           </a>

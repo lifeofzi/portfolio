@@ -98,14 +98,10 @@ export default function DesignPage() {
             a quote.
           </p>
           <div className={styles.ctaButtons}>
-            <BookCallButton
-              label="Book a free call"
-              className="bg-[#facc15] text-black border-[#facc15]"
-            />
+            <BookCallButton label="Book a free call" />
             <WhatsAppButton
               message="Hi, I'd like to get a website built — can we chat?"
               label="WhatsApp me"
-              className="bg-white text-black"
             />
           </div>
         </div>
