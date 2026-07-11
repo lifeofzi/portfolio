@@ -20,14 +20,15 @@ export function DesignFAQ() {
                 className="w-full text-left px-5 sm:px-7 py-4 sm:py-5 flex items-center justify-between gap-4"
                 onClick={() => setOpen(open === i ? null : i)}
                 aria-expanded={open === i}
+                aria-controls={`faq-panel-${i}`}
               >
                 <span className="text-base sm:text-lg font-display font-bold text-black">{faq.q}</span>
-                <span className="text-xl font-display font-bold text-black flex-shrink-0">
+                <span aria-hidden="true" className="text-xl font-display font-bold text-black flex-shrink-0">
                   {open === i ? '−' : '+'}
                 </span>
               </button>
               {open === i && (
-                <div className="px-5 sm:px-7 pb-4 sm:pb-5">
+                <div id={`faq-panel-${i}`} className="px-5 sm:px-7 pb-4 sm:pb-5">
                   <p className="text-sm sm:text-base font-display text-black/70 leading-relaxed">{faq.a}</p>
                 </div>
               )}
