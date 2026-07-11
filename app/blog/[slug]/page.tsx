@@ -101,13 +101,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
       </section>
 
-      <footer className="py-10 px-4 sm:px-6 lg:px-8 border-t-[3px] border-black bg-white">
-        <div className="max-w-7xl mx-auto text-center">
-          <p className="text-black font-display text-sm">
-            &copy; {new Date().getFullYear()} Zaman Ishtiyaq. All rights reserved.
-          </p>
-        </div>
-      </footer>
     </main>
   );
 }

@@ -68,11 +68,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <footer className="py-12 px-4 sm:px-6 lg:px-8 border-t border-gray-200 bg-white">
-        <div className="max-w-7xl mx-auto text-center text-gray-600">
-          <p>&copy; {new Date().getFullYear()} Zaman Ishtiyaq. All rights reserved.</p>
-        </div>
-      </footer>
     </main>
   );
 }

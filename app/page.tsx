@@ -101,14 +101,6 @@ export default function Home() {
       {/* Skills Section */}
       <SkillsSection />
 
-      {/* Footer */}
-      <footer className={styles.footer}>
-        <div className={styles.container}>
-          <p className={`${styles.footerText} text-center`}>
-            &copy; {new Date().getFullYear()} Zaman Ishtiyaq. All rights reserved.
-          </p>
-        </div>
-      </footer>
     </main>
   );
 }
