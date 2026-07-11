@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import styles from './page.module.css';
 import { Navigation } from '@/components/molecules/Navigation';
 import { DesignHero } from '@/components/organisms/DesignHero';
 import { PricingTiers } from '@/components/organisms/PricingTiers';
@@ -76,7 +77,7 @@ const designSchema = {
 
 export default function DesignPage() {
   return (
-    <div className="min-h-screen">
+    <div className={styles.page}>
       <Navigation />
       <script
         type="application/ld+json"
@@ -89,17 +90,14 @@ export default function DesignPage() {
       <DesignProcess />
       <DesignFAQ />
 
-      {/* Final CTA */}
-      <section className="py-16 sm:py-20 bg-black text-white">
-        <div className="max-w-3xl mx-auto text-center px-4">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold mb-4">
-            Ready to build your website?
-          </h2>
-          <p className="text-base sm:text-lg text-white/70 font-display mb-8 max-w-xl mx-auto">
+      <section className={styles.cta}>
+        <div className={styles.ctaInner}>
+          <h2 className={styles.ctaHeading}>Ready to build your website?</h2>
+          <p className={styles.ctaSubtext}>
             Book a free 30-minute call or drop me a WhatsApp — I&apos;ll reply within 24 hours with
             a quote.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <div className={styles.ctaButtons}>
             <BookCallButton
               label="Book a free call"
               className="bg-[#facc15] text-black border-[#facc15]"

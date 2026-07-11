@@ -1,5 +1,6 @@
 'use client';
 
+import styles from './DesignFAQ.module.css';
 import { useState } from 'react';
 import { faqs } from '@/data/design';
 
@@ -7,29 +8,29 @@ export function DesignFAQ() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section className="section-pad border-b-[3px] border-black bg-[#fef3c7]">
+    <section className={`section-pad ${styles.section}`}>
       <div className="section-inner-md">
-        <div className="text-center mb-10 sm:mb-14">
+        <div className={styles.intro}>
           <h2 className="section-heading mb-3">Common Questions</h2>
           <p className="section-sub">Everything you need to know before we start</p>
         </div>
-        <div className="space-y-3">
+        <div className={styles.list}>
           {faqs.map((faq, i) => (
-            <div key={faq.q} className="neo-card rounded-2xl bg-white overflow-hidden">
+            <div key={faq.q} className={`neo-card ${styles.item}`}>
               <button
-                className="w-full text-left px-5 sm:px-7 py-4 sm:py-5 flex items-center justify-between gap-4"
+                className={styles.button}
                 onClick={() => setOpen(open === i ? null : i)}
                 aria-expanded={open === i}
                 aria-controls={`faq-panel-${i}`}
               >
-                <span className="text-base sm:text-lg font-display font-bold text-black">{faq.q}</span>
-                <span aria-hidden="true" className="text-xl font-display font-bold text-black flex-shrink-0">
+                <span className={styles.question}>{faq.q}</span>
+                <span aria-hidden="true" className={styles.toggle}>
                   {open === i ? '−' : '+'}
                 </span>
               </button>
               {open === i && (
-                <div id={`faq-panel-${i}`} className="px-5 sm:px-7 pb-4 sm:pb-5">
-                  <p className="text-sm sm:text-base font-display text-black/70 leading-relaxed">{faq.a}</p>
+                <div id={`faq-panel-${i}`} className={styles.answer}>
+                  <p className={styles.answerText}>{faq.a}</p>
                 </div>
               )}
             </div>

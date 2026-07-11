@@ -1,0 +1,90 @@
+.section {
+  padding: 9rem 1rem 4rem;
+  background: #fef3c7;
+  border-bottom: 3px solid #000;
+}
+
+@media (min-width: 640px) {
+  .section { padding-left: 1.5rem; padding-right: 1.5rem; }
+}
+
+@media (min-width: 1024px) {
+  .section { padding-left: 2rem; padding-right: 2rem; }
+}
+
+.container {
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #bfdbfe;
+  border: 3px solid #000;
+  border-radius: 9999px;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.85);
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  font-family: var(--font-space-grotesk), var(--font-inter), system-ui, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.badgeDot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background: #3b82f6;
+  flex-shrink: 0;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.heading {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #000;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
+  font-family: var(--font-space-grotesk), var(--font-inter), system-ui, sans-serif;
+}
+
+@media (min-width: 640px) { .heading { font-size: 3rem; } }
+@media (min-width: 768px) { .heading { font-size: 3.75rem; } }
+
+.headingHighlight {
+  display: inline-block;
+  padding: 0.125rem 0.5rem;
+  background: #facc15;
+  border: 3px solid #000;
+  border-radius: 0.75rem;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.85);
+  margin-top: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: rgba(0, 0, 0, 0.8);
+  max-width: 42rem;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+  font-family: var(--font-space-grotesk), var(--font-inter), system-ui, sans-serif;
+}
+
+@media (min-width: 640px) { .subtitle { font-size: 1.25rem; } }
+
+.ctaRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media (min-width: 640px) { .ctaRow { flex-direction: row; } }
