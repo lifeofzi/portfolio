@@ -85,6 +85,13 @@ export const pricingTiers: PricingTier[] = [
 
 export const pastWork: PastWorkItem[] = [
   {
+    id: 'gocsfl',
+    name: 'Go Construction Services FL',
+    caption: 'Portfolio and lead-gen site for a Florida general contractor',
+    url: 'https://gocsfl.com/',
+    image: '/design-work/gocsfl.png',
+  },
+  {
     id: 'muhasaba',
     name: 'Muhasaba',
     caption: 'iOS-companion marketing site',
