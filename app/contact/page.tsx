@@ -51,7 +51,7 @@ export default function ContactPage() {
       {/* Hero */}
       <section className={styles.hero}>
         <div className={styles.heroInner}>
-          <h1 className={styles.heading}>Get in Touch</h1>
+          <h1 data-anim="split" className={styles.heading} style={{ visibility: 'hidden' }}>Get in Touch</h1>
           <p className={styles.subtext}>
             Pick whichever way works best for you — I reply within 24 hours.
           </p>
@@ -60,7 +60,7 @@ export default function ContactPage() {
 
       {/* Contact options */}
       <section className={styles.section}>
-        <div className={styles.grid}>
+        <div data-anim="stagger" className={styles.grid}>
 
           {/* Book a call */}
           <div className={`neo-card ${styles.card}`} style={{ backgroundColor: '#bfdbfe' }}>

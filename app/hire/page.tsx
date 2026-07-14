@@ -123,12 +123,12 @@ export default function HirePage() {
       {/* Hero */}
       <section className="pt-36 pb-16 px-4 sm:px-6 lg:px-8 bg-[#fef3c7] border-b-[3px] border-black">
         <div className="max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#bbf7d0] border-[3px] border-black rounded-full shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] mb-6 font-display text-sm font-bold">
+          <div data-anim="fade-up" className="inline-flex items-center gap-2 px-4 py-2 bg-[#bbf7d0] border-[3px] border-black rounded-full shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] mb-6 font-display text-sm font-bold">
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
             Currently accepting new projects
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold text-black leading-tight mb-4">
+          <h1 data-anim="split" className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold text-black leading-tight mb-4" style={{ visibility: 'hidden' }}>
             Hire an AI-Native<br />
             <span className="px-2 py-1 bg-[#facc15] border-[3px] border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] inline-block mt-2">
               Backend Engineer
@@ -169,7 +169,7 @@ export default function HirePage() {
             <h2 className="section-heading mb-3">What I Build</h2>
             <p className="section-sub">End-to-end delivery — design, development, and deployment</p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+          <div data-anim="stagger" className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             {services.map((s) => (
               <div
                 key={s.title}
@@ -196,7 +196,7 @@ export default function HirePage() {
       <section className="section-pad border-b-[3px] border-black bg-[#fef08a]">
         <div className="section-inner-md">
           <h2 className="section-heading text-center mb-10">Why Work With Me</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+          <div data-anim="stagger" className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
             {[
               { label: 'AI-native engineering', body: 'Multi-agent systems with OpenAI Agents SDK, durable pipelines with Temporal, LLM integrations in production — not toy demos.' },
               { label: 'Full ownership', body: 'I handle design, frontend, backend, AI integration, and deployment — one person, no hand-offs, no bottlenecks.' },
@@ -215,7 +215,7 @@ export default function HirePage() {
       <section className="section-pad border-b-[3px] border-black bg-white">
         <div className="section-inner-md">
           <h2 className="section-heading text-center mb-10">What Colleagues Say</h2>
-          <div className="neo-card rounded-2xl p-6 sm:p-8 bg-[#fef3c7] max-w-2xl mx-auto">
+          <div data-anim="fade-up" className="neo-card rounded-2xl p-6 sm:p-8 bg-[#fef3c7] max-w-2xl mx-auto">
             <p className="text-base sm:text-lg font-display text-black/85 leading-relaxed mb-6">
               &ldquo;Zaman was a key backend engineer on the AI Catalyst project at BrightEdge, and his contributions were essential to the success of the feature. He brought a steady, dependable presence to the team—consistently delivering high-quality code and tackling complex backend challenges with care and precision.
               <br /><br />
@@ -248,7 +248,7 @@ export default function HirePage() {
       <section className="section-pad border-b-[3px] border-black bg-white">
         <div className="section-inner-md">
           <h2 className="section-heading text-center mb-10">Common Questions</h2>
-          <div className="space-y-4">
+          <div data-anim="stagger" className="space-y-4">
             {faqs.map(({ q, a }) => (
               <div key={q} className="neo-card rounded-2xl p-5 sm:p-6 bg-[#fef3c7]">
                 <h3 className="text-base sm:text-lg font-display font-bold text-black mb-2">{q}</h3>
