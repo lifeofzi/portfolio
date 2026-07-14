@@ -24,18 +24,18 @@ export const Hero = () => {
 
   useGSAP(() => {
     const split = SplitText.create(h1Ref.current!, { type: 'words' });
-    gsap.set(h1Ref.current, { visibility: 'visible' });
 
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
     tl
-      .from(photoRef.current, { y: 40, opacity: 0, duration: 0.7 })
-      .from(helloRef.current, { y: 20, opacity: 0, duration: 0.5 }, '-=0.45')
-      .from(split.words, { y: '70%', opacity: 0, duration: 0.65, stagger: 0.07 }, '-=0.3')
-      .from(taglineRef.current, { y: 20, opacity: 0, duration: 0.5 }, '-=0.3')
-      .from(bioRef.current, { y: 20, opacity: 0, duration: 0.5 }, '-=0.35')
-      .from(ctasRef.current, { y: 20, opacity: 0, duration: 0.45 }, '-=0.3')
-      .from(badgeRef.current, { y: 16, opacity: 0, duration: 0.4 }, '-=0.25')
-      .from(socialRef.current!.children, { y: 16, opacity: 0, stagger: 0.1, duration: 0.4 }, '-=0.3');
+      .fromTo(photoRef.current, { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 })
+      .fromTo(helloRef.current, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5 }, '-=0.45')
+      .set(h1Ref.current, { visibility: 'visible' })
+      .fromTo(split.words, { y: '70%', opacity: 0 }, { y: '0%', opacity: 1, duration: 0.65, stagger: 0.07 }, '<')
+      .fromTo(taglineRef.current, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5 }, '-=0.3')
+      .fromTo(bioRef.current, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5 }, '-=0.35')
+      .fromTo(ctasRef.current, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45 }, '-=0.3')
+      .fromTo(badgeRef.current, { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4 }, '-=0.25')
+      .fromTo(socialRef.current!.children, { y: 16, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.1, duration: 0.4 }, '-=0.3');
   }, { scope: sectionRef });
 
   return (
