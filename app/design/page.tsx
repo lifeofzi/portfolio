@@ -1,13 +1,11 @@
 import type { Metadata } from 'next';
-import styles from './page.module.css';
 import { Navigation } from '@/components/molecules/Navigation';
 import { DesignHero } from '@/components/organisms/DesignHero';
 import { PricingTiers } from '@/components/organisms/PricingTiers';
 import { PastWorkGrid } from '@/components/organisms/PastWorkGrid';
 import { DesignProcess } from '@/components/organisms/DesignProcess';
 import { DesignFAQ } from '@/components/organisms/DesignFAQ';
-import { BookCallButton } from '@/components/atoms/BookCallButton';
-import { WhatsAppButton } from '@/components/atoms/WhatsAppButton';
+import { DesignCta } from '@/components/organisms/DesignCta';
 import { faqs, pricingTiers } from '@/data/design';
 
 const BASE = 'https://www.zamanishtiyaq.work';
@@ -77,7 +75,7 @@ const designSchema = {
 
 export default function DesignPage() {
   return (
-    <div className={styles.page}>
+    <div>
       <Navigation />
       <script
         type="application/ld+json"
@@ -89,23 +87,7 @@ export default function DesignPage() {
       <PastWorkGrid />
       <DesignProcess />
       <DesignFAQ />
-
-      <section className={styles.cta}>
-        <div className={styles.ctaInner}>
-          <h2 className={styles.ctaHeading}>Ready to build your website?</h2>
-          <p className={styles.ctaSubtext}>
-            Book a free 30-minute call or drop me a WhatsApp — I&apos;ll reply within 24 hours with
-            a quote.
-          </p>
-          <div className={styles.ctaButtons}>
-            <BookCallButton label="Book a free call" />
-            <WhatsAppButton
-              message="Hi, I'd like to get a website built — can we chat?"
-              label="WhatsApp me"
-            />
-          </div>
-        </div>
-      </section>
+      <DesignCta />
     </div>
   );
 }

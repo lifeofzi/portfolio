@@ -17,6 +17,12 @@
   margin: 0 auto;
 }
 
+/* SplitText line wrapper — clips word reveals */
+.splitLine {
+  overflow: hidden;
+  display: block;
+}
+
 .badge {
   display: inline-flex;
   align-items: center;

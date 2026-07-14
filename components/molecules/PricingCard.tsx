@@ -5,12 +5,13 @@ import type { PricingTier } from '@/data/design';
 
 interface Props {
   tier: PricingTier;
+  className?: string;
 }
 
-export function PricingCard({ tier }: Props) {
+export function PricingCard({ tier, className }: Props) {
   return (
     <div
-      className={`neo-card ${styles.card}${tier.popular ? ` ${styles.cardPopular}` : ''}`}
+      className={`neo-card ${styles.card}${tier.popular ? ` ${styles.cardPopular}` : ''}${className ? ` ${className}` : ''}`}
       style={{ backgroundColor: tier.color }}
     >
       {tier.popular && (
