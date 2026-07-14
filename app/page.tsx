@@ -76,11 +76,11 @@ export default function Home() {
       <section className={styles.timelineSection}>
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>
+            <h2 data-anim="split" className={styles.sectionTitle} style={{ visibility: 'hidden' }}>
               Experience{' '}
               <span className={styles.badgeGold}>& Education</span>
             </h2>
-            <p className={styles.sectionSubtitle}>
+            <p data-anim="fade-up" className={styles.sectionSubtitle}>
               A journey through my professional growth
             </p>
           </div>
@@ -100,14 +100,14 @@ export default function Home() {
         </div>
         <div className={styles.projectsContent}>
           <div className={styles.projectsHeader}>
-            <div className={styles.projectsFeaturedBadge}>
+            <div data-anim="fade-up" className={styles.projectsFeaturedBadge}>
               Featured Projects
             </div>
-            <h2 className={styles.sectionTitle}>
+            <h2 data-anim="split" className={styles.sectionTitle} style={{ visibility: 'hidden' }}>
               <span className={styles.badgeWhite}>Timeline</span>{' '}
               <span className={styles.badgeCream}>of Builds</span>
             </h2>
-            <p className={styles.sectionSubtitle}>
+            <p data-anim="fade-up" className={styles.sectionSubtitle}>
               A timeline of projects I&apos;ve built and deployed
             </p>
           </div>
@@ -121,13 +121,13 @@ export default function Home() {
       {/* Design Teaser Section */}
       <section className={styles.designTeaserSection}>
         <div className={styles.container}>
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#fde68a] border-[3px] border-black rounded-full shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] mb-6 font-display text-sm font-bold">
+          <div data-anim="fade-up" className="inline-flex items-center gap-2 px-4 py-2 bg-[#fde68a] border-[3px] border-black rounded-full shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] mb-6 font-display text-sm font-bold">
             Website Design
           </div>
-          <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-black mb-4">
+          <h2 data-anim="split" className="text-3xl sm:text-4xl font-display font-extrabold text-black mb-4" style={{ visibility: 'hidden' }}>
             Need a website?
           </h2>
-          <p className="text-base sm:text-lg font-display text-black/70 mb-8 max-w-lg mx-auto">
+          <p data-anim="fade-up" className="text-base sm:text-lg font-display text-black/70 mb-8 max-w-lg mx-auto">
             Landing pages, multi-page sites, and custom builds — designed and built end-to-end. Fixed price, fast delivery.
           </p>
           <Link
@@ -142,11 +142,11 @@ export default function Home() {
       {/* Callback Section */}
       <section className={styles.callbackSection}>
         <div className={styles.containerNarrow}>
-          <h2 className={styles.callbackTitle}>
+          <h2 data-anim="split" className={styles.callbackTitle} style={{ visibility: 'hidden' }}>
             Want a{' '}
             <span className={styles.badgePink}>Callback?</span>
           </h2>
-          <p className={styles.callbackSubtitle}>
+          <p data-anim="fade-up" className={styles.callbackSubtitle}>
             Leave your WhatsApp and I&apos;ll be in touch.
           </p>
           <CallbackModal source="homepage" />
