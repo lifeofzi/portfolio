@@ -49,16 +49,16 @@ export default function ProductsPage() {
       {/* Hero */}
       <section className="pt-36 pb-16 px-4 sm:px-6 lg:px-8 border-b-[3px] border-black">
         <div className="max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#e9d5ff] border-[3px] border-black rounded-full shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] mb-6 font-display text-sm font-bold">
+          <div data-anim="fade-up" className="inline-flex items-center gap-2 px-4 py-2 bg-[#e9d5ff] border-[3px] border-black rounded-full shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] mb-6 font-display text-sm font-bold">
             Digital Products
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold text-black leading-tight mb-4">
+          <h1 data-anim="split" className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold text-black leading-tight mb-4" style={{ visibility: 'hidden' }}>
             Things I Build &amp;{' '}
             <span className="px-2 py-1 bg-[#facc15] border-[3px] border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] inline-block">
               Sell
             </span>
           </h1>
-          <p className="text-lg sm:text-xl text-black/70 font-display max-w-2xl leading-relaxed">
+          <p data-anim="fade-up" className="text-lg sm:text-xl text-black/70 font-display max-w-2xl leading-relaxed">
             Developer tools, AI products, and services. Built to solve real problems.
           </p>
         </div>
@@ -67,7 +67,7 @@ export default function ProductsPage() {
       {/* Products */}
       <section className="section-pad border-b-[3px] border-black bg-white">
         <div className="section-inner">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div data-anim="stagger" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.map((p) => {
               const txt = p.dark ? 'text-white' : 'text-black';
               const txtMut = p.dark ? 'text-white/60' : 'text-black/60';
