@@ -1,20 +1,45 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { SplitText } from 'gsap/SplitText';
 import { profileInfo } from '@/data/profile';
 import { contactInfo } from '@/data/contact';
 
-export const Hero = () => {
-  const [mounted, setMounted] = useState(false);
+gsap.registerPlugin(SplitText);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+export const Hero = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const photoRef = useRef<HTMLDivElement>(null);
+  const helloRef = useRef<HTMLParagraphElement>(null);
+  const h1Ref = useRef<HTMLHeadingElement>(null);
+  const taglineRef = useRef<HTMLParagraphElement>(null);
+  const bioRef = useRef<HTMLParagraphElement>(null);
+  const ctasRef = useRef<HTMLDivElement>(null);
+  const badgeRef = useRef<HTMLDivElement>(null);
+  const socialRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    const split = SplitText.create(h1Ref.current!, { type: 'words' });
+    gsap.set(h1Ref.current, { visibility: 'visible' });
+
+    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    tl
+      .from(photoRef.current, { y: 40, opacity: 0, duration: 0.7 })
+      .from(helloRef.current, { y: 20, opacity: 0, duration: 0.5 }, '-=0.45')
+      .from(split.words, { y: '70%', opacity: 0, duration: 0.65, stagger: 0.07 }, '-=0.3')
+      .from(taglineRef.current, { y: 20, opacity: 0, duration: 0.5 }, '-=0.3')
+      .from(bioRef.current, { y: 20, opacity: 0, duration: 0.5 }, '-=0.35')
+      .from(ctasRef.current, { y: 20, opacity: 0, duration: 0.45 }, '-=0.3')
+      .from(badgeRef.current, { y: 16, opacity: 0, duration: 0.4 }, '-=0.25')
+      .from(socialRef.current!.children, { y: 16, opacity: 0, stagger: 0.1, duration: 0.4 }, '-=0.3');
+  }, { scope: sectionRef });
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-28 bg-[#fef3c7]">
+    <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-hidden pt-28 bg-[#fef3c7]">
       {/* Dotted grid background */}
       <div className="absolute inset-0 text-black">
         <div className="w-full h-full neo-dot-grid" />
@@ -27,13 +52,13 @@ export const Hero = () => {
         <div className="absolute left-1/4 bottom-16 w-32 h-32 bg-[#34d399] border-[3px] border-black shadow-[5px_5px_0_0_rgba(0,0,0,0.85)] -rotate-6" />
         <div className="absolute right-1/4 bottom-10 w-40 h-20 bg-white border-[3px] border-black shadow-[5px_5px_0_0_rgba(0,0,0,0.85)] rotate-2" />
       </div>
-      
+
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`space-y-10 ${mounted ? 'animate-fade-in' : 'opacity-0'}`}>
+        <div className="space-y-10">
           {/* Profile + Name */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div className="flex justify-center lg:justify-start">
-              <div className="relative w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 neo-card rounded-3xl bg-white overflow-hidden">
+              <div ref={photoRef} className="relative w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 neo-card rounded-3xl bg-white overflow-hidden">
                 <div className="absolute -left-3 -top-3 px-3 py-1 bg-black text-yellow-300 font-display text-sm border-[3px] border-black shadow-[3px_3px_0_0_rgba(0,0,0,0.85)] rounded-xl">
                   Always shipping
                 </div>
@@ -49,22 +74,26 @@ export const Hero = () => {
             </div>
 
             <div className="space-y-4 text-center lg:text-left">
-              <p className="font-display text-lg text-black">Hello, I&apos;m</p>
-              <h1 className="font-display text-5xl sm:text-6xl md:text-7xl font-bold leading-tight text-black">
+              <p ref={helloRef} className="font-display text-lg text-black">Hello, I&apos;m</p>
+              <h1
+                ref={h1Ref}
+                className="font-display text-5xl sm:text-6xl md:text-7xl font-bold leading-tight text-black"
+                style={{ visibility: 'hidden' }}
+              >
                 <span className="block neo-underline inline-block">{profileInfo.name.split(' ')[0]}</span>{' '}
                 <span className="block sm:inline-block px-3 py-1 bg-[#bfdbfe] border-[3px] border-black shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] rounded-xl mt-2 sm:mt-0">
                   {profileInfo.name.split(' ')[1] || ''}
                 </span>
                 <span className="sr-only"> — AI-Native Backend Engineer</span>
               </h1>
-              <p className="text-xl sm:text-2xl font-display text-black max-w-2xl">
+              <p ref={taglineRef} className="text-xl sm:text-2xl font-display text-black max-w-2xl">
                 {profileInfo.title}
               </p>
-              <p className="text-base sm:text-lg text-black max-w-2xl leading-relaxed">
+              <p ref={bioRef} className="text-base sm:text-lg text-black max-w-2xl leading-relaxed">
                 {profileInfo.bio}
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-3 pt-4">
+              <div ref={ctasRef} className="flex flex-col sm:flex-row gap-3 pt-4">
                 <Link
                   href="/hire"
                   className="font-display text-lg px-6 py-3 bg-[#facc15] border-[3px] border-black rounded-xl shadow-[6px_6px_0_0_rgba(0,0,0,0.85)] hover:-translate-y-1 transition-transform duration-150 text-black flex items-center justify-center gap-2"
@@ -81,7 +110,7 @@ export const Hero = () => {
                 </Link>
               </div>
 
-              <div className="flex items-center gap-3 pt-4">
+              <div ref={badgeRef} className="flex items-center gap-3 pt-4">
                 <span className="font-display text-sm uppercase tracking-wide bg-black text-white px-3 py-1 rounded-lg border-[3px] border-black">
                   Based in Srinagar · Remote friendly
                 </span>
@@ -90,7 +119,7 @@ export const Hero = () => {
           </div>
 
           {/* Social Links */}
-          <div className="flex items-center justify-center lg:justify-start gap-4 pt-4">
+          <div ref={socialRef} className="flex items-center justify-center lg:justify-start gap-4 pt-4">
             <a
               href={contactInfo.github}
               target="_blank"
@@ -133,4 +162,3 @@ export const Hero = () => {
     </section>
   );
 };
-
