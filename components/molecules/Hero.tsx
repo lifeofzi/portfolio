@@ -58,7 +58,7 @@ export const Hero = () => {
           {/* Profile + Name */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div className="flex justify-center lg:justify-start">
-              <div ref={photoRef} className="relative w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 neo-card rounded-3xl bg-white overflow-hidden">
+              <div ref={photoRef} className="relative w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 neo-card rounded-3xl bg-white overflow-hidden" style={{ opacity: 0 }}>
                 <div className="absolute -left-3 -top-3 px-3 py-1 bg-black text-yellow-300 font-display text-sm border-[3px] border-black shadow-[3px_3px_0_0_rgba(0,0,0,0.85)] rounded-xl">
                   Always shipping
                 </div>
@@ -74,7 +74,7 @@ export const Hero = () => {
             </div>
 
             <div className="space-y-4 text-center lg:text-left">
-              <p ref={helloRef} className="font-display text-lg text-black">Hello, I&apos;m</p>
+              <p ref={helloRef} className="font-display text-lg text-black" style={{ opacity: 0 }}>Hello, I&apos;m</p>
               <h1
                 ref={h1Ref}
                 className="font-display text-5xl sm:text-6xl md:text-7xl font-bold leading-tight text-black"
@@ -86,14 +86,14 @@ export const Hero = () => {
                 </span>
                 <span className="sr-only"> — AI-Native Backend Engineer</span>
               </h1>
-              <p ref={taglineRef} className="text-xl sm:text-2xl font-display text-black max-w-2xl">
+              <p ref={taglineRef} className="text-xl sm:text-2xl font-display text-black max-w-2xl" style={{ opacity: 0 }}>
                 {profileInfo.title}
               </p>
-              <p ref={bioRef} className="text-base sm:text-lg text-black max-w-2xl leading-relaxed">
+              <p ref={bioRef} className="text-base sm:text-lg text-black max-w-2xl leading-relaxed" style={{ opacity: 0 }}>
                 {profileInfo.bio}
               </p>
 
-              <div ref={ctasRef} className="flex flex-col sm:flex-row gap-3 pt-4">
+              <div ref={ctasRef} className="flex flex-col sm:flex-row gap-3 pt-4" style={{ opacity: 0 }}>
                 <Link
                   href="/hire"
                   className="font-display text-lg px-6 py-3 bg-[#facc15] border-[3px] border-black rounded-xl shadow-[6px_6px_0_0_rgba(0,0,0,0.85)] hover:-translate-y-1 transition-transform duration-150 text-black flex items-center justify-center gap-2"
@@ -110,7 +110,7 @@ export const Hero = () => {
                 </Link>
               </div>
 
-              <div ref={badgeRef} className="flex items-center gap-3 pt-4">
+              <div ref={badgeRef} className="flex items-center gap-3 pt-4" style={{ opacity: 0 }}>
                 <span className="font-display text-sm uppercase tracking-wide bg-black text-white px-3 py-1 rounded-lg border-[3px] border-black">
                   Based in Srinagar · Remote friendly
                 </span>
@@ -119,7 +119,7 @@ export const Hero = () => {
           </div>
 
           {/* Social Links */}
-          <div ref={socialRef} className="flex items-center justify-center lg:justify-start gap-4 pt-4">
+          <div ref={socialRef} className="flex items-center justify-center lg:justify-start gap-4 pt-4" style={{ opacity: 0 }}>
             <a
               href={contactInfo.github}
               target="_blank"
