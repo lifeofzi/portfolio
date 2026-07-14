@@ -4,15 +4,16 @@ import type { PastWorkItem } from '@/data/design';
 
 interface Props {
   item: PastWorkItem;
+  className?: string;
 }
 
-export function PastWorkCard({ item }: Props) {
+export function PastWorkCard({ item, className }: Props) {
   return (
     <a
       href={item.url}
       target="_blank"
       rel="noopener noreferrer"
-      className={`neo-card ${styles.card}`}
+      className={`neo-card ${styles.card}${className ? ` ${className}` : ''}`}
     >
       <div className={styles.imageWrapper}>
         <Image
