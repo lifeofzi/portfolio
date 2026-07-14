@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './switchline.css';
 import { LeadForm } from './LeadForm';
 import { SwitchlineNav } from './SwitchlineNav';
+import { IntegrationLogo } from './IntegrationLogo';
 
 const BASE = 'https://www.zamanishtiyaq.work';
 
@@ -239,6 +240,175 @@ export default function SwitchlinePage() {
               <li><span className="ck">+</span> Calendar connected — appointments booked directly, no manual hand-off</li>
               <li><span className="ck">+</span> Live and answering calls within 3 business days of the intake call</li>
             </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* BEYOND BOOKING — features grid */}
+      <section className="section beyond">
+        <div className="wrap">
+          <div className="section-head">
+            <div className="kick">What else you get</div>
+            <h2>More than just answering the phone.</h2>
+            <p>Most AI receptionists take a message. Switchline runs your front desk — call intelligence, outbound reminders, CRM sync, and live monitoring included at every plan.</p>
+          </div>
+          <div className="feat-grid">
+            <div className="feat-card">
+              <div className="feat-card-ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              <h3>Post-Call Analysis</h3>
+              <p>Custom data extracted from every call — service type, urgency, job size — in a structured summary, not a raw transcript.</p>
+            </div>
+            <div className="feat-card">
+              <div className="feat-card-ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+              </div>
+              <h3>AI Quality Scoring</h3>
+              <p>Every call auto-scored against your criteria. Catch miscommunications and missed opportunities before they cost you a review.</p>
+            </div>
+            <div className="feat-card">
+              <div className="feat-card-ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              </div>
+              <h3>Outbound Reminders</h3>
+              <p>Appointment confirmations and reminders sent automatically. No-shows drop. Staff stops spending the day chasing callbacks.</p>
+            </div>
+            <div className="feat-card">
+              <div className="feat-card-ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+              </div>
+              <h3>Live Monitoring</h3>
+              <p>Listen in on any live call from your phone. Full transparency — review recordings anytime, flag anything that needs follow-up.</p>
+            </div>
+            <div className="feat-card">
+              <div className="feat-card-ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <h3>SMS Follow-Up</h3>
+              <p>Auto-text every caller who doesn&apos;t book on the first call. Most leads lost to missed calls are recoverable with a fast text.</p>
+            </div>
+            <div className="feat-card">
+              <div className="feat-card-ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+              <h3>Contact Memory</h3>
+              <p>Remembers repeat callers across every conversation. Returning customers get context-aware handling — not the same intake script again.</p>
+            </div>
+            <div className="feat-card">
+              <div className="feat-card-ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              </div>
+              <h3>Concurrent Calls</h3>
+              <p>No queue. Multiple callers answered simultaneously on the same number — even during peak hours when your line is usually busy.</p>
+            </div>
+            <div className="feat-card">
+              <div className="feat-card-ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <h3>Branded Caller ID</h3>
+              <p>Your business name on every outbound call. Higher pickup rates on callbacks — callers recognise the name instead of ignoring the number.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* INTEGRATIONS */}
+      <section className="section int-section" id="integrations">
+        <div className="wrap">
+          <div className="section-head">
+            <div className="kick">Integrations</div>
+            <h2>Works with the tools you already use.</h2>
+            <p>Switchline connects directly to your calendar, CRM, and practice management software. No manual hand-offs, no copy-paste, no separate logins.</p>
+          </div>
+          <div className="int-groups">
+            <div className="int-row">
+              <div className="int-row-label">CRM &amp; Sales</div>
+              <div className="int-chips">
+                <span className="int-chip"><IntegrationLogo name="HubSpot" />HubSpot</span>
+                <span className="int-chip"><IntegrationLogo name="Salesforce" />Salesforce</span>
+                <span className="int-chip"><IntegrationLogo name="Go High Level" />Go High Level <span className="int-chip-badge">Popular</span></span>
+              </div>
+            </div>
+            <div className="int-row">
+              <div className="int-row-label">Healthcare EMR / Practice Management</div>
+              <div className="int-chips">
+                <span className="int-chip"><IntegrationLogo name="Dentrix" />Dentrix</span>
+                <span className="int-chip"><IntegrationLogo name="OpenDental" />OpenDental</span>
+                <span className="int-chip"><IntegrationLogo name="Jane App" />Jane App</span>
+                <span className="int-chip"><IntegrationLogo name="Epic" />Epic</span>
+                <span className="int-chip"><IntegrationLogo name="ChiroTouch" />ChiroTouch</span>
+              </div>
+            </div>
+            <div className="int-row">
+              <div className="int-row-label">Automation</div>
+              <div className="int-chips">
+                <span className="int-chip"><IntegrationLogo name="Make" />Make</span>
+                <span className="int-chip"><IntegrationLogo name="n8n" />n8n</span>
+                <span className="int-chip"><IntegrationLogo name="viaSocket" />viaSocket</span>
+              </div>
+            </div>
+            <div className="int-row">
+              <div className="int-row-label">Messaging &amp; Follow-Up</div>
+              <div className="int-chips">
+                <span className="int-chip"><IntegrationLogo name="WhatsApp" />WhatsApp</span>
+                <span className="int-chip"><IntegrationLogo name="SMS" />SMS</span>
+                <span className="int-chip"><IntegrationLogo name="Intercom" />Intercom</span>
+              </div>
+            </div>
+            <div className="int-row">
+              <div className="int-row-label">Telephony</div>
+              <div className="int-chips">
+                <span className="int-chip"><IntegrationLogo name="Twilio" />Twilio</span>
+                <span className="int-chip"><IntegrationLogo name="Vonage" />Vonage</span>
+                <span className="int-chip"><IntegrationLogo name="Telnyx" />Telnyx</span>
+                <span className="int-chip"><IntegrationLogo name="SIP / custom" />SIP / custom</span>
+              </div>
+            </div>
+          </div>
+          <div className="ghl-strip">
+            <p><strong>Already using Go High Level?</strong> Switchline syncs directly into your GHL sub-account — books appointments into your calendar, writes call tags and notes back to your pipeline, and can trigger outbound calls from any GHL workflow. No Zaps, no manual exports.</p>
+            <a href="#contact" className="ghl-cta">Set up the integration →</a>
+          </div>
+          <div className="int-footer">
+            <a href="/switchline/integrations">See full integrations list →</a>
+          </div>
+        </div>
+      </section>
+
+      {/* HEALTHCARE CALLOUT */}
+      <section className="section health">
+        <div className="wrap">
+          <div className="health-inner">
+            <div className="health-body">
+              <div className="kick">Healthcare &amp; Dental</div>
+              <h2>The front desk for HIPAA-regulated practices.</h2>
+              <p>Dental offices, medspas, clinics, and chiropractic practices have different requirements. Switchline Pro comes with a signed BAA, PHI handled correctly from day one, and direct integration with the software your practice already runs on.</p>
+              <div className="health-emrs">
+                <span className="health-emr">Dentrix</span>
+                <span className="health-emr">OpenDental</span>
+                <span className="health-emr">Jane App</span>
+                <span className="health-emr">Epic</span>
+                <span className="health-emr">ChiroTouch</span>
+              </div>
+              <a href="#contact" className="health-cta">Talk to us about your practice</a>
+            </div>
+            <div>
+              <div className="health-card">
+                <div className="health-stat">
+                  <div className="health-stat-n">$497<small>/mo</small></div>
+                  <div className="health-stat-l">Pro plan — HIPAA-ready, signed BAA included</div>
+                </div>
+                <div className="health-stat">
+                  <div className="health-stat-n">3 days</div>
+                  <div className="health-stat-l">From intake call to live on your phones</div>
+                </div>
+                <div className="health-stat">
+                  <div className="health-stat-n">24/7</div>
+                  <div className="health-stat-l">New patient calls answered — after hours and weekends too</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

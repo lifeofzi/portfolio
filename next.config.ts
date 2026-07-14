@@ -10,6 +10,9 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ['react-icons', 'simple-icons'],
   },
+  turbopack: {
+    root: process.cwd(),
+  },
 };
 
 export default nextConfig;
