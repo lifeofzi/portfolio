@@ -54,10 +54,10 @@ export function ScrollAnimations() {
       // Stagger direct children
       document.querySelectorAll<HTMLElement>('[data-anim="stagger"]').forEach((el) => {
         gsap.from(el.children, {
-          y: 55,
+          y: 40,
           opacity: 0,
-          duration: 0.65,
-          stagger: 0.1,
+          duration: 0.6,
+          stagger: 0.05,
           ease: 'power3.out',
           scrollTrigger: { trigger: el, start: 'top 80%' },
         });
