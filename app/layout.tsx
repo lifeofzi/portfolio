@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import { Footer } from "@/components/organisms/Footer";
+import { ScrollAnimations } from "@/components/atoms/ScrollAnimations";
 import "./globals.css";
 
 const inter = Inter({
@@ -144,6 +145,7 @@ export default function RootLayout({
         className={`${inter.variable} ${spaceGrotesk.variable} antialiased bg-amber-50 text-gray-900`}
         suppressHydrationWarning
       >
+        <ScrollAnimations />
         {children}
         <Footer />
         <SpeedInsights />

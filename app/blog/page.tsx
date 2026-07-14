@@ -51,10 +51,10 @@ export default function BlogPage() {
         </div>
         <div className="max-w-7xl mx-auto relative">
           <div className="text-center mb-12">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-display mb-4 text-black">
+            <h1 data-anim="split" className="text-4xl sm:text-5xl md:text-6xl font-bold font-display mb-4 text-black" style={{ visibility: 'hidden' }}>
               Blog <span className="px-2 py-1 bg-white border-[3px] border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,0.85)]">Posts</span>
             </h1>
-            <p className="text-lg sm:text-xl text-black/80 max-w-2xl mx-auto font-display">
+            <p data-anim="fade-up" className="text-lg sm:text-xl text-black/80 max-w-2xl mx-auto font-display">
               Thoughts on development, design, and building products
             </p>
           </div>
