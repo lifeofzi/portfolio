@@ -180,4 +180,8 @@ export const faqs: FaqItem[] = [
     q: 'How do I get started?',
     a: 'Book a free 30-minute call using the button on this page, or drop me a WhatsApp. We\'ll scope the project and I\'ll send a quote within 24 hours.',
   },
+  {
+    q: 'Can you build a SaaS platform or MVP for a startup?',
+    a: 'Yes — the Custom tier covers full SaaS and MVP builds. I handle everything: UI design, frontend, backend, database, auth, payments integration, and deployment. Most MVPs ship in 3–6 weeks.',
+  },
 ];
