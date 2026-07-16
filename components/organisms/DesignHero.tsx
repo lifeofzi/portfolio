@@ -49,8 +49,8 @@ export function DesignHero() {
         </div>
 
         <h1 ref={headingRef} className={styles.heading} style={{ visibility: 'hidden' }}>
-          Landing Page Design &amp; Custom Web Development —{' '}
-          <span className={styles.headingHighlight}>Fixed Price</span>
+          Landing Page Design &amp;{' '}
+          <span className={styles.headingHighlight}>Custom Web Development for Startups</span>
         </h1>
 
         <p ref={subtitleRef} className={styles.subtitle}>

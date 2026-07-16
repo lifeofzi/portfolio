@@ -3,11 +3,11 @@ import { Navigation } from '@/components/molecules/Navigation';
 import { contactInfo } from '@/data/contact';
 
 export const metadata: Metadata = {
-  title: 'Hire React, AI & Full-Stack Developer | Zaman Ishtiyaq',
+  title: 'Hire AI & Full-Stack Developer | Zaman Ishtiyaq',
   description: 'Hire a full-stack React & Python developer for AI agents, SaaS builds & iOS apps. Goldman Sachs · BrightEdge. Remote, fixed price.',
   alternates: { canonical: 'https://www.zamanishtiyaq.work/hire' },
   openGraph: {
-    title: 'Hire a React & Full-Stack Developer for AI Systems, SaaS & iOS',
+    title: 'Hire an AI & Full-Stack Developer for AI Systems, SaaS & iOS',
     description: 'Hire a full-stack React & Python developer for AI agent development, SaaS builds & iOS apps. Goldman Sachs · BrightEdge. Remote worldwide, fixed price.',
     url: 'https://www.zamanishtiyaq.work/hire',
   },
@@ -200,7 +200,7 @@ export default function HirePage() {
           </div>
 
           <h1 data-anim="split" className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold text-black leading-tight mb-4" style={{ visibility: 'hidden' }}>
-            Hire a React &amp; Full-Stack Developer for{' '}
+            Hire an AI &amp; Full-Stack Developer for{' '}
             <span className="px-2 py-1 bg-[#facc15] border-[3px] border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] inline-block mt-2">
               AI Systems, SaaS &amp; iOS
             </span>
