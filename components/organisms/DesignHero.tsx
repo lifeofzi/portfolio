@@ -49,12 +49,12 @@ export function DesignHero() {
         </div>
 
         <h1 ref={headingRef} className={styles.heading} style={{ visibility: 'hidden' }}>
-          Websites built<br />end-to-end —{' '}
-          <span className={styles.headingHighlight}>design to launch</span>
+          Landing Page Design &amp;{' '}
+          <span className={styles.headingHighlight}>Custom Web Development for Startups</span>
         </h1>
 
         <p ref={subtitleRef} className={styles.subtitle}>
-          I design and build fast, conversion-focused websites for startups, consultants, and creators — from a single landing page to a full multi-page platform. Fixed price, clear timeline, you own everything at the end.
+          Custom landing pages from $299. Full multi-page websites and SaaS platforms from $749. I design and build fast, conversion-focused websites for startups, consultants, and creators — mobile-first, SEO-ready, delivered on time.
         </p>
 
         <div ref={ctaRef} className={styles.ctaRow}>

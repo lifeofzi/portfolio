@@ -3,12 +3,12 @@ import { Navigation } from '@/components/molecules/Navigation';
 import { contactInfo } from '@/data/contact';
 
 export const metadata: Metadata = {
-  title: 'Hire Zaman Ishtiyaq — AI-Native Backend Engineer',
-  description: 'AI-Native Backend Engineer for hire. Agent systems, LLM pipelines, full-stack products. Goldman Sachs · BrightEdge · Atlan. Remote worldwide.',
+  title: 'Hire AI & Full-Stack Developer | Zaman Ishtiyaq',
+  description: 'Hire a full-stack React & Python developer for AI agents, SaaS builds & iOS apps. Goldman Sachs · BrightEdge. Remote, fixed price.',
   alternates: { canonical: 'https://www.zamanishtiyaq.work/hire' },
   openGraph: {
-    title: 'Hire Zaman Ishtiyaq — AI Automations, Agentic Systems & Full-Stack Development',
-    description: 'AI-Native Backend Engineer for hire. Agent systems, LLM pipelines, and full-stack products built to Goldman Sachs and BrightEdge production standards. Remote worldwide.',
+    title: 'Hire an AI & Full-Stack Developer for AI Systems, SaaS & iOS',
+    description: 'Hire a full-stack React & Python developer for AI agent development, SaaS builds & iOS apps. Goldman Sachs · BrightEdge. Remote worldwide, fixed price.',
     url: 'https://www.zamanishtiyaq.work/hire',
   },
 };
@@ -16,13 +16,13 @@ export const metadata: Metadata = {
 const services = [
   {
     title: 'AI Automations & Agentic Systems',
-    description: 'Multi-agent systems, LLM pipelines, and end-to-end AI automations — built with OpenAI Agents SDK, Temporal, and FastAPI. Agents that take real actions, not just chatbots.',
+    description: 'Custom AI agent development and AI workflow automation — built with OpenAI Agents SDK, Temporal, and FastAPI. Agentic systems that take real actions inside your business workflows, not just chatbot demos.',
     examples: ['Multi-agent restaurant analytics (OpenAI Agents SDK)', 'Durable AI pipelines with Temporal', 'LLM + tool-calling workflows'],
     color: '#fde68a',
   },
   {
-    title: 'Web Application',
-    description: 'Full-stack SaaS products, dashboards, and tools. From database schema to deployed frontend — one person, full ownership.',
+    title: 'SaaS & Web Application',
+    description: 'Full-stack SaaS platforms and MVPs built with React and Python. From database schema to deployed frontend — one developer, full ownership, fast time to market.',
     examples: ['Offer X-Ray — AI offer analysis', 'Architex — architecture platform', 'ReelRocket — UGC content studio'],
     color: '#bbf7d0',
   },
@@ -57,6 +57,14 @@ const faqs = [
     q: 'Can you handle design as well as development?',
     a: 'Yes. I handle the full stack including UI/UX design. You can see the design quality across my projects — Spree, Architex, and this portfolio.',
   },
+  {
+    q: 'Do you work on a retainer basis?',
+    a: 'Yes — for ongoing work I offer monthly retainer arrangements. This works well for teams that need continuous development without the overhead of a full-time hire. Ask me about current availability.',
+  },
+  {
+    q: 'Can you work with an existing React or Next.js codebase?',
+    a: 'Absolutely. I work with existing React and Next.js codebases regularly — auditing, extending features, and reducing technical debt. Send me a link and I\'ll take a look before we commit to anything.',
+  },
 ];
 
 const BASE = 'https://www.zamanishtiyaq.work';
@@ -65,9 +73,27 @@ const hireSchema = {
   '@context': 'https://schema.org',
   '@graph': [
     {
+      '@type': 'WebPage',
+      '@id': `${BASE}/hire#webpage`,
+      url: `${BASE}/hire`,
+      name: 'Hire React, AI & Full-Stack Developer | Zaman Ishtiyaq',
+      description: 'Hire a full-stack React & Python developer for AI agent development, SaaS builds & iOS apps. Goldman Sachs · BrightEdge. Remote, fixed price.',
+      isPartOf: { '@id': `${BASE}/#website` },
+      about: { '@id': `${BASE}/#person` },
+      breadcrumb: { '@id': `${BASE}/hire#breadcrumb` },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${BASE}/hire#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: BASE },
+        { '@type': 'ListItem', position: 2, name: 'Hire', item: `${BASE}/hire` },
+      ],
+    },
+    {
       '@type': 'Service',
       '@id': `${BASE}/hire#service`,
-      name: 'Freelance Web & AI Development',
+      name: 'Freelance React, AI & Full-Stack Development',
       provider: {
         '@type': 'Person',
         '@id': `${BASE}/#person`,
@@ -75,14 +101,53 @@ const hireSchema = {
         email: 'zaman.ishtiyaq@gmail.com',
         url: BASE,
       },
-      serviceType: ['Web Development', 'Full-Stack Development', 'AI Integration', 'iOS App Development'],
-      description: 'Custom website and web application development for startups and businesses. Services include full-stack web apps (Next.js, React, TypeScript), AI/LLM feature integration, iOS apps (Swift/SwiftUI), and API development.',
-      areaServed: 'Worldwide',
+      serviceType: [
+        'AI Agent Development',
+        'AI Workflow Automation',
+        'React Developer for Hire',
+        'Full-Stack Development',
+        'SaaS Development',
+        'MVP Development',
+        'Python Developer for Hire',
+        'Next.js Development',
+        'iOS App Development',
+        'LLM Integration',
+        'Web Application Development',
+      ],
+      description: 'Full-stack React and Python developer for hire. Specializing in AI agent development, agentic systems, SaaS MVPs, and iOS apps. Remote worldwide, fixed price.',
+      areaServed: [
+        { '@type': 'Country', name: 'United States' },
+        { '@type': 'Country', name: 'United Kingdom' },
+        { '@type': 'Country', name: 'India' },
+        'Worldwide',
+      ],
       availableChannel: {
         '@type': 'ServiceChannel',
         serviceUrl: `${BASE}/hire`,
-        availableLanguage: 'English',
+        availableLanguage: { '@type': 'Language', name: 'English' },
       },
+      hasPart: [
+        {
+          '@type': 'Service',
+          name: 'AI Agent Development',
+          description: 'Custom AI agents and multi-agent systems built with OpenAI Agents SDK, Temporal, and FastAPI.',
+        },
+        {
+          '@type': 'Service',
+          name: 'React & Next.js Development',
+          description: 'Full-stack web applications built with React, Next.js, and TypeScript.',
+        },
+        {
+          '@type': 'Service',
+          name: 'SaaS & MVP Development',
+          description: 'End-to-end SaaS platforms and MVPs from concept to deployed product.',
+        },
+        {
+          '@type': 'Service',
+          name: 'iOS App Development',
+          description: 'Native Swift/SwiftUI iOS apps shipped to the App Store.',
+        },
+      ],
       offers: {
         '@type': 'Offer',
         availability: 'https://schema.org/InStock',
@@ -90,6 +155,7 @@ const hireSchema = {
       },
       review: {
         '@type': 'Review',
+        itemReviewed: { '@id': `${BASE}/hire#service` },
         author: {
           '@type': 'Person',
           name: 'Benjamin McDermott',
@@ -97,6 +163,11 @@ const hireSchema = {
           url: 'https://www.linkedin.com/in/bmcde/',
         },
         reviewBody: 'Zaman was a key backend engineer on the AI Catalyst project at BrightEdge, and his contributions were essential to the success of the feature. He brought a steady, dependable presence to the team—consistently delivering high-quality code and tackling complex backend challenges with care and precision. Zaman was a pleasure to work with—quietly reliable, technically solid, and a great teammate throughout the project. Any team would benefit from having him on board.',
+        reviewRating: {
+          '@type': 'Rating',
+          ratingValue: '5',
+          bestRating: '5',
+        },
         datePublished: '2025-06-24',
       },
     },
@@ -129,18 +200,18 @@ export default function HirePage() {
           </div>
 
           <h1 data-anim="split" className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold text-black leading-tight mb-4" style={{ visibility: 'hidden' }}>
-            Hire an AI-Native<br />
+            Hire an AI &amp; Full-Stack Developer for{' '}
             <span className="px-2 py-1 bg-[#facc15] border-[3px] border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,0.85)] inline-block mt-2">
-              Backend Engineer
+              AI Systems, SaaS &amp; iOS
             </span>
           </h1>
 
           <p className="text-xl sm:text-2xl font-display font-semibold text-black/70 mb-4">
-            Agent systems · LLM pipelines · Full-stack products · iOS apps
+            AI agent development · React & Python · SaaS · iOS apps
           </p>
 
           <p className="text-lg sm:text-xl text-black/80 font-display max-w-2xl mb-8 leading-relaxed">
-            I&apos;m Zaman — a freelance AI-native backend engineer with 7+ years at Goldman Sachs (market risk systems), BrightEdge (200K+ daily API requests, 250+ Fortune 500 clients), and Atlan. Available to hire remotely worldwide.
+            I&apos;m Zaman — a full-stack React and Python developer with 7+ years at Goldman Sachs, BrightEdge, and Atlan. I build AI agent systems, SaaS platforms, web apps, and iOS apps for startups and businesses. Available to hire remotely worldwide, fixed price.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3">
@@ -206,6 +277,68 @@ export default function HirePage() {
                 <h3 className="text-lg sm:text-xl font-display font-extrabold text-black mb-2">{item.label}</h3>
                 <p className="text-sm sm:text-base text-black/70 font-display leading-relaxed">{item.body}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* AI Agent Development */}
+      <section className="section-pad border-b-[3px] border-black bg-[#fef3c7]">
+        <div className="section-inner-md">
+          <h2 className="section-heading mb-4">AI Agent Development &amp; Integration Services</h2>
+          <p className="text-base sm:text-lg text-black/80 font-display leading-relaxed mb-6">
+            I build custom AI agents and agentic systems that plug into real business workflows — not chatbot wrappers. Using OpenAI Agents SDK, Temporal for durable execution, and FastAPI for high-throughput backends.
+          </p>
+          <div data-anim="stagger" className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {[
+              { label: 'Multi-agent pipelines', body: 'Orchestrated agents with tool-calling, memory, and handoffs — production-grade with retry logic and observability.' },
+              { label: 'AI workflow automation', body: 'Automate internal and customer-facing processes with LLM-powered pipelines. Real actions, not just summarization.' },
+              { label: 'LLM application development', body: 'RAG systems, structured extraction, evaluation pipelines, and custom LLM integrations with any model.' },
+              { label: 'API & system integration', body: 'Connect AI agents to your existing tools, databases, and APIs. Durable execution with Temporal for long-running jobs.' },
+            ].map((item) => (
+              <div key={item.label} className="neo-card rounded-2xl p-5 bg-white">
+                <h3 className="text-base font-display font-extrabold text-black mb-1">{item.label}</h3>
+                <p className="text-sm text-black/70 font-display leading-relaxed">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SaaS & MVP Development */}
+      <section className="section-pad border-b-[3px] border-black bg-white">
+        <div className="section-inner-md">
+          <h2 className="section-heading mb-4">SaaS &amp; MVP Development Services</h2>
+          <p className="text-base sm:text-lg text-black/80 font-display leading-relaxed mb-6">
+            From idea to deployed product in 3–6 weeks. I build SaaS platforms and MVPs end-to-end — UI design, React frontend, Python backend, database, auth, payments, and deployment — so you can start acquiring customers instead of managing engineers.
+          </p>
+          <div data-anim="stagger" className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[
+              { label: 'Week 1–2', body: 'UI design, tech stack setup, core features, and database schema.' },
+              { label: 'Week 3–4', body: 'Auth, payments, remaining features, and initial deployment.' },
+              { label: 'Week 5–6', body: 'Polish, performance, SEO, and production-ready launch.' },
+            ].map((item) => (
+              <div key={item.label} className="neo-card rounded-2xl p-5 bg-[#bbf7d0]">
+                <h3 className="text-base font-display font-extrabold text-black mb-1">{item.label}</h3>
+                <p className="text-sm text-black/70 font-display leading-relaxed">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Remote Developer CTA section */}
+      <section className="section-pad border-b-[3px] border-black bg-[#bfdbfe]">
+        <div className="section-inner-md">
+          <h2 className="section-heading mb-4">Hire a React, Python &amp; Next.js Developer — Full Stack, Fully Remote</h2>
+          <p className="text-base sm:text-lg text-black/80 font-display leading-relaxed mb-6 max-w-2xl">
+            Looking to hire a React developer, Python developer, or full-stack engineer? I&apos;m available for project-based engagements, short-term contracts, and monthly retainers — remote worldwide. US, UK, and international clients welcome.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {['React developer for hire', 'Python developer for hire', 'Next.js developer', 'Full-stack engineer', 'AI engineer', 'Remote developer'].map((tag) => (
+              <span key={tag} className="px-3 py-1.5 bg-white border-[2px] border-black rounded-full font-display text-sm font-semibold text-black">
+                {tag}
+              </span>
             ))}
           </div>
         </div>
