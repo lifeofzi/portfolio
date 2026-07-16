@@ -1,4 +1,6 @@
 import { ImageResponse } from 'next/og';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 
 export const runtime = 'nodejs';
 export const size = { width: 1200, height: 630 };
@@ -15,7 +17,12 @@ async function loadFont() {
 }
 
 export default async function Image() {
-  const fontData = await loadFont();
+  const [fontData, photo] = await Promise.all([
+    loadFont(),
+    Promise.resolve(readFileSync(join(process.cwd(), 'public/me.png'))),
+  ]);
+
+  const photoSrc = `data:image/png;base64,${photo.toString('base64')}`;
 
   return new ImageResponse(
     (
@@ -25,12 +32,8 @@ export default async function Image() {
           height: '100%',
           background: '#fef3c7',
           display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'flex-start',
-          padding: '72px 80px',
-          fontFamily: 'Inter',
           position: 'relative',
+          fontFamily: 'Inter',
         }}
       >
         {/* Dot grid */}
@@ -44,12 +47,22 @@ export default async function Image() {
         />
 
         {/* Decorative shapes */}
-        <div style={{ position: 'absolute', top: 52, right: 80, width: 120, height: 80, background: '#bfdbfe', border: '3px solid #1a1a1a', boxShadow: '6px 6px 0 #1a1a1a', borderRadius: 12, transform: 'rotate(3deg)', display: 'flex' }} />
-        <div style={{ position: 'absolute', bottom: 60, right: 200, width: 80, height: 56, background: '#bbf7d0', border: '3px solid #1a1a1a', boxShadow: '5px 5px 0 #1a1a1a', borderRadius: 10, transform: 'rotate(-4deg)', display: 'flex' }} />
-        <div style={{ position: 'absolute', top: 180, right: 60, width: 60, height: 60, background: '#fde68a', border: '3px solid #1a1a1a', boxShadow: '4px 4px 0 #1a1a1a', borderRadius: 10, transform: 'rotate(6deg)', display: 'flex' }} />
+        <div style={{ position: 'absolute', top: 44, right: 360, width: 80, height: 52, background: '#bbf7d0', border: '3px solid #1a1a1a', boxShadow: '5px 5px 0 #1a1a1a', borderRadius: 8, transform: 'rotate(2deg)', display: 'flex' }} />
+        <div style={{ position: 'absolute', bottom: 60, left: 460, width: 56, height: 56, background: '#fde68a', border: '3px solid #1a1a1a', boxShadow: '5px 5px 0 #1a1a1a', borderRadius: 8, transform: 'rotate(-4deg)', display: 'flex' }} />
+        <div style={{ position: 'absolute', bottom: 44, right: 340, width: 96, height: 36, background: '#bfdbfe', border: '3px solid #1a1a1a', boxShadow: '4px 4px 0 #1a1a1a', borderRadius: 8, transform: 'rotate(3deg)', display: 'flex' }} />
 
-        {/* Content */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 24, position: 'relative', maxWidth: 900 }}>
+        {/* Left content */}
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            padding: '64px 48px 64px 72px',
+            flex: 1,
+            justifyContent: 'center',
+            gap: 20,
+            position: 'relative',
+          }}
+        >
           {/* Domain pill */}
           <div
             style={{
@@ -64,7 +77,7 @@ export default async function Image() {
               letterSpacing: '0.02em',
             }}
           >
-            zamanishtiyaq.work/design
+            zamanishtiyaq.work/hire
           </div>
 
           {/* Headline */}
@@ -77,37 +90,68 @@ export default async function Image() {
               letterSpacing: '-0.02em',
             }}
           >
-            Landing Page Design &amp; Custom Web Development
+            Hire an AI &amp; Full-Stack Developer
           </div>
 
-          {/* Subtitle badge */}
+          {/* Badge */}
           <div
             style={{
               display: 'flex',
               background: '#facc15',
               border: '3px solid #1a1a1a',
               boxShadow: '5px 5px 0 #1a1a1a',
-              padding: '12px 24px',
-              fontSize: 24,
+              padding: '12px 22px',
+              fontSize: 22,
               fontWeight: 800,
               color: '#1a1a1a',
               borderRadius: 12,
               alignSelf: 'flex-start',
             }}
           >
-            From $299 · Fixed Price · Fast Delivery
+            AI Systems · SaaS · iOS Apps
           </div>
 
-          {/* Description */}
+          {/* Sub */}
           <div
             style={{
-              fontSize: 22,
+              fontSize: 20,
               color: '#555',
               lineHeight: 1.5,
+              maxWidth: 480,
               fontWeight: 700,
             }}
           >
-            Mobile-first, SEO-ready. Designed and built end-to-end for startups.
+            Goldman Sachs · BrightEdge · Atlan. Remote worldwide, fixed price.
+          </div>
+        </div>
+
+        {/* Right — photo */}
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '48px 72px 48px 16px',
+            position: 'relative',
+          }}
+        >
+          <div
+            style={{
+              width: 280,
+              height: 280,
+              border: '4px solid #1a1a1a',
+              boxShadow: '10px 10px 0 #1a1a1a',
+              borderRadius: 24,
+              overflow: 'hidden',
+              display: 'flex',
+              background: 'white',
+            }}
+          >
+            <img
+              src={photoSrc}
+              alt=""
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            />
           </div>
         </div>
       </div>
